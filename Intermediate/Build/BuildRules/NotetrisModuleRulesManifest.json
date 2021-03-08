@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\Unreal Projects\\Notetris\\Source\\Notetris\\Notetris.Build.cs",
+		"D:\\Unreal Projects\\Notetris\\Source\\Notetris.Target.cs",
+		"D:\\Unreal Projects\\Notetris\\Source\\NotetrisEditor.Target.cs"
+	],
+	"EngineVersion": "4.26.0"
+}

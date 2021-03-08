@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "Notetris",
+			"Path": "D:\\Unreal Projects\\Notetris\\Source\\Notetris.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "NotetrisEditor",
+			"Path": "D:\\Unreal Projects\\Notetris\\Source\\NotetrisEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

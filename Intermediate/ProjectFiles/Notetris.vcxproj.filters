@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Notetris.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{655070A4-D587-4A7E-9CD2-1BCDE374E87B}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Notetris.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\NotetrisEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{721136FD-6399-48A0-B2CD-1D8AE77389C4}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Notetris">
+      <UniqueIdentifier>{41EC0829-6C19-45BB-BCA2-A9E5DC1847E1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Notetris\Block.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\Block.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\Notetris\Notetris.Build.cs">
+      <Filter>Source\Notetris</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Notetris\Notetris.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\Notetris.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\NotetrisGameModeBase.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\NotetrisGameModeBase.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\NotetrisPlayerController.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\NotetrisPlayerController.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
