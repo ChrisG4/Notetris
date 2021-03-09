@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Notetris.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{655070A4-D587-4A7E-9CD2-1BCDE374E87B}</UniqueIdentifier>
+      <UniqueIdentifier>{6BFE2CAD-009A-4FA4-A062-6230E4FA2797}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Notetris.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\NotetrisEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{721136FD-6399-48A0-B2CD-1D8AE77389C4}</UniqueIdentifier>
+      <UniqueIdentifier>{E2A2FC1A-7CF4-4529-AE81-882FA2A23931}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,12 +29,18 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Notetris">
-      <UniqueIdentifier>{41EC0829-6C19-45BB-BCA2-A9E5DC1847E1}</UniqueIdentifier>
+      <UniqueIdentifier>{A3794C8B-3B6F-45B8-B11B-E825A7E830E8}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Notetris\Block.cpp">
       <Filter>Source\Notetris</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Notetris\Block.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\CompositeBlock.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\CompositeBlock.h">
       <Filter>Source\Notetris</Filter>
     </ClInclude>
     <None Include="..\..\Source\Notetris\Notetris.Build.cs">
@@ -54,6 +62,17 @@
       <Filter>Source\Notetris</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Notetris\NotetrisPlayerController.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\SingleBlock.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\SingleBlock.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\Notetris\Definitions.h">
       <Filter>Source\Notetris</Filter>
     </ClInclude>
   </ItemGroup>

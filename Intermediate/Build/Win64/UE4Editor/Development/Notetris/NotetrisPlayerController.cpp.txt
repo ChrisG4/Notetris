@@ -1,0 +1,3 @@
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\Definitions.Notetris.h
+D:\Unreal Projects\Notetris\Source\Notetris\NotetrisPlayerController.h
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\NotetrisPlayerController.generated.h
