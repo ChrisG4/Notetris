@@ -2,6 +2,7 @@
 
 
 #include "SingleBlock.h"
+#include "Definitions.h"
 
 // Sets default values
 ASingleBlock::ASingleBlock()
@@ -32,7 +33,39 @@ void ASingleBlock::Tick(float DeltaTime)
 
 }
 
-UPaperSpriteComponent* ASingleBlock::GetSpriteComponent() {
-	return this->BlockSprite;
+UPaperSpriteComponent* ASingleBlock::GetSpriteComponent()
+{
+	if (BlockSprite != nullptr)
+	{
+		return this->BlockSprite;
+	}
+	else
+	{
+		return nullptr;
+	}
+}
+
+void ASingleBlock::MoveBlockLeft()
+{
+	FVector NewLocation;
+	NewLocation = this->GetActorLocation() + FVector(-BLOCK_SIZE, 0, 0);
+
+	this->SetActorLocation(NewLocation);
+}
+
+void ASingleBlock::MoveBlockRight()
+{
+	FVector NewLocation;
+	NewLocation = this->GetActorLocation() + FVector(BLOCK_SIZE, 0, 0);
+
+	this->SetActorLocation(NewLocation);
+}
+
+void ASingleBlock::MoveBlockDown()
+{
+	FVector NewLocation;
+	NewLocation = this->GetActorLocation() + FVector(0, 0, -BLOCK_SIZE);
+
+	this->SetActorLocation(NewLocation);
 }
 

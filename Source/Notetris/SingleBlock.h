@@ -32,4 +32,10 @@ public:
 
 	UPaperSpriteComponent* GetSpriteComponent();
 
+	void MoveBlockLeft();
+
+	void MoveBlockRight();
+
+	void MoveBlockDown();
+
 };

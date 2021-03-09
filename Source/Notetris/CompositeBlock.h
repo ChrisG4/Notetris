@@ -6,6 +6,7 @@
 #include "GameFramework/Pawn.h"
 #include "SingleBlock.h"
 #include "Engine/Texture.h"
+#include "Components/SceneComponent.h"
 #include "CompositeBlock.generated.h"
 
 UCLASS()
@@ -22,6 +23,9 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditDefaultsOnly)
+	USceneComponent* CompositeBlockRoot;
+
+	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<ASingleBlock> SingleBlockActor;
 
 	//Multiplied by Sprite Size (e.g. (1, 0, 0) would be one block to the left)
@@ -31,6 +35,8 @@ protected:
 	UPROPERTY()
 	TArray<ASingleBlock*> SingleBlocks;
 
+	float MoveDownTimer = 0;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -39,5 +45,14 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void CreateBlocks();
+
+	UFUNCTION()
+	void MoveBlockLeft();
+
+	UFUNCTION()	
+	void MoveBlockRight();
+
+	UFUNCTION()
+	void MoveBlockDown();
 
 };
