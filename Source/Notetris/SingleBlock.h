@@ -45,5 +45,6 @@ public:
 	bool CanMoveDown();
 	void MoveBlockDown();
 
+	void SetGameGrid(AGameGrid* NewGameGrid);
 	void SetGridIndex(int32 NewGridIndex);
 };

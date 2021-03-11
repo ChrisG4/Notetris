@@ -17,9 +17,6 @@ void ACompositeBlock::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//CompositeBlockRoot = CreateDefaultSubobject<USceneComponent>(TEXT("CompositeBlockRoot"));
-	//SetRootComponent(CompositeBlockRoot);
-
 	CreateBlocks();
 }
 
@@ -90,5 +87,13 @@ void ACompositeBlock::MoveBlockDown()
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		SingleBlocks[i]->MoveBlockDown();
+	}
+}
+
+void ACompositeBlock::SetGameGrid(AGameGrid* NewGameGrid)
+{
+	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	{
+		SingleBlocks[i]->SetGameGrid(NewGameGrid);
 	}
 }

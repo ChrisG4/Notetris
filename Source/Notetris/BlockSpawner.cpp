@@ -22,7 +22,10 @@ void ABlockSpawner::BeginPlay()
 	{
 		FActorSpawnParameters params;
 		int32 BlockChoice = FMath::RandRange(0, SpawnableBlocks.Num() - 1);
-		GetWorld()->SpawnActor<ACompositeBlock>(SpawnableBlocks[BlockChoice], this->GetActorLocation(), FRotator(0, 0, 0), params);
+
+		ACompositeBlock * NewBlock = GetWorld()->SpawnActor<ACompositeBlock>(SpawnableBlocks[BlockChoice], this->GetActorLocation(), FRotator(0, 0, 0), params);
+		if(GameGrid != nullptr)
+			NewBlock->SetGameGrid(this->GameGrid);
 	}
 	
 }

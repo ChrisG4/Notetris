@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
 #include "SingleBlock.h"
+#include "GameGrid.h"
 #include "Engine/Texture.h"
 #include "Components/SceneComponent.h"
 #include "CompositeBlock.generated.h"
@@ -55,4 +56,5 @@ public:
 	UFUNCTION()
 	void MoveBlockDown();
 
+	void SetGameGrid(AGameGrid* NewGameGrid);
 };

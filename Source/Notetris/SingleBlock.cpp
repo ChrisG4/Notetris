@@ -25,8 +25,6 @@ ASingleBlock::ASingleBlock()
 void ASingleBlock::BeginPlay()
 {
 	Super::BeginPlay();
-
-	GameGrid = Cast<AGameGrid>(UGameplayStatics::GetActorOfClass(GetWorld(), AGameGrid::StaticClass()));
 	
 }
 
@@ -78,7 +76,14 @@ void ASingleBlock::MoveBlockDown()
 	this->SetActorLocation(NewLocation);
 }
 
+void ASingleBlock::SetGameGrid(AGameGrid* NewGameGrid)
+{
+	this->GameGrid = NewGameGrid;
+}
+
 void ASingleBlock::SetGridIndex(int32 NewGridIndex)
 {
 	this->GridIndex = NewGridIndex;
 }
+
+

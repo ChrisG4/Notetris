@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "CompositeBlock.h"
+#include "GameGrid.h"
 #include "BlockSpawner.generated.h"
 
 UCLASS()
@@ -21,6 +22,10 @@ protected:
 	virtual void BeginPlay() override;
 
 	bool bCanSpawnBlock = true;
+
+	UPROPERTY(EditAnywhere)
+	AGameGrid* GameGrid;
+
 
 	UPROPERTY(EditDefaultsOnly)
 	TArray<TSubclassOf<ACompositeBlock>> SpawnableBlocks;
