@@ -5,7 +5,6 @@
 
 #include "CoreMinimal.h"
 #include "Engine/TriggerBox.h"
-#include "SingleBlock.h"
 #include "DrawDebugHelpers.h"
 #include "GridTriggerBox.generated.h"
 
@@ -20,6 +19,7 @@ class NOTETRIS_API AGridTriggerBox : public ATriggerBox
 protected:
 	void BeginPlay() override;
 
+	UPROPERTY(VisibleAnywhere)
 	int32 GridIndex = 0;
 
 	bool IsSpaceTaken = false;

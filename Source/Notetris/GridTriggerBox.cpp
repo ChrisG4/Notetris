@@ -3,6 +3,7 @@
 
 #include "GridTriggerBox.h"
 #include "Definitions.h"
+#include "SingleBlock.h"
 
 AGridTriggerBox::AGridTriggerBox()
 {
@@ -13,7 +14,7 @@ AGridTriggerBox::AGridTriggerBox()
 
 void AGridTriggerBox::BeginPlay()
 {
-	DrawDebugBox(GetWorld(), GetActorLocation(), GetComponentsBoundingBox().GetExtent(), FColor::Green, true, -1, 0, 5);
+	DrawDebugBox(GetWorld(), GetActorLocation(), GetComponentsBoundingBox().GetExtent(), FColor::Green, true, -1, 0, 2);
 	print("Box Extent Drawn");
 }
 

@@ -3,6 +3,8 @@
 
 #include "SingleBlock.h"
 #include "Definitions.h"
+#include "Kismet/GameplayStatics.h"
+#include "Engine/World.h"
 
 // Sets default values
 ASingleBlock::ASingleBlock()
@@ -23,6 +25,8 @@ ASingleBlock::ASingleBlock()
 void ASingleBlock::BeginPlay()
 {
 	Super::BeginPlay();
+
+	GameGrid = Cast<AGameGrid>(UGameplayStatics::GetActorOfClass(GetWorld(), AGameGrid::StaticClass()));
 	
 }
 
@@ -59,6 +63,11 @@ void ASingleBlock::MoveBlockRight()
 	NewLocation = this->GetActorLocation() + FVector(BLOCK_SIZE, 0, 0);
 
 	this->SetActorLocation(NewLocation);
+}
+
+bool ASingleBlock::CanMoveDown()
+{
+	return true;
 }
 
 void ASingleBlock::MoveBlockDown()

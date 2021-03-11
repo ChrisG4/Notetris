@@ -40,7 +40,7 @@ void AGameGrid::CreateGrid()
 				AGridTriggerBox* NewTriggerBox = GetWorld()->SpawnActor<AGridTriggerBox>(GridBox, params);
 				NewTriggerBox->SetGridIndex(i + j * WALL_LENGTH);
 				NewTriggerBox->SetActorLocation(FVector(i * BLOCK_SIZE, 0, j * BLOCK_SIZE) + this->GetActorLocation());
-				//GridBoxes.Push(NewTriggerBox);
+				GridBoxes.Push(NewTriggerBox);
 			}
 		}
 	}

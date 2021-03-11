@@ -4,6 +4,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "PaperSpriteComponent.h"
+#include "GameGrid.h"
 #include "Components/SceneComponent.h"
 #include "SingleBlock.generated.h"
 
@@ -26,6 +27,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	UPaperSpriteComponent* BlockSprite;
 
+	UPROPERTY(VisibleAnywhere)
+	AGameGrid* GameGrid;
+
 	int32 GridIndex;
 
 public:	
@@ -38,6 +42,7 @@ public:
 
 	void MoveBlockRight();
 
+	bool CanMoveDown();
 	void MoveBlockDown();
 
 	void SetGridIndex(int32 NewGridIndex);
