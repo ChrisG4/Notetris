@@ -19,12 +19,6 @@ void AGridTriggerBox::BeginPlay()
 
 void AGridTriggerBox::OnBlockBeginOverlap(class AActor* OverlappedActor, class AActor* OtherActor)
 {
-	
-	if (OverlappedActor != nullptr && OtherActor != this)
-	{
-		print("Overlapped");
-	}
-
 	ASingleBlock* OverlappingBlock = Cast<ASingleBlock>(OtherActor);
 
 	if (OverlappingBlock)
