@@ -19,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 	UPackage* Z_Construct_UPackage__Script_Notetris();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	PAPER2D_API UClass* Z_Construct_UClass_UPaperSpriteComponent_NoRegister();
+	NOTETRIS_API UClass* Z_Construct_UClass_AGameGrid_NoRegister();
 // End Cross Module References
 	void ASingleBlock::StaticRegisterNativesASingleBlock()
 	{
@@ -41,6 +42,10 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BlockSprite_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_BlockSprite;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GameGrid_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_GameGrid;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -71,9 +76,17 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockSprite = { "BlockSprite", nullptr, (EPropertyFlags)0x0020080000090009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, BlockSprite), Z_Construct_UClass_UPaperSpriteComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockSprite_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockSprite_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASingleBlock_Statics::NewProp_GameGrid_MetaData[] = {
+		{ "Category", "SingleBlock" },
+		{ "ModuleRelativePath", "SingleBlock.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_GameGrid = { "GameGrid", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, GameGrid), Z_Construct_UClass_AGameGrid_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GameGrid_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GameGrid_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASingleBlock_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockRoot,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockSprite,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASingleBlock_Statics::NewProp_GameGrid,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASingleBlock_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ASingleBlock>::IsAbstract,
@@ -102,7 +115,7 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASingleBlock, 2701719448);
+	IMPLEMENT_CLASS(ASingleBlock, 278542996);
 	template<> NOTETRIS_API UClass* StaticClass<ASingleBlock>()
 	{
 		return ASingleBlock::StaticClass();

@@ -129,6 +129,11 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GridIndex_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_GridIndex;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
 	};
@@ -147,6 +152,16 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 		{ "ModuleRelativePath", "GridTriggerBox.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex_MetaData[] = {
+		{ "Category", "GridTriggerBox" },
+		{ "ModuleRelativePath", "GridTriggerBox.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex = { "GridIndex", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGridTriggerBox, GridIndex), METADATA_PARAMS(Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGridTriggerBox_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGridTriggerBox_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AGridTriggerBox>::IsAbstract,
 	};
@@ -156,11 +171,11 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		FuncInfo,
-		nullptr,
+		Z_Construct_UClass_AGridTriggerBox_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		UE_ARRAY_COUNT(FuncInfo),
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_AGridTriggerBox_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_AGridTriggerBox_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_AGridTriggerBox_Statics::Class_MetaDataParams))
@@ -174,7 +189,7 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGridTriggerBox, 3408531688);
+	IMPLEMENT_CLASS(AGridTriggerBox, 3996086723);
 	template<> NOTETRIS_API UClass* StaticClass<AGridTriggerBox>()
 	{
 		return AGridTriggerBox::StaticClass();
