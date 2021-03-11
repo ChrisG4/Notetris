@@ -3,7 +3,7 @@
 /MACHINE:x64
 /SUBSYSTEM:WINDOWS
 /DEF
-/NAME:"UE4Editor-Notetris-0006.dll"
+/NAME:"UE4Editor-Notetris-0005.dll"
 /IGNORE:4221
 /NODEFAULTLIB
 "D:\Unreal Projects\Notetris\Intermediate\Build\Win64\NotetrisEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
@@ -26,5 +26,5 @@
 "D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\NotetrisPlayerController.gen.cpp.obj"
 "D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\SingleBlock.gen.cpp.obj"
 "D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\Default.rc2.res"
-/OUT:"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\UE4Editor-Notetris-0006.lib"
+/OUT:"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\UE4Editor-Notetris-0005.lib"
 /INCLUDE:IMPLEMENT_MODULE_Notetris

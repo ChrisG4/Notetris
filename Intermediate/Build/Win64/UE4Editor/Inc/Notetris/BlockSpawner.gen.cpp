@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeBlockSpawner() {}
 	NOTETRIS_API UClass* Z_Construct_UClass_ABlockSpawner();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Notetris();
+	NOTETRIS_API UClass* Z_Construct_UClass_AGameGrid_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	NOTETRIS_API UClass* Z_Construct_UClass_ACompositeBlock_NoRegister();
 // End Cross Module References
@@ -33,6 +34,10 @@ void EmptyLinkFunctionForGeneratedCodeBlockSpawner() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GameGrid_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_GameGrid;
 		static const UE4CodeGen_Private::FClassPropertyParams NewProp_SpawnableBlocks_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SpawnableBlocks_MetaData[];
@@ -52,6 +57,13 @@ void EmptyLinkFunctionForGeneratedCodeBlockSpawner() {}
 		{ "ModuleRelativePath", "BlockSpawner.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlockSpawner_Statics::NewProp_GameGrid_MetaData[] = {
+		{ "Category", "BlockSpawner" },
+		{ "ModuleRelativePath", "BlockSpawner.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABlockSpawner_Statics::NewProp_GameGrid = { "GameGrid", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABlockSpawner, GameGrid), Z_Construct_UClass_AGameGrid_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABlockSpawner_Statics::NewProp_GameGrid_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABlockSpawner_Statics::NewProp_GameGrid_MetaData)) };
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ABlockSpawner_Statics::NewProp_SpawnableBlocks_Inner = { "SpawnableBlocks", nullptr, (EPropertyFlags)0x0004000000000000, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_ACompositeBlock_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABlockSpawner_Statics::NewProp_SpawnableBlocks_MetaData[] = {
@@ -61,6 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeBlockSpawner() {}
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABlockSpawner_Statics::NewProp_SpawnableBlocks = { "SpawnableBlocks", nullptr, (EPropertyFlags)0x0024080000010001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABlockSpawner, SpawnableBlocks), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ABlockSpawner_Statics::NewProp_SpawnableBlocks_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABlockSpawner_Statics::NewProp_SpawnableBlocks_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABlockSpawner_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlockSpawner_Statics::NewProp_GameGrid,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlockSpawner_Statics::NewProp_SpawnableBlocks_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABlockSpawner_Statics::NewProp_SpawnableBlocks,
 	};
@@ -91,7 +104,7 @@ void EmptyLinkFunctionForGeneratedCodeBlockSpawner() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABlockSpawner, 3723026977);
+	IMPLEMENT_CLASS(ABlockSpawner, 3735361928);
 	template<> NOTETRIS_API UClass* StaticClass<ABlockSpawner>()
 	{
 		return ABlockSpawner::StaticClass();
