@@ -3,6 +3,7 @@
 
 #include "GameGrid.h"
 #include "Definitions.h"
+#include <Engine/World.h>
 
 // Sets default values
 AGameGrid::AGameGrid()
@@ -16,8 +17,8 @@ AGameGrid::AGameGrid()
 void AGameGrid::BeginPlay()
 {
 	Super::BeginPlay();
+
 	
-	CreateGrid();
 }
 
 // Called every frame
@@ -30,17 +31,13 @@ void AGameGrid::Tick(float DeltaTime)
 void AGameGrid::CreateGrid()
 {
 	for (int i{ 0 }; i < WALL_LENGTH; i++)
-		for (int j{ 0 }; j < WALL_HEIGHT; j++)
+		for (int j{ 0 }; i < WALL_HEIGHT; j++)
 		{
-			float XPos = (BLOCK_SIZE / 2) + (BLOCK_SIZE * i);
-			float ZPos = (BLOCK_SIZE / 2) + (BLOCK_SIZE * j);
-			FVector NewGridVector = FVector(XPos, 0, ZPos) + this->GetActorLocation();
-
-			FGridSpace* GridSpace;
-			GridSpace->GridVector = NewGridVector;
-
-			GridSpaces.Push(GridSpace);
-		
+			FActorSpawnParameters params;
+			AGridTriggerBox* NewTriggerBox = GetWorld()->SpawnActor<AGridTriggerBox>(AGridTriggerBox::StaticClass(), params);
+			NewTriggerBox->SetGridIndex(i + j * WALL_LENGTH);
+			NewTriggerBox->SetActorLocation(FVector(i * WALL_LENGTH + j * WALL_HEIGHT));
+			GridBoxes.Push(NewTriggerBox);
 		}
 }
 

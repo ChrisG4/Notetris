@@ -4,17 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "GridTriggerBox.h"
 #include "GameGrid.generated.h"
-
-USTRUCT()
-struct FGridSpace {
-	GENERATED_BODY()
-
-	FVector GridVector = FVector(0, 0, 0);
-
-	bool bIsSpaceOccupied = false;
-};
-
 
 UCLASS()
 class NOTETRIS_API AGameGrid : public AActor
@@ -29,7 +20,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	TArray<FGridSpace*> GridSpaces; //MAYBE MAKE THIS MULTIDIMENTIONAL ARRAY TO REPRESENT WHERE EACH GRID SPACE IS
+	UPROPERTY(EditAnywhere)
+	TArray<AGridTriggerBox*> GridBoxes;
 
 public:	
 	// Called every frame

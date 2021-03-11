@@ -26,6 +26,8 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	UPaperSpriteComponent* BlockSprite;
 
+	int32 GridIndex;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -38,4 +40,5 @@ public:
 
 	void MoveBlockDown();
 
+	void SetGridIndex(int32 NewGridIndex);
 };

@@ -69,3 +69,7 @@ void ASingleBlock::MoveBlockDown()
 	this->SetActorLocation(NewLocation);
 }
 
+void ASingleBlock::SetGridIndex(int32 NewGridIndex)
+{
+	this->GridIndex = NewGridIndex;
+}
