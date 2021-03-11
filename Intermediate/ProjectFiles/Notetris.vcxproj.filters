@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Notetris.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{89C2C40E-EBC7-44C7-BFCF-807859FA8819}</UniqueIdentifier>
+      <UniqueIdentifier>{98350A7F-47B4-44E9-A501-D4309F2067FC}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Notetris.Target.cs">
       <Filter>Source</Filter>
@@ -13,8 +13,9 @@
     </None>
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
+    <None Include="..\..\README.md" />
     <Filter Include="Config">
-      <UniqueIdentifier>{212F7728-E03F-4016-B412-8FB426228DD9}</UniqueIdentifier>
+      <UniqueIdentifier>{E80DE13E-4315-433B-B139-89A3F01EE426}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -29,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Notetris">
-      <UniqueIdentifier>{F833ACC6-4908-45ED-B9C8-9585B39AF769}</UniqueIdentifier>
+      <UniqueIdentifier>{DA886694-02C3-417A-8546-D809ABE513FA}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Notetris\Block.cpp">
       <Filter>Source\Notetris</Filter>
@@ -56,6 +57,12 @@
       <Filter>Source\Notetris</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Notetris\GameGrid.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\GridTriggerBox.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\GridTriggerBox.h">
       <Filter>Source\Notetris</Filter>
     </ClInclude>
     <None Include="..\..\Source\Notetris\Notetris.Build.cs">
