@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeGameGrid() {}
 	NOTETRIS_API UClass* Z_Construct_UClass_AGameGrid();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Notetris();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	NOTETRIS_API UClass* Z_Construct_UClass_AGridTriggerBox_NoRegister();
 // End Cross Module References
 	void AGameGrid::StaticRegisterNativesAGameGrid()
@@ -32,6 +33,10 @@ void EmptyLinkFunctionForGeneratedCodeGameGrid() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GridBox_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_GridBox;
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_GridBoxes_Inner;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GridBoxes_MetaData[];
@@ -51,6 +56,13 @@ void EmptyLinkFunctionForGeneratedCodeGameGrid() {}
 		{ "ModuleRelativePath", "GameGrid.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBox_MetaData[] = {
+		{ "Category", "GameGrid" },
+		{ "ModuleRelativePath", "GameGrid.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBox = { "GridBox", nullptr, (EPropertyFlags)0x0024080000000001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGameGrid, GridBox), Z_Construct_UClass_AGridTriggerBox_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBox_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBox_MetaData)) };
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBoxes_Inner = { "GridBoxes", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AGridTriggerBox_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBoxes_MetaData[] = {
@@ -60,6 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeGameGrid() {}
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBoxes = { "GridBoxes", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGameGrid, GridBoxes), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBoxes_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBoxes_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGameGrid_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBox,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBoxes_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBoxes,
 	};
@@ -90,7 +103,7 @@ void EmptyLinkFunctionForGeneratedCodeGameGrid() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGameGrid, 4126151988);
+	IMPLEMENT_CLASS(AGameGrid, 3597669726);
 	template<> NOTETRIS_API UClass* StaticClass<AGameGrid>()
 	{
 		return AGameGrid::StaticClass();

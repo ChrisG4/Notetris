@@ -59,6 +59,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGameGrid); \
 
 
 #define Notetris_Source_Notetris_GameGrid_h_13_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__GridBox() { return STRUCT_OFFSET(AGameGrid, GridBox); } \
 	FORCEINLINE static uint32 __PPO__GridBoxes() { return STRUCT_OFFSET(AGameGrid, GridBoxes); }
 
 
