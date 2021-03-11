@@ -18,7 +18,7 @@ void AGameGrid::BeginPlay()
 {
 	Super::BeginPlay();
 
-	
+	CreateGrid();
 }
 
 // Called every frame
@@ -30,15 +30,20 @@ void AGameGrid::Tick(float DeltaTime)
 
 void AGameGrid::CreateGrid()
 {
-	for (int i{ 0 }; i < WALL_LENGTH; i++)
-		for (int j{ 0 }; i < WALL_HEIGHT; j++)
+	if (GridBox != nullptr)
+	{
+		for (int i{ 0 }; i < WALL_LENGTH; i++)
 		{
-			FActorSpawnParameters params;
-			AGridTriggerBox* NewTriggerBox = GetWorld()->SpawnActor<AGridTriggerBox>(AGridTriggerBox::StaticClass(), params);
-			NewTriggerBox->SetGridIndex(i + j * WALL_LENGTH);
-			NewTriggerBox->SetActorLocation(FVector(i * WALL_LENGTH + j * WALL_HEIGHT));
-			GridBoxes.Push(NewTriggerBox);
+			for (int j{ 0 }; j < WALL_HEIGHT; j++)
+			{
+				FActorSpawnParameters params;
+				AGridTriggerBox* NewTriggerBox = GetWorld()->SpawnActor<AGridTriggerBox>(GridBox, params);
+				NewTriggerBox->SetGridIndex(i + j * WALL_LENGTH);
+				NewTriggerBox->SetActorLocation(FVector(i * BLOCK_SIZE, 0, j * BLOCK_SIZE) + this->GetActorLocation());
+				//GridBoxes.Push(NewTriggerBox);
+			}
 		}
+	}
 }
 
 void AGameGrid::SetWallsOccupied()

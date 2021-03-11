@@ -21,6 +21,9 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere)
+	TSubclassOf<AGridTriggerBox> GridBox;
+
+	UPROPERTY(EditAnywhere)
 	TArray<AGridTriggerBox*> GridBoxes;
 
 public:	
