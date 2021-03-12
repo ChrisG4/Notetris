@@ -16,6 +16,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define Notetris_Source_Notetris_CompositeBlock_h_16_SPARSE_DATA
 #define Notetris_Source_Notetris_CompositeBlock_h_16_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execPlaceBlock); \
 	DECLARE_FUNCTION(execMoveBlockDown); \
 	DECLARE_FUNCTION(execMoveBlockRight); \
 	DECLARE_FUNCTION(execMoveBlockLeft);
@@ -23,6 +24,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define Notetris_Source_Notetris_CompositeBlock_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execPlaceBlock); \
 	DECLARE_FUNCTION(execMoveBlockDown); \
 	DECLARE_FUNCTION(execMoveBlockRight); \
 	DECLARE_FUNCTION(execMoveBlockLeft);

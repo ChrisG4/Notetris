@@ -22,6 +22,13 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 	NOTETRIS_API UClass* Z_Construct_UClass_ASingleBlock_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 // End Cross Module References
+	DEFINE_FUNCTION(ACompositeBlock::execPlaceBlock)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->PlaceBlock();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ACompositeBlock::execMoveBlockDown)
 	{
 		P_FINISH;
@@ -50,6 +57,7 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 			{ "MoveBlockDown", &ACompositeBlock::execMoveBlockDown },
 			{ "MoveBlockLeft", &ACompositeBlock::execMoveBlockLeft },
 			{ "MoveBlockRight", &ACompositeBlock::execMoveBlockRight },
+			{ "PlaceBlock", &ACompositeBlock::execPlaceBlock },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -119,6 +127,28 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ACompositeBlock_PlaceBlock_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACompositeBlock_PlaceBlock_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "CompositeBlock.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACompositeBlock_PlaceBlock_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACompositeBlock, nullptr, "PlaceBlock", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACompositeBlock_PlaceBlock_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACompositeBlock_PlaceBlock_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ACompositeBlock_PlaceBlock()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ACompositeBlock_PlaceBlock_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_ACompositeBlock_NoRegister()
 	{
 		return ACompositeBlock::StaticClass();
@@ -160,6 +190,7 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 		{ &Z_Construct_UFunction_ACompositeBlock_MoveBlockDown, "MoveBlockDown" }, // 1316492273
 		{ &Z_Construct_UFunction_ACompositeBlock_MoveBlockLeft, "MoveBlockLeft" }, // 214783627
 		{ &Z_Construct_UFunction_ACompositeBlock_MoveBlockRight, "MoveBlockRight" }, // 2166710762
+		{ &Z_Construct_UFunction_ACompositeBlock_PlaceBlock, "PlaceBlock" }, // 4130128484
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::Class_MetaDataParams[] = {
@@ -235,7 +266,7 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACompositeBlock, 2147854677);
+	IMPLEMENT_CLASS(ACompositeBlock, 944551488);
 	template<> NOTETRIS_API UClass* StaticClass<ACompositeBlock>()
 	{
 		return ACompositeBlock::StaticClass();

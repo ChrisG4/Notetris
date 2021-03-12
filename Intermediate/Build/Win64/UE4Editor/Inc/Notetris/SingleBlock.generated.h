@@ -74,7 +74,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASingleBlock); \
 #define Notetris_Source_Notetris_SingleBlock_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__BlockRoot() { return STRUCT_OFFSET(ASingleBlock, BlockRoot); } \
 	FORCEINLINE static uint32 __PPO__BlockSprite() { return STRUCT_OFFSET(ASingleBlock, BlockSprite); } \
-	FORCEINLINE static uint32 __PPO__GameGrid() { return STRUCT_OFFSET(ASingleBlock, GameGrid); }
+	FORCEINLINE static uint32 __PPO__GameGrid() { return STRUCT_OFFSET(ASingleBlock, GameGrid); } \
+	FORCEINLINE static uint32 __PPO__GridIndex() { return STRUCT_OFFSET(ASingleBlock, GridIndex); }
 
 
 #define Notetris_Source_Notetris_SingleBlock_h_11_PROLOG

@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeNotetris_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x5CA991A9,
+				0xE610D471,
 				0x90831C79,
 				METADATA_PARAMS(nullptr, 0)
 			};
