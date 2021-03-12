@@ -76,7 +76,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGridTriggerBox); \
 
 
 #define Notetris_Source_Notetris_GridTriggerBox_h_17_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__GridIndex() { return STRUCT_OFFSET(AGridTriggerBox, GridIndex); }
+	FORCEINLINE static uint32 __PPO__GridIndex() { return STRUCT_OFFSET(AGridTriggerBox, GridIndex); } \
+	FORCEINLINE static uint32 __PPO__bIsSpaceOccupied() { return STRUCT_OFFSET(AGridTriggerBox, bIsSpaceOccupied); }
 
 
 #define Notetris_Source_Notetris_GridTriggerBox_h_14_PROLOG
