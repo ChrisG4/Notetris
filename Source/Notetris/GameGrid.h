@@ -34,4 +34,8 @@ public:
 
 	void SetWallsOccupied();
 
+
+	UFUNCTION()
+	bool IsGridBoxOccupied(int32 GridBoxIndex);
+
 };

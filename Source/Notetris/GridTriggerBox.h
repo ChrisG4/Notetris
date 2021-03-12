@@ -22,7 +22,7 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	int32 GridIndex = 0;
 
-	bool IsSpaceTaken = false;
+	bool bIsSpaceOccupied = false;
 	
 public:
 	AGridTriggerBox();
@@ -33,5 +33,13 @@ public:
 	UFUNCTION()
 	void OnBlockEndOverlap(class AActor* OverlappedActor, class AActor* OtherActor);
 
+	UFUNCTION()
+	void SetIsSpaceOccupied(bool IsSpaceOccupied);
+	
+	UFUNCTION()
+	bool GetIsSpaceOccupied();
+
+	UFUNCTION()
 	void SetGridIndex(int32 NewGridIndex);
+
 };

@@ -19,6 +19,8 @@ void AGameGrid::BeginPlay()
 	Super::BeginPlay();
 
 	CreateGrid();
+
+	SetWallsOccupied();
 }
 
 // Called every frame
@@ -48,5 +50,28 @@ void AGameGrid::CreateGrid()
 
 void AGameGrid::SetWallsOccupied()
 {
+	for (int i{ 0 }; i < WALL_LENGTH; i++)
+	{
+		GridBoxes[i]->SetIsSpaceOccupied(true);
+	}
+
+	for (int i{ 0 }; i < WALL_HEIGHT; i++)
+	{
+		GridBoxes[i * WALL_LENGTH]->SetIsSpaceOccupied(true);
+	}
+}
+
+
+bool AGameGrid::IsGridBoxOccupied(int32 GridBoxIndex)
+{
+	if (GridBoxIndex >= 0 && GridBoxIndex < GridBoxes.Num())
+	{
+		return GridBoxes[GridBoxIndex]->GetIsSpaceOccupied();
+	}
+	else
+	{
+		print("Grid Box not found");
+		return false;
+	}
 }
 

@@ -65,7 +65,15 @@ void ASingleBlock::MoveBlockRight()
 
 bool ASingleBlock::CanMoveDown()
 {
-	return true;
+	if (GameGrid != nullptr)
+	{
+		int32 GridIndexToCheck = this->GridIndex - WALL_LENGTH;
+		return !GameGrid->IsGridBoxOccupied(GridIndexToCheck);
+	}
+	else
+	{
+		return true;
+	}
 }
 
 void ASingleBlock::MoveBlockDown()

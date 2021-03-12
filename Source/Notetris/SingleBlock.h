@@ -42,9 +42,13 @@ public:
 
 	void MoveBlockRight();
 
+	UFUNCTION()
 	bool CanMoveDown();
 	void MoveBlockDown();
 
+	UFUNCTION()
 	void SetGameGrid(AGameGrid* NewGameGrid);
+
+	UFUNCTION()
 	void SetGridIndex(int32 NewGridIndex);
 };
