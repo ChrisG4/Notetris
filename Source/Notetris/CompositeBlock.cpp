@@ -63,7 +63,13 @@ void ACompositeBlock::CreateBlocks()
 
 void ACompositeBlock::MoveBlockLeft()
 {
+	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	{
+		if (!SingleBlocks[i]->CanMoveLeft())
+			return;
+	}
 
+	print("BlockMoveLeft");
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		SingleBlocks[i]->MoveBlockLeft();
@@ -73,7 +79,12 @@ void ACompositeBlock::MoveBlockLeft()
 
 void ACompositeBlock::MoveBlockRight()
 {
-
+	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	{
+		if (!SingleBlocks[i]->CanMoveRight())
+			return;
+	}
+	print("BlockMoveRight");
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		SingleBlocks[i]->MoveBlockRight();
@@ -84,11 +95,11 @@ void ACompositeBlock::MoveBlockDown()
 {
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
-		print(SingleBlocks[i]->CanMoveDown() ? TEXT("Block can move down") : TEXT("Block can't move down"));
 		if (!SingleBlocks[i]->CanMoveDown())
 			return;
 	}
 	
+	print("BlockMoveDown");
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		SingleBlocks[i]->MoveBlockDown();

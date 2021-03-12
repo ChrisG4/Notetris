@@ -38,8 +38,10 @@ public:
 
 	UPaperSpriteComponent* GetSpriteComponent();
 
+	bool CanMoveLeft();
 	void MoveBlockLeft();
 
+	bool CanMoveRight();
 	void MoveBlockRight();
 
 	UFUNCTION()

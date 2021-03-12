@@ -50,14 +50,22 @@ void AGameGrid::CreateGrid()
 
 void AGameGrid::SetWallsOccupied()
 {
+	//FLOOR
 	for (int i{ 0 }; i < WALL_LENGTH; i++)
 	{
 		GridBoxes[i]->SetIsSpaceOccupied(true);
 	}
 
+	//LEFT WALL
 	for (int i{ 0 }; i < WALL_HEIGHT; i++)
 	{
 		GridBoxes[i * WALL_LENGTH]->SetIsSpaceOccupied(true);
+	}
+
+	//RIGHT WALL
+	for (int i{ 1 }; i <= WALL_HEIGHT; i++)
+	{
+		GridBoxes[(i * WALL_LENGTH) - 1]->SetIsSpaceOccupied(true);
 	}
 }
 

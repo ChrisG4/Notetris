@@ -47,12 +47,35 @@ UPaperSpriteComponent* ASingleBlock::GetSpriteComponent()
 	}
 }
 
+bool ASingleBlock::CanMoveLeft() {
+	if (GameGrid != nullptr)
+	{
+		return !GameGrid->IsGridBoxOccupied(this->GridIndex - 1);
+	}
+	else
+	{
+		return true;
+	}
+}
+
 void ASingleBlock::MoveBlockLeft()
 {
 	FVector NewLocation;
 	NewLocation = this->GetActorLocation() + FVector(-BLOCK_SIZE, 0, 0);
 
 	this->SetActorLocation(NewLocation);
+}
+
+bool ASingleBlock::CanMoveRight()
+{
+	if (GameGrid != nullptr)
+	{
+		return !GameGrid->IsGridBoxOccupied(this->GridIndex + 1);
+	}
+	else
+	{
+		return true;
+	}
 }
 
 void ASingleBlock::MoveBlockRight()

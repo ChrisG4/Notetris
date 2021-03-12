@@ -22,6 +22,7 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	int32 GridIndex = 0;
 
+	UPROPERTY(VisibleAnywhere)
 	bool bIsSpaceOccupied = false;
 	
 public:
