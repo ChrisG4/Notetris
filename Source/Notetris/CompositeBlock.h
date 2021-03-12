@@ -24,21 +24,21 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditDefaultsOnly)
-	USceneComponent* CompositeBlockRoot;
+		USceneComponent* CompositeBlockRoot;
 
 	UPROPERTY(EditDefaultsOnly)
-	TSubclassOf<ASingleBlock> SingleBlockActor;
+		TSubclassOf<ASingleBlock> SingleBlockActor;
 
 	//Multiplied by Sprite Size (e.g. (1, 0, 0) would be one block to the left)
 	UPROPERTY(EditDefaultsOnly)
-	TArray<FVector> BlockUnitPositions;
+		TArray<FVector> BlockUnitPositions;
 
 	UPROPERTY()
-	TArray<ASingleBlock*> SingleBlocks;
+		TArray<ASingleBlock*> SingleBlocks;
 
 	float MoveDownTimer = 0;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -48,13 +48,17 @@ public:
 	void CreateBlocks();
 
 	UFUNCTION()
-	void MoveBlockLeft();
-
-	UFUNCTION()	
-	void MoveBlockRight();
+		void MoveBlockLeft();
 
 	UFUNCTION()
-	void MoveBlockDown();
+		void MoveBlockRight();
+
+	UFUNCTION()
+		void MoveBlockDown();
 
 	void SetGameGrid(AGameGrid* NewGameGrid);
+
+	UFUNCTION()
+	void PlaceBlock();
+
 };

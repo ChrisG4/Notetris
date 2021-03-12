@@ -18,7 +18,18 @@ void ABlockSpawner::BeginPlay()
 {
 	Super::BeginPlay();
 
-	if (SpawnableBlocks.Num() > 0 && bCanSpawnBlock == true)
+	SpawnBlock();
+}
+
+// Called every frame
+void ABlockSpawner::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+}
+
+void ABlockSpawner::SpawnBlock()
+{
+	if (SpawnableBlocks.Num() > 0 && bCanSpawnBlock == true && GameGrid != nullptr)
 	{
 		FActorSpawnParameters params;
 		int32 BlockChoice = FMath::RandRange(0, SpawnableBlocks.Num() - 1);
@@ -27,13 +38,4 @@ void ABlockSpawner::BeginPlay()
 		if(GameGrid != nullptr)
 			NewBlock->SetGameGrid(this->GameGrid);
 	}
-	
 }
-
-// Called every frame
-void ABlockSpawner::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
-}
-

@@ -14,7 +14,7 @@ AGridTriggerBox::AGridTriggerBox()
 
 void AGridTriggerBox::BeginPlay()
 {
-	//DrawDebugBox(GetWorld(), GetActorLocation(), GetComponentsBoundingBox().GetExtent(), FColor::Green, true, -1, 0, 2);
+	DrawDebugBox(GetWorld(), GetActorLocation(), GetComponentsBoundingBox().GetExtent(), FColor::Green, true, -1, 0, 2);
 }
 
 void AGridTriggerBox::OnBlockBeginOverlap(class AActor* OverlappedActor, class AActor* OtherActor)
@@ -23,6 +23,7 @@ void AGridTriggerBox::OnBlockBeginOverlap(class AActor* OverlappedActor, class A
 
 	if (OverlappingBlock)
 	{
+		print("OVERLAPPED");
 		OverlappingBlock->SetGridIndex(this->GridIndex);
 	}
 }

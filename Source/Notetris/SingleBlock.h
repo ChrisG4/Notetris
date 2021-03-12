@@ -30,7 +30,8 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	AGameGrid* GameGrid;
 
-	int32 GridIndex;
+	UPROPERTY(VisibleAnywhere)
+	int32 GridIndex = 0;
 
 public:	
 	// Called every frame

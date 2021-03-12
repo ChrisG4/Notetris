@@ -96,14 +96,18 @@ void ACompositeBlock::MoveBlockDown()
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		if (!SingleBlocks[i]->CanMoveDown())
+		{
+			PlaceBlock();
 			return;
+		}
 	}
 	
-	print("BlockMoveDown");
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		SingleBlocks[i]->MoveBlockDown();
 	}
+	
+	MoveDownTimer = 0;
 }
 
 void ACompositeBlock::SetGameGrid(AGameGrid* NewGameGrid)
@@ -112,4 +116,10 @@ void ACompositeBlock::SetGameGrid(AGameGrid* NewGameGrid)
 	{
 		SingleBlocks[i]->SetGameGrid(NewGameGrid);
 	}
+}
+
+void ACompositeBlock::PlaceBlock()
+{
+	this->DisableInput(GetWorld()->GetFirstPlayerController());
+	print("Block Placed");
 }
