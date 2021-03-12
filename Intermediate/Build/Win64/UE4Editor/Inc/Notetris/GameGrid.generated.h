@@ -14,8 +14,16 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define NOTETRIS_GameGrid_generated_h
 
 #define Notetris_Source_Notetris_GameGrid_h_13_SPARSE_DATA
-#define Notetris_Source_Notetris_GameGrid_h_13_RPC_WRAPPERS
-#define Notetris_Source_Notetris_GameGrid_h_13_RPC_WRAPPERS_NO_PURE_DECLS
+#define Notetris_Source_Notetris_GameGrid_h_13_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execIsGridBoxOccupied);
+
+
+#define Notetris_Source_Notetris_GameGrid_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execIsGridBoxOccupied);
+
+
 #define Notetris_Source_Notetris_GameGrid_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGameGrid(); \

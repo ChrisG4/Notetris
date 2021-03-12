@@ -8,14 +8,27 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AGameGrid;
 #ifdef NOTETRIS_SingleBlock_generated_h
 #error "SingleBlock.generated.h already included, missing '#pragma once' in SingleBlock.h"
 #endif
 #define NOTETRIS_SingleBlock_generated_h
 
 #define Notetris_Source_Notetris_SingleBlock_h_14_SPARSE_DATA
-#define Notetris_Source_Notetris_SingleBlock_h_14_RPC_WRAPPERS
-#define Notetris_Source_Notetris_SingleBlock_h_14_RPC_WRAPPERS_NO_PURE_DECLS
+#define Notetris_Source_Notetris_SingleBlock_h_14_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execSetGridIndex); \
+	DECLARE_FUNCTION(execSetGameGrid); \
+	DECLARE_FUNCTION(execCanMoveDown);
+
+
+#define Notetris_Source_Notetris_SingleBlock_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSetGridIndex); \
+	DECLARE_FUNCTION(execSetGameGrid); \
+	DECLARE_FUNCTION(execCanMoveDown);
+
+
 #define Notetris_Source_Notetris_SingleBlock_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASingleBlock(); \

@@ -19,6 +19,29 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 	UPackage* Z_Construct_UPackage__Script_Notetris();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AGridTriggerBox::execSetGridIndex)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_NewGridIndex);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetGridIndex(Z_Param_NewGridIndex);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AGridTriggerBox::execGetIsSpaceOccupied)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(bool*)Z_Param__Result=P_THIS->GetIsSpaceOccupied();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AGridTriggerBox::execSetIsSpaceOccupied)
+	{
+		P_GET_UBOOL(Z_Param_IsSpaceOccupied);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetIsSpaceOccupied(Z_Param_IsSpaceOccupied);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AGridTriggerBox::execOnBlockEndOverlap)
 	{
 		P_GET_OBJECT(AActor,Z_Param_OverlappedActor);
@@ -41,10 +64,50 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 	{
 		UClass* Class = AGridTriggerBox::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "GetIsSpaceOccupied", &AGridTriggerBox::execGetIsSpaceOccupied },
 			{ "OnBlockBeginOverlap", &AGridTriggerBox::execOnBlockBeginOverlap },
 			{ "OnBlockEndOverlap", &AGridTriggerBox::execOnBlockEndOverlap },
+			{ "SetGridIndex", &AGridTriggerBox::execSetGridIndex },
+			{ "SetIsSpaceOccupied", &AGridTriggerBox::execSetIsSpaceOccupied },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics
+	{
+		struct GridTriggerBox_eventGetIsSpaceOccupied_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((GridTriggerBox_eventGetIsSpaceOccupied_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(GridTriggerBox_eventGetIsSpaceOccupied_Parms), &Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "GridTriggerBox.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGridTriggerBox, nullptr, "GetIsSpaceOccupied", nullptr, nullptr, sizeof(GridTriggerBox_eventGetIsSpaceOccupied_Parms), Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AGridTriggerBox_OnBlockBeginOverlap_Statics
 	{
@@ -118,6 +181,75 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics
+	{
+		struct GridTriggerBox_eventSetGridIndex_Parms
+		{
+			int32 NewGridIndex;
+		};
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_NewGridIndex;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::NewProp_NewGridIndex = { "NewGridIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GridTriggerBox_eventSetGridIndex_Parms, NewGridIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::NewProp_NewGridIndex,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "GridTriggerBox.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGridTriggerBox, nullptr, "SetGridIndex", nullptr, nullptr, sizeof(GridTriggerBox_eventSetGridIndex_Parms), Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGridTriggerBox_SetGridIndex()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics
+	{
+		struct GridTriggerBox_eventSetIsSpaceOccupied_Parms
+		{
+			bool IsSpaceOccupied;
+		};
+		static void NewProp_IsSpaceOccupied_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_IsSpaceOccupied;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::NewProp_IsSpaceOccupied_SetBit(void* Obj)
+	{
+		((GridTriggerBox_eventSetIsSpaceOccupied_Parms*)Obj)->IsSpaceOccupied = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::NewProp_IsSpaceOccupied = { "IsSpaceOccupied", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(GridTriggerBox_eventSetIsSpaceOccupied_Parms), &Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::NewProp_IsSpaceOccupied_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::NewProp_IsSpaceOccupied,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "GridTriggerBox.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGridTriggerBox, nullptr, "SetIsSpaceOccupied", nullptr, nullptr, sizeof(GridTriggerBox_eventSetIsSpaceOccupied_Parms), Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AGridTriggerBox_NoRegister()
 	{
 		return AGridTriggerBox::StaticClass();
@@ -142,8 +274,11 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Notetris,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AGridTriggerBox_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied, "GetIsSpaceOccupied" }, // 1142429638
 		{ &Z_Construct_UFunction_AGridTriggerBox_OnBlockBeginOverlap, "OnBlockBeginOverlap" }, // 909406801
 		{ &Z_Construct_UFunction_AGridTriggerBox_OnBlockEndOverlap, "OnBlockEndOverlap" }, // 942104857
+		{ &Z_Construct_UFunction_AGridTriggerBox_SetGridIndex, "SetGridIndex" }, // 1097275892
+		{ &Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied, "SetIsSpaceOccupied" }, // 3301826151
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGridTriggerBox_Statics::Class_MetaDataParams[] = {
@@ -189,7 +324,7 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGridTriggerBox, 3996086723);
+	IMPLEMENT_CLASS(AGridTriggerBox, 2005335213);
 	template<> NOTETRIS_API UClass* StaticClass<AGridTriggerBox>()
 	{
 		return AGridTriggerBox::StaticClass();

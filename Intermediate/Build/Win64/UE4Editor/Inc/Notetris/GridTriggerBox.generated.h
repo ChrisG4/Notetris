@@ -17,12 +17,18 @@ class AActor;
 #define Notetris_Source_Notetris_GridTriggerBox_h_17_SPARSE_DATA
 #define Notetris_Source_Notetris_GridTriggerBox_h_17_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execSetGridIndex); \
+	DECLARE_FUNCTION(execGetIsSpaceOccupied); \
+	DECLARE_FUNCTION(execSetIsSpaceOccupied); \
 	DECLARE_FUNCTION(execOnBlockEndOverlap); \
 	DECLARE_FUNCTION(execOnBlockBeginOverlap);
 
 
 #define Notetris_Source_Notetris_GridTriggerBox_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execSetGridIndex); \
+	DECLARE_FUNCTION(execGetIsSpaceOccupied); \
+	DECLARE_FUNCTION(execSetIsSpaceOccupied); \
 	DECLARE_FUNCTION(execOnBlockEndOverlap); \
 	DECLARE_FUNCTION(execOnBlockBeginOverlap);
 
