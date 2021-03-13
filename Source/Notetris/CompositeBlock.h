@@ -8,6 +8,7 @@
 #include "GameGrid.h"
 #include "Engine/Texture.h"
 #include "Components/SceneComponent.h"
+
 #include "CompositeBlock.generated.h"
 
 UCLASS()
@@ -24,17 +25,17 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditDefaultsOnly)
-		USceneComponent* CompositeBlockRoot;
+	USceneComponent* CompositeBlockRoot;
 
 	UPROPERTY(EditDefaultsOnly)
-		TSubclassOf<ASingleBlock> SingleBlockActor;
+	TSubclassOf<ASingleBlock> SingleBlockActor;
 
 	//Multiplied by Sprite Size (e.g. (1, 0, 0) would be one block to the left)
 	UPROPERTY(EditDefaultsOnly)
-		TArray<FVector> BlockUnitPositions;
+	TArray<FVector> BlockUnitPositions;
 
 	UPROPERTY()
-		TArray<ASingleBlock*> SingleBlocks;
+	TArray<ASingleBlock*> SingleBlocks;
 
 	float MoveDownTimer = 0;
 

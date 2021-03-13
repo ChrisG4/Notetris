@@ -29,13 +29,16 @@ void ABlockSpawner::Tick(float DeltaTime)
 
 void ABlockSpawner::SpawnBlock()
 {
-	if (SpawnableBlocks.Num() > 0 && bCanSpawnBlock == true && GameGrid != nullptr)
+	if (SpawnableBlocks.Num() > 0 && GameGrid != nullptr)
 	{
 		FActorSpawnParameters params;
+
 		int32 BlockChoice = FMath::RandRange(0, SpawnableBlocks.Num() - 1);
 
 		ACompositeBlock * NewBlock = GetWorld()->SpawnActor<ACompositeBlock>(SpawnableBlocks[BlockChoice], this->GetActorLocation(), FRotator(0, 0, 0), params);
 		if(GameGrid != nullptr)
 			NewBlock->SetGameGrid(this->GameGrid);
+		
+		NewBlock->SetOwner(this);
 	}
 }

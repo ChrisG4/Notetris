@@ -4,6 +4,8 @@
 #include "CompositeBlock.h"
 #include "Engine/World.h"
 #include "Definitions.h"
+#include "BlockSpawner.h"
+
 
 // Sets default values
 ACompositeBlock::ACompositeBlock()
@@ -122,4 +124,11 @@ void ACompositeBlock::PlaceBlock()
 {
 	this->DisableInput(GetWorld()->GetFirstPlayerController());
 	print("Block Placed");
+	this->SetActorTickEnabled(false);
+
+	if (Cast<ABlockSpawner>(this->GetOwner()))
+	{
+		Cast<ABlockSpawner>(this->GetOwner())->SpawnBlock();
+	}
+
 }
