@@ -125,10 +125,18 @@ void ACompositeBlock::PlaceBlock()
 	this->DisableInput(GetWorld()->GetFirstPlayerController());
 	print("Block Placed");
 	this->SetActorTickEnabled(false);
+	SetBlockBoxesOccupied();
 
 	if (Cast<ABlockSpawner>(this->GetOwner()))
 	{
 		Cast<ABlockSpawner>(this->GetOwner())->SpawnBlock();
 	}
+}
 
+void ACompositeBlock::SetBlockBoxesOccupied()
+{
+	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	{
+		SingleBlocks[i]->SetGridBoxOccupied(true);
+	}
 }

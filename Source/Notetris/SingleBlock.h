@@ -54,4 +54,7 @@ public:
 
 	UFUNCTION()
 	void SetGridIndex(int32 NewGridIndex);
+	int32 GetGridIndex();
+
+	void SetGridBoxOccupied(bool IsOccupied);
 };

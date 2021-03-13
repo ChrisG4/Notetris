@@ -62,4 +62,5 @@ public:
 	UFUNCTION()
 	void PlaceBlock();
 
+	void SetBlockBoxesOccupied();
 };

@@ -38,4 +38,6 @@ public:
 	UFUNCTION()
 	bool IsGridBoxOccupied(int32 GridBoxIndex);
 
+	void SetIsGridBoxOccupied(int32 GridBoxIndex, bool IsOccupied);
+
 };

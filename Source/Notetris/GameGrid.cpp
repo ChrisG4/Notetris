@@ -83,3 +83,10 @@ bool AGameGrid::IsGridBoxOccupied(int32 GridBoxIndex)
 	}
 }
 
+void AGameGrid::SetIsGridBoxOccupied(int32 GridBoxIndex, bool IsOccupied)
+{
+	if (GridBoxes[GridBoxIndex] != nullptr)
+	{
+		GridBoxes[GridBoxIndex]->SetIsSpaceOccupied(IsOccupied);
+	}
+}

@@ -125,4 +125,14 @@ void ASingleBlock::SetGridIndex(int32 NewGridIndex)
 	this->GridIndex = NewGridIndex;
 }
 
+int32 ASingleBlock::GetGridIndex()
+{
+	return this->GridIndex;
+}
+
+void ASingleBlock::SetGridBoxOccupied(bool IsOccupied)
+{
+	GameGrid->SetIsGridBoxOccupied(this->GridIndex, IsOccupied);
+}
+
 
