@@ -33,6 +33,8 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	int32 GridIndex = 0;
 
+	FVector* UnitPosition;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -48,6 +50,9 @@ public:
 	UFUNCTION()
 	bool CanMoveDown();
 	void MoveBlockDown();
+
+	bool CanRotateClockwise();
+	bool CanRotateAnticlockwise();
 
 	UFUNCTION()
 	void SetGameGrid(AGameGrid* NewGameGrid);

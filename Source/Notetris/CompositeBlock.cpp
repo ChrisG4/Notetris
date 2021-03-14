@@ -5,6 +5,7 @@
 #include "Engine/World.h"
 #include "Definitions.h"
 #include "BlockSpawner.h"
+#include "NotetrisMath.h"
 
 
 // Sets default values
@@ -44,7 +45,8 @@ void ACompositeBlock::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAction("MoveBlockLeft", IE_Pressed, this, &ACompositeBlock::MoveBlockLeft);
 	PlayerInputComponent->BindAction("MoveBlockRight", IE_Pressed, this, &ACompositeBlock::MoveBlockRight);
 	PlayerInputComponent->BindAction("MoveBlockDown", IE_Pressed, this, &ACompositeBlock::MoveBlockDown);
-
+	PlayerInputComponent->BindAction("RotateBlockClockwise", IE_Pressed, this, &ACompositeBlock::RotateBlockClockwise);
+	PlayerInputComponent->BindAction("RotateBlockAnticlockwise", IE_Pressed, this, &ACompositeBlock::RotateBlockAnticlockwise);
 }
 
 void ACompositeBlock::CreateBlocks()
@@ -65,6 +67,7 @@ void ACompositeBlock::CreateBlocks()
 
 void ACompositeBlock::MoveBlockLeft()
 {
+	this->SetActorLocation(FVector(-BLOCK_SIZE, 0, 0) + this->GetActorLocation());
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		if (!SingleBlocks[i]->CanMoveLeft())
@@ -81,6 +84,7 @@ void ACompositeBlock::MoveBlockLeft()
 
 void ACompositeBlock::MoveBlockRight()
 {
+	this->SetActorLocation(FVector(BLOCK_SIZE, 0, 0) + this->GetActorLocation());
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		if (!SingleBlocks[i]->CanMoveRight())
@@ -95,6 +99,7 @@ void ACompositeBlock::MoveBlockRight()
 
 void ACompositeBlock::MoveBlockDown()
 {
+	this->SetActorLocation(FVector(0, 0, -BLOCK_SIZE) + this->GetActorLocation());
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		if (!SingleBlocks[i]->CanMoveDown())
@@ -110,6 +115,25 @@ void ACompositeBlock::MoveBlockDown()
 	}
 	
 	MoveDownTimer = 0;
+}
+
+void ACompositeBlock::RotateBlockClockwise()
+{
+	for (int i{ 0 }; i < BlockUnitPositions.Num(); i++)
+	{
+		NotetrisMath::RotateClockwise(BlockUnitPositions[i]);
+		SingleBlocks[i]->SetActorLocation((BlockUnitPositions[i] * BLOCK_SIZE) + this->GetActorLocation());
+	}
+
+}
+
+void ACompositeBlock::RotateBlockAnticlockwise()
+{
+	for (int i{ 0 }; i < BlockUnitPositions.Num(); i++)
+	{
+		NotetrisMath::RotateAnticlockwise(BlockUnitPositions[i]);
+		SingleBlocks[i]->SetActorLocation((BlockUnitPositions[i] * BLOCK_SIZE) + this->GetActorLocation());
+	}
 }
 
 void ACompositeBlock::SetGameGrid(AGameGrid* NewGameGrid)

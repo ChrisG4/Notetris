@@ -57,6 +57,9 @@ public:
 	UFUNCTION()
 		void MoveBlockDown();
 
+	void RotateBlockClockwise();
+	void RotateBlockAnticlockwise();
+
 	void SetGameGrid(AGameGrid* NewGameGrid);
 
 	UFUNCTION()

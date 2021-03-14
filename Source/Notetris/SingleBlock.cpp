@@ -115,6 +115,16 @@ void ASingleBlock::MoveBlockDown()
 	this->SetActorLocation(NewLocation);
 }
 
+bool ASingleBlock::CanRotateClockwise()
+{
+	return true;
+}
+
+bool ASingleBlock::CanRotateAnticlockwise()
+{
+	return true;
+}
+
 void ASingleBlock::SetGameGrid(AGameGrid* NewGameGrid)
 {
 	this->GameGrid = NewGameGrid;
