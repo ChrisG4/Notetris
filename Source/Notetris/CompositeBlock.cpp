@@ -28,8 +28,12 @@ void ACompositeBlock::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (GridIndex == 0)
+	{
+		SetGridIndex();
+	}
+	
 	MoveDownTimer += DeltaTime;
-
 	if (MoveDownTimer >= MOVE_DOWN_RATE)
 	{
 		this->MoveBlockDown();
@@ -67,13 +71,13 @@ void ACompositeBlock::CreateBlocks()
 
 void ACompositeBlock::MoveBlockLeft()
 {
-	this->SetActorLocation(FVector(-BLOCK_SIZE, 0, 0) + this->GetActorLocation());
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		if (!SingleBlocks[i]->CanMoveLeft())
 			return;
 	}
-
+	this->SetActorLocation(FVector(-BLOCK_SIZE, 0, 0) + this->GetActorLocation());
+	GridIndex -= 1;
 	print("BlockMoveLeft");
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
@@ -84,13 +88,13 @@ void ACompositeBlock::MoveBlockLeft()
 
 void ACompositeBlock::MoveBlockRight()
 {
-	this->SetActorLocation(FVector(BLOCK_SIZE, 0, 0) + this->GetActorLocation());
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		if (!SingleBlocks[i]->CanMoveRight())
 			return;
 	}
-	print("BlockMoveRight");
+	this->SetActorLocation(FVector(BLOCK_SIZE, 0, 0) + this->GetActorLocation());
+	GridIndex += 1;
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		SingleBlocks[i]->MoveBlockRight();
@@ -99,7 +103,6 @@ void ACompositeBlock::MoveBlockRight()
 
 void ACompositeBlock::MoveBlockDown()
 {
-	this->SetActorLocation(FVector(0, 0, -BLOCK_SIZE) + this->GetActorLocation());
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		if (!SingleBlocks[i]->CanMoveDown())
@@ -108,7 +111,9 @@ void ACompositeBlock::MoveBlockDown()
 			return;
 		}
 	}
-	
+	this->SetActorLocation(FVector(0, 0, -BLOCK_SIZE) + this->GetActorLocation());
+	GridIndex -= WALL_LENGTH;
+
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		SingleBlocks[i]->MoveBlockDown();
@@ -117,30 +122,73 @@ void ACompositeBlock::MoveBlockDown()
 	MoveDownTimer = 0;
 }
 
-void ACompositeBlock::RotateBlockClockwise()
+bool ACompositeBlock::CanRotateClockwise()
 {
 	for (int i{ 0 }; i < BlockUnitPositions.Num(); i++)
 	{
 		NotetrisMath::RotateClockwise(BlockUnitPositions[i]);
-		SingleBlocks[i]->SetActorLocation((BlockUnitPositions[i] * BLOCK_SIZE) + this->GetActorLocation());
+		int32 GridIndexToCheck = GridIndex + BlockUnitPositions[i].X + (BlockUnitPositions[i].Z * WALL_LENGTH);
+		NotetrisMath::RotateAnticlockwise(BlockUnitPositions[i]);
+		if (GameGrid->IsGridBoxOccupied(GridIndexToCheck))
+		{
+			return false;
+		}
 	}
-
+	return true;
 }
 
-void ACompositeBlock::RotateBlockAnticlockwise()
+void ACompositeBlock::RotateBlockClockwise()
+{
+	if (CanRotateClockwise()) {
+		for (int i{ 0 }; i < BlockUnitPositions.Num(); i++)
+		{
+			NotetrisMath::RotateClockwise(BlockUnitPositions[i]);
+			SingleBlocks[i]->SetActorLocation((BlockUnitPositions[i] * BLOCK_SIZE) + this->GetActorLocation());
+		}
+	}
+}
+
+bool ACompositeBlock::CanRotateAnticlockwise()
 {
 	for (int i{ 0 }; i < BlockUnitPositions.Num(); i++)
 	{
 		NotetrisMath::RotateAnticlockwise(BlockUnitPositions[i]);
-		SingleBlocks[i]->SetActorLocation((BlockUnitPositions[i] * BLOCK_SIZE) + this->GetActorLocation());
+		int32 GridIndexToCheck = GridIndex + BlockUnitPositions[i].X + (BlockUnitPositions[i].Z * WALL_LENGTH);
+		NotetrisMath::RotateClockwise(BlockUnitPositions[i]);
+		if (GameGrid->IsGridBoxOccupied(GridIndexToCheck))
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+void ACompositeBlock::RotateBlockAnticlockwise()
+{
+	if (CanRotateAnticlockwise()) {
+		for (int i{ 0 }; i < BlockUnitPositions.Num(); i++)
+		{
+			NotetrisMath::RotateAnticlockwise(BlockUnitPositions[i]);
+			SingleBlocks[i]->SetActorLocation((BlockUnitPositions[i] * BLOCK_SIZE) + this->GetActorLocation());
+		}
 	}
 }
 
 void ACompositeBlock::SetGameGrid(AGameGrid* NewGameGrid)
 {
+	this->GameGrid = NewGameGrid;
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		SingleBlocks[i]->SetGameGrid(NewGameGrid);
+	}
+}
+
+void ACompositeBlock::SetGridIndex()
+{
+	if (BlockUnitPositions.Num() > 0 && SingleBlocks.Num() > 0)
+	{
+		int32 RelativeIndex = SingleBlocks[0]->GetGridIndex();
+		GridIndex = RelativeIndex + BlockUnitPositions[0].X + (BlockUnitPositions[0].Y * WALL_LENGTH);
 	}
 }
 

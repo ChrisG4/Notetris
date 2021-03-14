@@ -12,7 +12,7 @@ class NOTETRIS_API NotetrisMath
 public:
 	NotetrisMath();
 	~NotetrisMath();
-
+	
 	static void RotateClockwise(FVector& VectorToRotate);
 
 	static void RotateAnticlockwise(FVector& VectorToRotate);

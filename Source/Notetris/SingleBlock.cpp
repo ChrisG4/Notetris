@@ -27,13 +27,6 @@ ASingleBlock::ASingleBlock()
 void ASingleBlock::BeginPlay()
 {
 	Super::BeginPlay();
-
-	TArray<AActor*> OverlappingActors;
-	GetOverlappingActors(OverlappingActors, AGridTriggerBox::StaticClass());
-
-	print(FString::FromInt(OverlappingActors.Num()))
-
-	print(FString::FromInt(this->GridIndex));
 }
 
 // Called every frame

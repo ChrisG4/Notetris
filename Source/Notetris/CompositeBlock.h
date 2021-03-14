@@ -8,7 +8,6 @@
 #include "GameGrid.h"
 #include "Engine/Texture.h"
 #include "Components/SceneComponent.h"
-
 #include "CompositeBlock.generated.h"
 
 UCLASS()
@@ -39,6 +38,12 @@ protected:
 
 	float MoveDownTimer = 0;
 
+	UPROPERTY()
+	AGameGrid* GameGrid;
+
+	UPROPERTY(VisibleAnywhere)
+	int32 GridIndex = 0;
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -57,10 +62,14 @@ public:
 	UFUNCTION()
 		void MoveBlockDown();
 
+	bool CanRotateClockwise();
 	void RotateBlockClockwise();
+
+	bool CanRotateAnticlockwise();
 	void RotateBlockAnticlockwise();
 
 	void SetGameGrid(AGameGrid* NewGameGrid);
+	void SetGridIndex();
 
 	UFUNCTION()
 	void PlaceBlock();

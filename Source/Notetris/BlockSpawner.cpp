@@ -17,14 +17,20 @@ ABlockSpawner::ABlockSpawner()
 void ABlockSpawner::BeginPlay()
 {
 	Super::BeginPlay();
-
-	SpawnBlock();
 }
 
 // Called every frame
 void ABlockSpawner::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	Timer += DeltaTime;
+
+	if (Timer >= 0.1 && bCanSpawnBlock == true)
+	{
+		SpawnBlock();
+		SetActorTickEnabled(false);
+	}
 }
 
 void ABlockSpawner::SpawnBlock()
@@ -40,5 +46,7 @@ void ABlockSpawner::SpawnBlock()
 			NewBlock->SetGameGrid(this->GameGrid);
 		
 		NewBlock->SetOwner(this);
+
+		bCanSpawnBlock = false;
 	}
 }
