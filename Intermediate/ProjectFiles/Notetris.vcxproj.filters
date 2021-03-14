@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Notetris.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{98350A7F-47B4-44E9-A501-D4309F2067FC}</UniqueIdentifier>
+      <UniqueIdentifier>{FC67D491-A1C8-4BE1-A0D2-EDF940D30A88}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Notetris.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\README.md" />
     <Filter Include="Config">
-      <UniqueIdentifier>{E80DE13E-4315-433B-B139-89A3F01EE426}</UniqueIdentifier>
+      <UniqueIdentifier>{8FD0B366-1220-4DAD-9273-91011958E64C}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Notetris">
-      <UniqueIdentifier>{DA886694-02C3-417A-8546-D809ABE513FA}</UniqueIdentifier>
+      <UniqueIdentifier>{87F35DA6-1315-417C-9315-9733EEE71D8D}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Notetris\Block.cpp">
       <Filter>Source\Notetris</Filter>
@@ -78,6 +78,12 @@
       <Filter>Source\Notetris</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Notetris\NotetrisGameModeBase.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\NotetrisMath.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\NotetrisMath.h">
       <Filter>Source\Notetris</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Notetris\NotetrisPlayerController.cpp">

@@ -17,3 +17,4 @@ D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\Comp
 D:\Unreal Projects\Notetris\Source\Notetris\Definitions.h
 D:\Unreal Projects\Notetris\Source\Notetris\BlockSpawner.h
 D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\BlockSpawner.generated.h
+D:\Unreal Projects\Notetris\Source\Notetris\NotetrisMath.h
