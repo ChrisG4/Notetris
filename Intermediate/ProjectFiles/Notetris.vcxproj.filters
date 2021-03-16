@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Notetris.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{FC67D491-A1C8-4BE1-A0D2-EDF940D30A88}</UniqueIdentifier>
+      <UniqueIdentifier>{B1626694-C505-47B1-958D-716B0E398CFD}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Notetris.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\README.md" />
     <Filter Include="Config">
-      <UniqueIdentifier>{8FD0B366-1220-4DAD-9273-91011958E64C}</UniqueIdentifier>
+      <UniqueIdentifier>{B5873D6A-90EF-477E-92A7-3A1818C3CAF5}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Notetris">
-      <UniqueIdentifier>{87F35DA6-1315-417C-9315-9733EEE71D8D}</UniqueIdentifier>
+      <UniqueIdentifier>{C775E98E-2E77-49FE-9583-61996C8C91DD}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Notetris\Block.cpp">
       <Filter>Source\Notetris</Filter>

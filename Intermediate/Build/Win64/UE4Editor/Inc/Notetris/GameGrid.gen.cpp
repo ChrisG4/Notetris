@@ -15,12 +15,12 @@ void EmptyLinkFunctionForGeneratedCodeGameGrid() {}
 // Cross Module References
 	NOTETRIS_API UScriptStruct* Z_Construct_UScriptStruct_FGridBoxRow();
 	UPackage* Z_Construct_UPackage__Script_Notetris();
-	NOTETRIS_API UClass* Z_Construct_UClass_AGridTriggerBox_NoRegister();
 	NOTETRIS_API UClass* Z_Construct_UClass_AGameGrid_NoRegister();
 	NOTETRIS_API UClass* Z_Construct_UClass_AGameGrid();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector2D();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	NOTETRIS_API UClass* Z_Construct_UClass_AGridTriggerBox_NoRegister();
 // End Cross Module References
 class UScriptStruct* FGridBoxRow::StaticStruct()
 {
@@ -50,16 +50,6 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 		static const UE4CodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
 #endif
 		static void* NewStructOps();
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_GridColumn_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GridColumn_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_GridColumn;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_BlocksInRow_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_BlocksInRow;
-		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
 #if WITH_METADATA
@@ -71,24 +61,6 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 	{
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FGridBoxRow>();
 	}
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_GridColumn_Inner = { "GridColumn", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AGridTriggerBox_NoRegister, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_GridColumn_MetaData[] = {
-		{ "ModuleRelativePath", "GameGrid.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_GridColumn = { "GridColumn", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FGridBoxRow, GridColumn), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_GridColumn_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_GridColumn_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_BlocksInRow_MetaData[] = {
-		{ "ModuleRelativePath", "GameGrid.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_BlocksInRow = { "BlocksInRow", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FGridBoxRow, BlocksInRow), METADATA_PARAMS(Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_BlocksInRow_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_BlocksInRow_MetaData)) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FGridBoxRow_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_GridColumn_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_GridColumn,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_BlocksInRow,
-	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FGridBoxRow_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_Notetris,
 		nullptr,
@@ -96,8 +68,8 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 		"GridBoxRow",
 		sizeof(FGridBoxRow),
 		alignof(FGridBoxRow),
-		Z_Construct_UScriptStruct_FGridBoxRow_Statics::PropPointers,
-		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FGridBoxRow_Statics::PropPointers),
+		nullptr,
+		0,
 		RF_Public|RF_Transient|RF_MarkAsNative,
 		EStructFlags(0x00000001),
 		METADATA_PARAMS(Z_Construct_UScriptStruct_FGridBoxRow_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FGridBoxRow_Statics::Struct_MetaDataParams))
@@ -117,7 +89,7 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FGridBoxRow_Hash() { return 2068246269U; }
+	uint32 Get_Z_Construct_UScriptStruct_FGridBoxRow_Hash() { return 3118367014U; }
 	DEFINE_FUNCTION(AGameGrid::execIsGridBoxOccupied)
 	{
 		P_GET_STRUCT(FVector2D,Z_Param_GridIndex);
