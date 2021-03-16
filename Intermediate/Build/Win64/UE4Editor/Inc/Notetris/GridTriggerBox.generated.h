@@ -8,6 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FVector2D;
 class AActor;
 #ifdef NOTETRIS_GridTriggerBox_generated_h
 #error "GridTriggerBox.generated.h already included, missing '#pragma once' in GridTriggerBox.h"

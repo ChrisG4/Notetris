@@ -18,12 +18,13 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Notetris();
 	NOTETRIS_API UClass* Z_Construct_UClass_AGameGrid_NoRegister();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector2D();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	PAPER2D_API UClass* Z_Construct_UClass_UPaperSpriteComponent_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(ASingleBlock::execSetGridIndex)
 	{
-		P_GET_PROPERTY(FIntProperty,Z_Param_NewGridIndex);
+		P_GET_STRUCT(FVector2D,Z_Param_NewGridIndex);
 		P_FINISH;
 		P_NATIVE_BEGIN;
 		P_THIS->SetGridIndex(Z_Param_NewGridIndex);
@@ -127,16 +128,16 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 	{
 		struct SingleBlock_eventSetGridIndex_Parms
 		{
-			int32 NewGridIndex;
+			FVector2D NewGridIndex;
 		};
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_NewGridIndex;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_NewGridIndex;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::NewProp_NewGridIndex = { "NewGridIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SingleBlock_eventSetGridIndex_Parms, NewGridIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::NewProp_NewGridIndex = { "NewGridIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SingleBlock_eventSetGridIndex_Parms, NewGridIndex), Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::NewProp_NewGridIndex,
 	};
@@ -145,7 +146,7 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 		{ "ModuleRelativePath", "SingleBlock.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASingleBlock, nullptr, "SetGridIndex", nullptr, nullptr, sizeof(SingleBlock_eventSetGridIndex_Parms), Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASingleBlock, nullptr, "SetGridIndex", nullptr, nullptr, sizeof(SingleBlock_eventSetGridIndex_Parms), Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_ASingleBlock_SetGridIndex()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -181,7 +182,7 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GridIndex_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_GridIndex;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_GridIndex;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -193,7 +194,7 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_ASingleBlock_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_ASingleBlock_CanMoveDown, "CanMoveDown" }, // 645122378
 		{ &Z_Construct_UFunction_ASingleBlock_SetGameGrid, "SetGameGrid" }, // 3900374395
-		{ &Z_Construct_UFunction_ASingleBlock_SetGridIndex, "SetGridIndex" }, // 1765287278
+		{ &Z_Construct_UFunction_ASingleBlock_SetGridIndex, "SetGridIndex" }, // 762456899
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASingleBlock_Statics::Class_MetaDataParams[] = {
@@ -230,7 +231,7 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 		{ "ModuleRelativePath", "SingleBlock.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex = { "GridIndex", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, GridIndex), METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex = { "GridIndex", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, GridIndex), Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASingleBlock_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockRoot,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockSprite,
@@ -264,7 +265,7 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASingleBlock, 1868005264);
+	IMPLEMENT_CLASS(ASingleBlock, 624439860);
 	template<> NOTETRIS_API UClass* StaticClass<ASingleBlock>()
 	{
 		return ASingleBlock::StaticClass();

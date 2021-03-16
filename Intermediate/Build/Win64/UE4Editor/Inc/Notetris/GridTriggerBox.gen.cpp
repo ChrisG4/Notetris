@@ -18,13 +18,14 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 	ENGINE_API UClass* Z_Construct_UClass_ATriggerBox();
 	UPackage* Z_Construct_UPackage__Script_Notetris();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector2D();
 // End Cross Module References
 	DEFINE_FUNCTION(AGridTriggerBox::execSetGridIndex)
 	{
-		P_GET_PROPERTY(FIntProperty,Z_Param_NewGridIndex);
+		P_GET_STRUCT(FVector2D,Z_Param_NewGridIndexVector);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->SetGridIndex(Z_Param_NewGridIndex);
+		P_THIS->SetGridIndex(Z_Param_NewGridIndexVector);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(AGridTriggerBox::execGetIsSpaceOccupied)
@@ -185,25 +186,25 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 	{
 		struct GridTriggerBox_eventSetGridIndex_Parms
 		{
-			int32 NewGridIndex;
+			FVector2D NewGridIndexVector;
 		};
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_NewGridIndex;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_NewGridIndexVector;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::NewProp_NewGridIndex = { "NewGridIndex", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GridTriggerBox_eventSetGridIndex_Parms, NewGridIndex), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::NewProp_NewGridIndexVector = { "NewGridIndexVector", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(GridTriggerBox_eventSetGridIndex_Parms, NewGridIndexVector), Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(nullptr, 0) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::NewProp_NewGridIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::NewProp_NewGridIndexVector,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "GridTriggerBox.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGridTriggerBox, nullptr, "SetGridIndex", nullptr, nullptr, sizeof(GridTriggerBox_eventSetGridIndex_Parms), Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGridTriggerBox, nullptr, "SetGridIndex", nullptr, nullptr, sizeof(GridTriggerBox_eventSetGridIndex_Parms), Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_AGridTriggerBox_SetGridIndex()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -264,7 +265,7 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GridIndex_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_GridIndex;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_GridIndex;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bIsSpaceOccupied_MetaData[];
 #endif
@@ -282,7 +283,7 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 		{ &Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied, "GetIsSpaceOccupied" }, // 1142429638
 		{ &Z_Construct_UFunction_AGridTriggerBox_OnBlockBeginOverlap, "OnBlockBeginOverlap" }, // 909406801
 		{ &Z_Construct_UFunction_AGridTriggerBox_OnBlockEndOverlap, "OnBlockEndOverlap" }, // 942104857
-		{ &Z_Construct_UFunction_AGridTriggerBox_SetGridIndex, "SetGridIndex" }, // 1097275892
+		{ &Z_Construct_UFunction_AGridTriggerBox_SetGridIndex, "SetGridIndex" }, // 4058219586
 		{ &Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied, "SetIsSpaceOccupied" }, // 3301826151
 	};
 #if WITH_METADATA
@@ -298,7 +299,7 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 		{ "ModuleRelativePath", "GridTriggerBox.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex = { "GridIndex", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGridTriggerBox, GridIndex), METADATA_PARAMS(Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex = { "GridIndex", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGridTriggerBox, GridIndex), Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_bIsSpaceOccupied_MetaData[] = {
 		{ "Category", "GridTriggerBox" },
@@ -341,7 +342,7 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGridTriggerBox, 1623949991);
+	IMPLEMENT_CLASS(AGridTriggerBox, 3762386340);
 	template<> NOTETRIS_API UClass* StaticClass<AGridTriggerBox>()
 	{
 		return AGridTriggerBox::StaticClass();

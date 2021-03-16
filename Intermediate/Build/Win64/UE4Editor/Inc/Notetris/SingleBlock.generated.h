@@ -8,6 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FVector2D;
 class AGameGrid;
 #ifdef NOTETRIS_SingleBlock_generated_h
 #error "SingleBlock.generated.h already included, missing '#pragma once' in SingleBlock.h"
