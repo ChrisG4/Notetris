@@ -7,6 +7,20 @@
 #include "GridTriggerBox.h"
 #include "GameGrid.generated.h"
 
+USTRUCT()
+struct FGridBoxRow
+{
+	GENERATED_USTRUCT_BODY()
+
+public:
+
+	UPROPERTY()
+	TArray<AGridTriggerBox*> GridColumn;
+
+	UPROPERTY()
+	int32 BlocksInRow;
+};
+
 UCLASS()
 class NOTETRIS_API AGameGrid : public AActor
 {
@@ -23,8 +37,8 @@ protected:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AGridTriggerBox> GridBox;
 
-	UPROPERTY(EditAnywhere)
-	TArray<AGridTriggerBox*> GridBoxes;
+	UPROPERTY()
+	TArray<FGridBoxRow> GridRow;
 
 public:	
 	// Called every frame
@@ -36,8 +50,8 @@ public:
 
 
 	UFUNCTION()
-	bool IsGridBoxOccupied(int32 GridBoxIndex);
+	bool IsGridBoxOccupied(FVector2D GridIndex);
 
-	void SetIsGridBoxOccupied(int32 GridBoxIndex, bool IsOccupied);
+	void SetIsGridBoxOccupied(FVector2D GridIndex, bool IsOccupied);
 
 };

@@ -51,7 +51,7 @@ UPaperSpriteComponent* ASingleBlock::GetSpriteComponent()
 bool ASingleBlock::CanMoveLeft() {
 	if (GameGrid != nullptr)
 	{
-		return !GameGrid->IsGridBoxOccupied(this->GridIndex - 1);
+		return !GameGrid->IsGridBoxOccupied(FVector2D(GridIndex.X - 1, GridIndex.Y));
 	}
 	else
 	{
@@ -71,7 +71,7 @@ bool ASingleBlock::CanMoveRight()
 {
 	if (GameGrid != nullptr)
 	{
-		return !GameGrid->IsGridBoxOccupied(this->GridIndex + 1);
+		return !GameGrid->IsGridBoxOccupied(FVector2D(GridIndex.X + 1, GridIndex.Y));
 	}
 	else
 	{
@@ -91,8 +91,7 @@ bool ASingleBlock::CanMoveDown()
 {
 	if (GameGrid != nullptr)
 	{
-		int32 GridIndexToCheck = this->GridIndex - WALL_LENGTH;
-		return !GameGrid->IsGridBoxOccupied(GridIndexToCheck);
+		return !GameGrid->IsGridBoxOccupied(FVector2D(GridIndex.X, GridIndex.Y - 1));
 	}
 	else
 	{
@@ -123,12 +122,12 @@ void ASingleBlock::SetGameGrid(AGameGrid* NewGameGrid)
 	this->GameGrid = NewGameGrid;
 }
 
-void ASingleBlock::SetGridIndex(int32 NewGridIndex)
+void ASingleBlock::SetGridIndex(FVector2D NewGridIndex)
 {
 	this->GridIndex = NewGridIndex;
 }
 
-int32 ASingleBlock::GetGridIndex()
+FVector2D ASingleBlock::GetGridIndex()
 {
 	return this->GridIndex;
 }

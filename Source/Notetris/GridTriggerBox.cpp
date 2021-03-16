@@ -23,7 +23,6 @@ void AGridTriggerBox::OnBlockBeginOverlap(class AActor* OverlappedActor, class A
 
 	if (OverlappingBlock)
 	{
-		print("OVERLAPPED");
 		OverlappingBlock->SetGridIndex(this->GridIndex);
 	}
 }
@@ -42,8 +41,8 @@ bool AGridTriggerBox::GetIsSpaceOccupied()
 	return this->bIsSpaceOccupied;
 }
 
-void AGridTriggerBox::SetGridIndex(int32 NewGridIndex)
+void AGridTriggerBox::SetGridIndex(FVector2D NewGridIndexVector)
 {
-	this->GridIndex = NewGridIndex;
+	this->GridIndex = NewGridIndexVector;
 }
 

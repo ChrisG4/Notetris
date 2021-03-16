@@ -21,6 +21,8 @@ void ACompositeBlock::BeginPlay()
 	Super::BeginPlay();
 
 	CreateBlocks();
+
+	SetGridIndex();
 }
 
 // Called every frame
@@ -28,7 +30,7 @@ void ACompositeBlock::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (GridIndex == 0)
+	if (GridIndex == FVector2D(0, 0))
 	{
 		SetGridIndex();
 	}
@@ -77,7 +79,7 @@ void ACompositeBlock::MoveBlockLeft()
 			return;
 	}
 	this->SetActorLocation(FVector(-BLOCK_SIZE, 0, 0) + this->GetActorLocation());
-	GridIndex -= 1;
+	GridIndex += FVector2D(-1, 0);
 	print("BlockMoveLeft");
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
@@ -94,7 +96,7 @@ void ACompositeBlock::MoveBlockRight()
 			return;
 	}
 	this->SetActorLocation(FVector(BLOCK_SIZE, 0, 0) + this->GetActorLocation());
-	GridIndex += 1;
+	GridIndex += FVector2D(1, 0);
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		SingleBlocks[i]->MoveBlockRight();
@@ -112,7 +114,7 @@ void ACompositeBlock::MoveBlockDown()
 		}
 	}
 	this->SetActorLocation(FVector(0, 0, -BLOCK_SIZE) + this->GetActorLocation());
-	GridIndex -= WALL_LENGTH;
+	GridIndex += FVector2D(0, -1);
 
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
@@ -126,9 +128,11 @@ bool ACompositeBlock::CanRotateClockwise()
 {
 	for (int i{ 0 }; i < BlockUnitPositions.Num(); i++)
 	{
-		NotetrisMath::RotateClockwise(BlockUnitPositions[i]);
-		int32 GridIndexToCheck = GridIndex + BlockUnitPositions[i].X + (BlockUnitPositions[i].Z * WALL_LENGTH);
-		NotetrisMath::RotateAnticlockwise(BlockUnitPositions[i]);
+		FVector UnitPositionToCheck = BlockUnitPositions[i];
+		NotetrisMath::RotateClockwise(UnitPositionToCheck);
+
+		FVector2D GridIndexToCheck = FVector2D(GridIndex.X + UnitPositionToCheck.X, GridIndex.Y + UnitPositionToCheck.Z);
+
 		if (GameGrid->IsGridBoxOccupied(GridIndexToCheck))
 		{
 			return false;
@@ -152,9 +156,11 @@ bool ACompositeBlock::CanRotateAnticlockwise()
 {
 	for (int i{ 0 }; i < BlockUnitPositions.Num(); i++)
 	{
-		NotetrisMath::RotateAnticlockwise(BlockUnitPositions[i]);
-		int32 GridIndexToCheck = GridIndex + BlockUnitPositions[i].X + (BlockUnitPositions[i].Z * WALL_LENGTH);
-		NotetrisMath::RotateClockwise(BlockUnitPositions[i]);
+		FVector UnitPositionToCheck = BlockUnitPositions[i];
+		NotetrisMath::RotateAnticlockwise(UnitPositionToCheck);
+
+		FVector2D GridIndexToCheck = FVector2D(GridIndex.X + UnitPositionToCheck.X, GridIndex.Y + UnitPositionToCheck.Z);
+
 		if (GameGrid->IsGridBoxOccupied(GridIndexToCheck))
 		{
 			return false;
@@ -187,8 +193,8 @@ void ACompositeBlock::SetGridIndex()
 {
 	if (BlockUnitPositions.Num() > 0 && SingleBlocks.Num() > 0)
 	{
-		int32 RelativeIndex = SingleBlocks[0]->GetGridIndex();
-		GridIndex = RelativeIndex + BlockUnitPositions[0].X + (BlockUnitPositions[0].Y * WALL_LENGTH);
+		FVector2D RelativeIndex = SingleBlocks[0]->GetGridIndex();
+		GridIndex = FVector2D(RelativeIndex.X - BlockUnitPositions[0].X, RelativeIndex.Y - BlockUnitPositions[0].Z);
 	}
 }
 

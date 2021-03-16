@@ -19,7 +19,6 @@ void AGameGrid::BeginPlay()
 	Super::BeginPlay();
 
 	CreateGrid();
-
 	SetWallsOccupied();
 }
 
@@ -30,63 +29,68 @@ void AGameGrid::Tick(float DeltaTime)
 
 }
 
+
 void AGameGrid::CreateGrid()
 {
 	if (GridBox != nullptr)
 	{
-		for (int i{ 0 }; i < WALL_LENGTH; i++)
+		FActorSpawnParameters params;
+		for (int i{ 0 }; i < WALL_HEIGHT; i++)
 		{
-			for (int j{ 0 }; j < WALL_HEIGHT; j++)
+			FGridBoxRow NewRow;
+
+			for (int j{ 0 }; j < WALL_LENGTH; j++)
 			{
-				FActorSpawnParameters params;
-				AGridTriggerBox* NewTriggerBox = GetWorld()->SpawnActor<AGridTriggerBox>(GridBox, params);
-				NewTriggerBox->SetGridIndex(i + j * WALL_LENGTH);
-				NewTriggerBox->SetActorLocation(FVector(i * BLOCK_SIZE, 0, j * BLOCK_SIZE) + this->GetActorLocation());
-				GridBoxes.Push(NewTriggerBox);
+				FVector SpawnLocation = this->GetActorLocation() + FVector(j * BLOCK_SIZE, 0, i * BLOCK_SIZE);
+				
+				AGridTriggerBox* NewBox = GetWorld()->SpawnActor<AGridTriggerBox>(GridBox, SpawnLocation, FRotator(0, 0, 0), params);
+				NewBox->SetGridIndex(FVector2D(j, i));
+			
+
+				NewRow.GridColumn.Push(NewBox);
 			}
+
+			GridRow.Push(NewRow);
 		}
 	}
 }
 
 void AGameGrid::SetWallsOccupied()
 {
-	//FLOOR
-	for (int i{ 0 }; i < WALL_LENGTH; i++)
-	{
-		GridBoxes[i]->SetIsSpaceOccupied(true);
-	}
 
-	//LEFT WALL
-	for (int i{ 0 }; i < WALL_HEIGHT; i++)
-	{
-		GridBoxes[i * WALL_LENGTH]->SetIsSpaceOccupied(true);
-	}
+	if (GridRow.Num() > 0) {
+		//FLOOR
+		for (int i{ 0 }; i < WALL_LENGTH; i++)
+		{
+			GridRow[0].GridColumn[i]->SetIsSpaceOccupied(true);
+		}
 
-	//RIGHT WALL
-	for (int i{ 1 }; i <= WALL_HEIGHT; i++)
-	{
-		GridBoxes[(i * WALL_LENGTH) - 1]->SetIsSpaceOccupied(true);
+		//SIDE WALLS
+		for (int i{ 0 }; i < WALL_HEIGHT; i++)
+		{
+			GridRow[i].GridColumn[0]->SetIsSpaceOccupied(true);
+			GridRow[i].GridColumn[WALL_LENGTH - 1]->SetIsSpaceOccupied(true);
+		}
 	}
 }
 
 
-bool AGameGrid::IsGridBoxOccupied(int32 GridBoxIndex)
+bool AGameGrid::IsGridBoxOccupied(FVector2D GridIndex)
 {
-	if (GridBoxIndex >= 0 && GridBoxIndex < GridBoxes.Num())
+	if (GridRow[GridIndex.Y].GridColumn[GridIndex.X] != nullptr)
 	{
-		return GridBoxes[GridBoxIndex]->GetIsSpaceOccupied();
+		return GridRow[GridIndex.Y].GridColumn[GridIndex.X]->GetIsSpaceOccupied();
 	}
 	else
 	{
-		print("Grid Box not found");
 		return false;
 	}
 }
 
-void AGameGrid::SetIsGridBoxOccupied(int32 GridBoxIndex, bool IsOccupied)
+void AGameGrid::SetIsGridBoxOccupied(FVector2D GridIndex, bool IsOccupied)
 {
-	if (GridBoxes[GridBoxIndex] != nullptr)
+	if (GridIndex.X < WALL_LENGTH && GridIndex.Y < WALL_HEIGHT)
 	{
-		GridBoxes[GridBoxIndex]->SetIsSpaceOccupied(IsOccupied);
+		GridRow[GridIndex.Y].GridColumn[GridIndex.X]->SetIsSpaceOccupied(IsOccupied);
 	}
 }

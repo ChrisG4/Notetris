@@ -20,7 +20,7 @@ protected:
 	void BeginPlay() override;
 
 	UPROPERTY(VisibleAnywhere)
-	int32 GridIndex = 0;
+	FVector2D GridIndex;
 
 	UPROPERTY(VisibleAnywhere)
 	bool bIsSpaceOccupied = false;
@@ -41,6 +41,6 @@ public:
 	bool GetIsSpaceOccupied();
 
 	UFUNCTION()
-	void SetGridIndex(int32 NewGridIndex);
+	void SetGridIndex(FVector2D NewGridIndexVector);
 
 };

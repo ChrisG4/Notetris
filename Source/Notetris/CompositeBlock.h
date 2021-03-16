@@ -42,7 +42,7 @@ protected:
 	AGameGrid* GameGrid;
 
 	UPROPERTY(VisibleAnywhere)
-	int32 GridIndex = 0;
+	FVector2D GridIndex = FVector2D(0, 0);
 
 public:
 	// Called every frame

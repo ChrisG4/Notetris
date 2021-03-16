@@ -31,7 +31,7 @@ protected:
 	AGameGrid* GameGrid;
 
 	UPROPERTY(VisibleAnywhere)
-	int32 GridIndex = 0;
+	FVector2D GridIndex;
 
 	FVector* UnitPosition;
 
@@ -58,8 +58,8 @@ public:
 	void SetGameGrid(AGameGrid* NewGameGrid);
 
 	UFUNCTION()
-	void SetGridIndex(int32 NewGridIndex);
-	int32 GetGridIndex();
+	void SetGridIndex(FVector2D NewGridIndex);
+	FVector2D GetGridIndex();
 
 	void SetGridBoxOccupied(bool IsOccupied);
 };
