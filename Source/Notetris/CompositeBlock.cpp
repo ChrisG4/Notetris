@@ -201,7 +201,6 @@ void ACompositeBlock::SetGridIndex()
 void ACompositeBlock::PlaceBlock()
 {
 	this->DisableInput(GetWorld()->GetFirstPlayerController());
-	print("Block Placed");
 	this->SetActorTickEnabled(false);
 	SetBlockBoxesOccupied();
 
@@ -212,6 +211,11 @@ void ACompositeBlock::PlaceBlock()
 		GameGrid->GetRow(RowPlaced).BlocksInRow.Push(SingleBlocks[i]);
 		GameGrid->GetRow(RowPlaced).NumberOfBlocksInRow++;
 
+	}
+
+	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	{
+		int32 RowPlaced = SingleBlocks[i]->GetGridIndex().Y;
 		if (IsRowFull(RowPlaced))
 		{
 			GameGrid->RemoveBlocksInRow(RowPlaced);
