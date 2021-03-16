@@ -74,6 +74,22 @@ void AGameGrid::SetWallsOccupied()
 	}
 }
 
+FGridBoxRow& AGameGrid::GetRow(int32 RowNumber)
+{
+	{
+		return GridRow[RowNumber];
+	}
+	
+}
+
+void AGameGrid::RemoveBlocksInRow(int32 RowNumber)
+{
+	for (int i{ 0 }; i < (WALL_LENGTH - 2); i++) {
+		GridRow[RowNumber].BlocksInRow[i]->Destroy();
+	}
+	GridRow[RowNumber].BlocksInRow.Empty();
+	GridRow[RowNumber].NumberOfBlocksInRow = 0;
+}
 
 bool AGameGrid::IsGridBoxOccupied(FVector2D GridIndex)
 {

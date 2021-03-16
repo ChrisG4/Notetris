@@ -10,15 +10,15 @@
 USTRUCT()
 struct FGridBoxRow
 {
-	GENERATED_USTRUCT_BODY()
+	GENERATED_BODY()
 
 public:
 
-	UPROPERTY()
 	TArray<AGridTriggerBox*> GridColumn;
 
-	UPROPERTY()
-	int32 BlocksInRow;
+	int32 NumberOfBlocksInRow = 0;
+
+	TArray<AActor*> BlocksInRow;
 };
 
 UCLASS()
@@ -48,10 +48,13 @@ public:
 
 	void SetWallsOccupied();
 
+	FGridBoxRow& GetRow(int32 RowNumber);
+	void RemoveBlocksInRow(int32 RowNumber);
 
 	UFUNCTION()
 	bool IsGridBoxOccupied(FVector2D GridIndex);
-
 	void SetIsGridBoxOccupied(FVector2D GridIndex, bool IsOccupied);
+
+	
 
 };

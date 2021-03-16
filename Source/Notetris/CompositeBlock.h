@@ -74,5 +74,7 @@ public:
 	UFUNCTION()
 	void PlaceBlock();
 
+	bool IsRowFull(int32 RowNumber);
+
 	void SetBlockBoxesOccupied();
 };

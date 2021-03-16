@@ -80,7 +80,7 @@ void ACompositeBlock::MoveBlockLeft()
 	}
 	this->SetActorLocation(FVector(-BLOCK_SIZE, 0, 0) + this->GetActorLocation());
 	GridIndex += FVector2D(-1, 0);
-	print("BlockMoveLeft");
+
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
 		SingleBlocks[i]->MoveBlockLeft();
@@ -205,9 +205,35 @@ void ACompositeBlock::PlaceBlock()
 	this->SetActorTickEnabled(false);
 	SetBlockBoxesOccupied();
 
+	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	{
+		int32 RowPlaced = SingleBlocks[i]->GetGridIndex().Y;
+		
+		GameGrid->GetRow(RowPlaced).BlocksInRow.Push(SingleBlocks[i]);
+		GameGrid->GetRow(RowPlaced).NumberOfBlocksInRow++;
+
+		if (IsRowFull(RowPlaced))
+		{
+			GameGrid->RemoveBlocksInRow(RowPlaced);
+			print(FString::FromInt(GameGrid->GetRow(RowPlaced).BlocksInRow.Num()));
+		}
+	}
+	
 	if (Cast<ABlockSpawner>(this->GetOwner()))
 	{
 		Cast<ABlockSpawner>(this->GetOwner())->SpawnBlock();
+	}
+}
+
+bool ACompositeBlock::IsRowFull(int32 RowNumber)
+{
+	if (GameGrid->GetRow(RowNumber).NumberOfBlocksInRow == WALL_LENGTH - 2)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 }
 
