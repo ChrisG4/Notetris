@@ -107,6 +107,20 @@ void ASingleBlock::MoveBlockDown()
 	this->SetActorLocation(NewLocation);
 }
 
+void ASingleBlock::FallDown()
+{
+	GameGrid->GetRow(GridIndex.Y).NumberOfBlocksInRow--;
+	GameGrid->GetRow(GridIndex.Y - 1).NumberOfBlocksInRow++;
+
+	GameGrid->GetRow(GridIndex.Y).GridColumn[GridIndex.X]->SetIsSpaceOccupied(false);
+	GameGrid->GetRow(GridIndex.Y - 1).GridColumn[GridIndex.X]->SetIsSpaceOccupied(true);
+	
+	FVector NewLocation;
+	NewLocation = this->GetActorLocation() + FVector(0, 0, -BLOCK_SIZE);
+
+	this->SetActorLocation(NewLocation);
+}
+
 bool ASingleBlock::CanRotateClockwise()
 {
 	return true;

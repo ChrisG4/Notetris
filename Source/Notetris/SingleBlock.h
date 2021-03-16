@@ -51,6 +51,8 @@ public:
 	bool CanMoveDown();
 	void MoveBlockDown();
 
+	void FallDown();
+
 	bool CanRotateClockwise();
 	bool CanRotateAnticlockwise();
 

@@ -3,6 +3,7 @@
 
 #include "GameGrid.h"
 #include "Definitions.h"
+#include "SingleBlock.h"
 #include <Engine/World.h>
 
 // Sets default values
@@ -89,6 +90,25 @@ void AGameGrid::RemoveBlocksInRow(int32 RowNumber)
 	}
 	GridRow[RowNumber].BlocksInRow.Empty();
 	GridRow[RowNumber].NumberOfBlocksInRow = 0;
+
+	MoveBlocksDown(RowNumber + 1);
+}
+
+void AGameGrid::MoveBlocksDown(int32 BottomRowNumber)
+{
+	for (int i{ BottomRowNumber }; i < WALL_HEIGHT; i++)
+	{
+		if (GridRow[i].BlocksInRow.Num() > 0) {
+			for (int j{ 0 }; j < GridRow[i].BlocksInRow.Num(); j++) {
+				if (Cast<ASingleBlock>(GridRow[i].BlocksInRow[j])) {
+					Cast<ASingleBlock>(GridRow[i].BlocksInRow[j])->FallDown();
+
+				}
+			}
+		}
+		GridRow[i - 1].BlocksInRow = GridRow[i].BlocksInRow;
+		GridRow[i].BlocksInRow.Empty();
+	}
 }
 
 bool AGameGrid::IsGridBoxOccupied(FVector2D GridIndex)

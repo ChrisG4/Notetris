@@ -51,6 +51,8 @@ public:
 	FGridBoxRow& GetRow(int32 RowNumber);
 	void RemoveBlocksInRow(int32 RowNumber);
 
+	void MoveBlocksDown(int32 BottomRowNumber);
+
 	UFUNCTION()
 	bool IsGridBoxOccupied(FVector2D GridIndex);
 	void SetIsGridBoxOccupied(FVector2D GridIndex, bool IsOccupied);

@@ -29,6 +29,7 @@ void AGridTriggerBox::OnBlockBeginOverlap(class AActor* OverlappedActor, class A
 
 void AGridTriggerBox::OnBlockEndOverlap(class AActor* OverlappedActor, class AActor* OtherActor)
 {
+	this->bIsSpaceOccupied = false;
 }
 
 void AGridTriggerBox::SetIsSpaceOccupied(bool IsSpaceOccupied)

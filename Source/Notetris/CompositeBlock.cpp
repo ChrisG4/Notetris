@@ -215,7 +215,6 @@ void ACompositeBlock::PlaceBlock()
 		if (IsRowFull(RowPlaced))
 		{
 			GameGrid->RemoveBlocksInRow(RowPlaced);
-			print(FString::FromInt(GameGrid->GetRow(RowPlaced).BlocksInRow.Num()));
 		}
 	}
 	
