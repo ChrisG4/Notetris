@@ -53,8 +53,7 @@ public:
 
 	void FallDown();
 
-	bool CanRotateClockwise();
-	bool CanRotateAnticlockwise();
+	int32 FindDropRow();
 
 	UFUNCTION()
 	void SetGameGrid(AGameGrid* NewGameGrid);

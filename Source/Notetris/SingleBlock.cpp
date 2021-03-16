@@ -121,14 +121,24 @@ void ASingleBlock::FallDown()
 	this->SetActorLocation(NewLocation);
 }
 
-bool ASingleBlock::CanRotateClockwise()
+int32 ASingleBlock::FindDropRow()
 {
-	return true;
-}
+	if (GameGrid != nullptr) {
+		int Index = GridIndex.Y - 1;
+		for (int32 i{ Index }; i >= 0; i--)
+		{
+			if (GameGrid->GetRow(i).GridColumn[GridIndex.X]->GetIsSpaceOccupied())
+			{
+				return i + 1;
+			}
+		}
 
-bool ASingleBlock::CanRotateAnticlockwise()
-{
-	return true;
+		return 0;
+	}
+	else
+	{
+		return 0;
+	}
 }
 
 void ASingleBlock::SetGameGrid(AGameGrid* NewGameGrid)

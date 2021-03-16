@@ -68,6 +68,8 @@ public:
 	bool CanRotateAnticlockwise();
 	void RotateBlockAnticlockwise();
 
+	void DropBlock();
+
 	void SetGameGrid(AGameGrid* NewGameGrid);
 	void SetGridIndex();
 

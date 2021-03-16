@@ -53,6 +53,7 @@ void ACompositeBlock::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAction("MoveBlockDown", IE_Pressed, this, &ACompositeBlock::MoveBlockDown);
 	PlayerInputComponent->BindAction("RotateBlockClockwise", IE_Pressed, this, &ACompositeBlock::RotateBlockClockwise);
 	PlayerInputComponent->BindAction("RotateBlockAnticlockwise", IE_Pressed, this, &ACompositeBlock::RotateBlockAnticlockwise);
+	PlayerInputComponent->BindAction("DropBlock", IE_Pressed, this, &ACompositeBlock::DropBlock);
 }
 
 void ACompositeBlock::CreateBlocks()
@@ -178,6 +179,25 @@ void ACompositeBlock::RotateBlockAnticlockwise()
 			SingleBlocks[i]->SetActorLocation((BlockUnitPositions[i] * BLOCK_SIZE) + this->GetActorLocation());
 		}
 	}
+}
+
+void ACompositeBlock::DropBlock()
+{
+	int32 HighestDropRow = 0;
+	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	{
+		int32 BlockDropRow = SingleBlocks[i]->FindDropRow();
+		if (BlockDropRow > HighestDropRow)
+		{
+			HighestDropRow = BlockDropRow;
+		}
+	}
+
+	int32 RowsToDrop = GridIndex.Y - HighestDropRow;
+	for (int i{ 0 }; i < RowsToDrop; i++) {
+		MoveBlockDown();
+	}
+	PlaceBlock();
 }
 
 void ACompositeBlock::SetGameGrid(AGameGrid* NewGameGrid)
