@@ -8,6 +8,7 @@
 #include "GameGrid.h"
 #include "Engine/Texture.h"
 #include "Components/SceneComponent.h"
+#include "Sound/SoundBase.h"
 #include "CompositeBlock.generated.h"
 
 UCLASS()
@@ -44,6 +45,11 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	FVector2D GridIndex = FVector2D(0, 0);
 
+	UPROPERTY(EditDefaultsOnly)
+	USoundBase* MoveSound;
+
+	bool IsBlockDropping = false;
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -79,4 +85,6 @@ public:
 	bool IsRowFull(int32 RowNumber);
 
 	void SetBlockBoxesOccupied();
+
+	void PlayMoveSound();
 };

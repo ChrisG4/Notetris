@@ -5,6 +5,7 @@
 #include "Engine/World.h"
 #include "Definitions.h"
 #include "BlockSpawner.h"
+#include "Kismet/GameplayStatics.h"
 #include "NotetrisMath.h"
 
 
@@ -21,7 +22,6 @@ void ACompositeBlock::BeginPlay()
 	Super::BeginPlay();
 
 	CreateBlocks();
-
 	SetGridIndex();
 }
 
@@ -86,6 +86,8 @@ void ACompositeBlock::MoveBlockLeft()
 	{
 		SingleBlocks[i]->MoveBlockLeft();
 	}
+
+	PlayMoveSound();
 }
 
 
@@ -102,6 +104,8 @@ void ACompositeBlock::MoveBlockRight()
 	{
 		SingleBlocks[i]->MoveBlockRight();
 	}
+
+	PlayMoveSound();
 }
 
 void ACompositeBlock::MoveBlockDown()
@@ -123,6 +127,11 @@ void ACompositeBlock::MoveBlockDown()
 	}
 	
 	MoveDownTimer = 0;
+	
+	if (IsBlockDropping == false) {
+		PlayMoveSound();
+	}
+	
 }
 
 bool ACompositeBlock::CanRotateClockwise()
@@ -151,6 +160,8 @@ void ACompositeBlock::RotateBlockClockwise()
 			SingleBlocks[i]->SetActorLocation((BlockUnitPositions[i] * BLOCK_SIZE) + this->GetActorLocation());
 		}
 	}
+
+	PlayMoveSound();
 }
 
 bool ACompositeBlock::CanRotateAnticlockwise()
@@ -167,6 +178,7 @@ bool ACompositeBlock::CanRotateAnticlockwise()
 			return false;
 		}
 	}
+
 	return true;
 }
 
@@ -179,10 +191,14 @@ void ACompositeBlock::RotateBlockAnticlockwise()
 			SingleBlocks[i]->SetActorLocation((BlockUnitPositions[i] * BLOCK_SIZE) + this->GetActorLocation());
 		}
 	}
+	
+	PlayMoveSound();
 }
 
 void ACompositeBlock::DropBlock()
 {
+	IsBlockDropping = true;
+
 	int32 SmallestNumberOfDropRows = SingleBlocks[0]->FindNumberOfRowsToDrop();
 
 	for (int i{ 1 }; i < SingleBlocks.Num(); i++)
@@ -200,7 +216,10 @@ void ACompositeBlock::DropBlock()
 		MoveBlockDown();
 	}
 
+	IsBlockDropping = false;
+	
 	PlaceBlock();
+	
 }
 
 void ACompositeBlock::SetGameGrid(AGameGrid* NewGameGrid)
@@ -278,4 +297,10 @@ void ACompositeBlock::SetBlockBoxesOccupied()
 	{
 		SingleBlocks[i]->SetGridBoxOccupied(true);
 	}
+}
+
+void ACompositeBlock::PlayMoveSound()
+{
+	if (MoveSound != nullptr)
+		UGameplayStatics::PlaySound2D(this, MoveSound, 1.0f, 1.0f, 0.0f);
 }
