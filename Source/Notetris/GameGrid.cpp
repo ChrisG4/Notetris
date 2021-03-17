@@ -85,7 +85,7 @@ FGridBoxRow& AGameGrid::GetRow(int32 RowNumber)
 
 void AGameGrid::RemoveBlocksInRow(int32 RowNumber)
 {
-	for (int i{ 0 }; i < (WALL_LENGTH - 2); i++) {
+	for (int i{ 0 }; i < (GridRow[RowNumber].BlocksInRow.Num()); i++) {
 		GridRow[RowNumber].BlocksInRow[i]->Destroy();
 	}
 	GridRow[RowNumber].BlocksInRow.Empty();

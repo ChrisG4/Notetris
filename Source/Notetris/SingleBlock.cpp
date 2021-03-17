@@ -121,7 +121,7 @@ void ASingleBlock::FallDown()
 	this->SetActorLocation(NewLocation);
 }
 
-int32 ASingleBlock::FindDropRow()
+int32 ASingleBlock::FindNumberOfRowsToDrop()
 {
 	if (GameGrid != nullptr) {
 		int Index = GridIndex.Y - 1;
@@ -129,7 +129,7 @@ int32 ASingleBlock::FindDropRow()
 		{
 			if (GameGrid->GetRow(i).GridColumn[GridIndex.X]->GetIsSpaceOccupied())
 			{
-				return i + 1;
+				return GridIndex.Y - i - 1;
 			}
 		}
 

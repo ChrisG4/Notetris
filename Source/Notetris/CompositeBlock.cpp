@@ -183,20 +183,23 @@ void ACompositeBlock::RotateBlockAnticlockwise()
 
 void ACompositeBlock::DropBlock()
 {
-	int32 HighestDropRow = 0;
-	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	int32 SmallestNumberOfDropRows = SingleBlocks[0]->FindNumberOfRowsToDrop();
+
+	for (int i{ 1 }; i < SingleBlocks.Num(); i++)
 	{
-		int32 BlockDropRow = SingleBlocks[i]->FindDropRow();
-		if (BlockDropRow > HighestDropRow)
+		int32 RowsToDrop = SingleBlocks[i]->FindNumberOfRowsToDrop();
+
+		if (RowsToDrop < SmallestNumberOfDropRows)
 		{
-			HighestDropRow = BlockDropRow;
+			SmallestNumberOfDropRows = RowsToDrop;
 		}
 	}
+	print(FString::FromInt(SmallestNumberOfDropRows));
 
-	int32 RowsToDrop = GridIndex.Y - HighestDropRow;
-	for (int i{ 0 }; i < RowsToDrop; i++) {
+	for (int i{ 0 }; i < SmallestNumberOfDropRows; i++) {
 		MoveBlockDown();
 	}
+
 	PlaceBlock();
 }
 
@@ -246,6 +249,8 @@ void ACompositeBlock::PlaceBlock()
 	{
 		Cast<ABlockSpawner>(this->GetOwner())->SpawnBlock();
 	}
+
+	this->Destroy();
 }
 
 bool ACompositeBlock::IsRowFull(int32 RowNumber)

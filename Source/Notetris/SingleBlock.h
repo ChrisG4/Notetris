@@ -53,7 +53,7 @@ public:
 
 	void FallDown();
 
-	int32 FindDropRow();
+	int32 FindNumberOfRowsToDrop();
 
 	UFUNCTION()
 	void SetGameGrid(AGameGrid* NewGameGrid);

@@ -16,6 +16,7 @@ public:
 
 	TArray<AGridTriggerBox*> GridColumn;
 
+	UPROPERTY(VisibleAnywhere);
 	int32 NumberOfBlocksInRow = 0;
 
 	TArray<AActor*> BlocksInRow;
@@ -37,7 +38,7 @@ protected:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AGridTriggerBox> GridBox;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere)
 	TArray<FGridBoxRow> GridRow;
 
 public:	
