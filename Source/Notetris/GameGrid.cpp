@@ -82,7 +82,7 @@ void AGameGrid::SetWallsOccupied()
 
 void AGameGrid::CreateGameOverLine()
 {
-	GameOverLine->SetWorldScale3D(FVector(BLOCK_SIZE * (WALL_LENGTH - 2), 0, BLOCK_SIZE / 4));
+	GameOverLine->SetWorldScale3D(FVector(BLOCK_SIZE * (WALL_LENGTH - 2), 0, BLOCK_SIZE / 10));
 	GameOverLine->SetWorldLocation(this->GetActorLocation() + FVector((BLOCK_SIZE / 2) + (BLOCK_SIZE * ((WALL_LENGTH - 2) / 2)),  -0.1, BLOCK_SIZE * GAME_OVER_HEIGHT));
 }
 
