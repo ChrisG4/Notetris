@@ -238,6 +238,13 @@ void ACompositeBlock::PlaceBlock()
 
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
+		if (SingleBlocks[i]->IsBlockAboveGameOverLine())
+		{
+			print("Game Over");
+			Cast<ABlockSpawner>(this->GetOwner())->Destroy();
+			return;
+		}
+		
 		int32 RowPlaced = SingleBlocks[i]->GetGridIndex().Y;
 		if (IsRowFull(RowPlaced))
 		{

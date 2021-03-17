@@ -55,6 +55,8 @@ public:
 
 	int32 FindNumberOfRowsToDrop();
 
+	bool IsBlockAboveGameOverLine();
+
 	UFUNCTION()
 	void SetGameGrid(AGameGrid* NewGameGrid);
 

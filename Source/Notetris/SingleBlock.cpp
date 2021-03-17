@@ -141,6 +141,18 @@ int32 ASingleBlock::FindNumberOfRowsToDrop()
 	}
 }
 
+bool ASingleBlock::IsBlockAboveGameOverLine()
+{
+	if (GridIndex.Y >= GAME_OVER_HEIGHT)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 void ASingleBlock::SetGameGrid(AGameGrid* NewGameGrid)
 {
 	this->GameGrid = NewGameGrid;
