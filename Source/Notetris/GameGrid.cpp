@@ -12,6 +12,8 @@ AGameGrid::AGameGrid()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	GameOverLine = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("GameOverLine"));
+
 }
 
 // Called when the game starts or when spawned
@@ -20,6 +22,9 @@ void AGameGrid::BeginPlay()
 	Super::BeginPlay();
 
 	CreateGrid();
+	if (GameOverLine != nullptr) {
+		CreateGameOverLine();
+	}
 	SetWallsOccupied();
 }
 
@@ -73,6 +78,12 @@ void AGameGrid::SetWallsOccupied()
 			GridRow[i].GridColumn[WALL_LENGTH - 1]->SetIsSpaceOccupied(true);
 		}
 	}
+}
+
+void AGameGrid::CreateGameOverLine()
+{
+	GameOverLine->SetWorldScale3D(FVector(BLOCK_SIZE * (WALL_LENGTH - 2), 0, BLOCK_SIZE / 4));
+	GameOverLine->SetWorldLocation(this->GetActorLocation() + FVector((BLOCK_SIZE / 2) + (BLOCK_SIZE * ((WALL_LENGTH - 2) / 2)),  -0.1, BLOCK_SIZE * GAME_OVER_HEIGHT));
 }
 
 FGridBoxRow& AGameGrid::GetRow(int32 RowNumber)

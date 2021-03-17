@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "GridTriggerBox.h"
+#include "Components/StaticMeshComponent.h"
 #include "GameGrid.generated.h"
 
 USTRUCT()
@@ -41,6 +42,9 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	TArray<FGridBoxRow> GridRow;
 
+	UPROPERTY(EditDefaultsOnly)
+	UStaticMeshComponent* GameOverLine;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -48,6 +52,8 @@ public:
 	void CreateGrid();
 
 	void SetWallsOccupied();
+
+	void CreateGameOverLine();
 
 	FGridBoxRow& GetRow(int32 RowNumber);
 	void RemoveBlocksInRow(int32 RowNumber);
