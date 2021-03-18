@@ -59,6 +59,8 @@ public:
 
 	void CreateBlocks();
 
+	void MoveBlock(FVector NewLocation);
+
 	UFUNCTION()
 		void MoveBlockLeft();
 

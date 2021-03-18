@@ -4,6 +4,7 @@
 #include "BlockSpawner.h"
 #include "Math/UnrealMathUtility.h"
 #include "Engine/World.h"
+#include "Definitions.h"
 
 // Sets default values
 ABlockSpawner::ABlockSpawner()
@@ -17,6 +18,8 @@ ABlockSpawner::ABlockSpawner()
 void ABlockSpawner::BeginPlay()
 {
 	Super::BeginPlay();
+
+	CreateUpcomingBlocks();
 }
 
 // Called every frame
@@ -28,12 +31,12 @@ void ABlockSpawner::Tick(float DeltaTime)
 
 	if (Timer >= 0.1 && bCanSpawnBlock == true)
 	{
-		SpawnBlock();
+		SpawnInitialBlock();
 		SetActorTickEnabled(false);
 	}
 }
 
-void ABlockSpawner::SpawnBlock()
+void ABlockSpawner::SpawnInitialBlock()
 {
 	if (SpawnableBlocks.Num() > 0 && GameGrid != nullptr)
 	{
@@ -49,4 +52,64 @@ void ABlockSpawner::SpawnBlock()
 
 		bCanSpawnBlock = false;
 	}
+}
+
+void ABlockSpawner::SpawnBlock()
+{
+	UpdateUpcomingBlocks();
+	
+	if (UpcomingBlocks.Num() > 0) {
+		ACompositeBlock* NextBlock = UpcomingBlocks[0];
+
+
+		if (NextBlock != nullptr) {
+			NextBlock->MoveBlock(this->GetActorLocation());
+			if (GameGrid != nullptr)
+				NextBlock->SetGameGrid(this->GameGrid);
+
+			NextBlock->SetActorTickEnabled(true);
+			GetWorld()->GetFirstPlayerController()->Possess(NextBlock);
+			NextBlock->SetOwner(this);
+
+		}
+
+		UpcomingBlocks.RemoveAt(0, 1, true);
+		
+	
+	}
+	print(FString::FromInt(UpcomingBlocks.Num()))
+}
+
+void ABlockSpawner::CreateUpcomingBlocks()
+{
+	FActorSpawnParameters params;
+	
+	for (int i{ 0 }; i < UPCOMING_BLOCKS_NUMBER; i++)
+	{
+		int32 BlockChoice = FMath::RandRange(0, SpawnableBlocks.Num() - 1);
+		FVector SpawnLocation = this->GetActorLocation() + FVector(WALL_LENGTH * BLOCK_SIZE, 0, -UPCOMING_BLOCK_GAP * (i + 1) * BLOCK_SIZE);
+
+		ACompositeBlock* NewBlock = GetWorld()->SpawnActor<ACompositeBlock>(SpawnableBlocks[BlockChoice], SpawnLocation, FRotator(0, 0, 0), params);
+
+		NewBlock->SetActorTickEnabled(false);
+		UpcomingBlocks.Push(NewBlock);
+	}
+}
+
+void ABlockSpawner::UpdateUpcomingBlocks()
+{
+	for (int i{ 0 }; i < UpcomingBlocks.Num(); i++)
+	{
+		UpcomingBlocks[i]->MoveBlock(UpcomingBlocks[i]->GetActorLocation() + FVector(0, 0, UPCOMING_BLOCK_GAP * BLOCK_SIZE));
+	}
+	
+	FActorSpawnParameters params;
+	int32 BlockChoice = FMath::RandRange(0, SpawnableBlocks.Num() - 1);
+	FVector SpawnLocation = this->GetActorLocation() + FVector(WALL_LENGTH * BLOCK_SIZE, 0, -UPCOMING_BLOCK_GAP * UPCOMING_BLOCKS_NUMBER * BLOCK_SIZE);
+
+	ACompositeBlock* NewBlock = GetWorld()->SpawnActor<ACompositeBlock>(SpawnableBlocks[BlockChoice], SpawnLocation, FRotator(0, 0, 0), params);
+
+	NewBlock->SetActorTickEnabled(false);
+	UpcomingBlocks.Push(NewBlock);
+
 }

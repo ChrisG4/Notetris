@@ -72,6 +72,15 @@ void ACompositeBlock::CreateBlocks()
 	}
 }
 
+void ACompositeBlock::MoveBlock(FVector NewLocation)
+{
+	this->SetActorLocation(NewLocation);
+	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	{
+		SingleBlocks[i]->SetActorLocation(NewLocation + BlockUnitPositions[i] * BLOCK_SIZE);
+	}
+}
+
 void ACompositeBlock::MoveBlockLeft()
 {
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
@@ -273,9 +282,11 @@ void ACompositeBlock::PlaceBlock()
 	
 	if (Cast<ABlockSpawner>(this->GetOwner()))
 	{
+		print("Owner Found");
 		Cast<ABlockSpawner>(this->GetOwner())->SpawnBlock();
 	}
 
+	print("Block Placed");
 	this->Destroy();
 }
 

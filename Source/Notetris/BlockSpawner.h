@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "CompositeBlock.h"
 #include "GameGrid.h"
+#include "Containers/Queue.h"
 #include "BlockSpawner.generated.h"
 
 UCLASS()
@@ -30,12 +31,18 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	TArray<TSubclassOf<ACompositeBlock>> SpawnableBlocks;
 
+	TArray<ACompositeBlock*> UpcomingBlocks;
+
 	float Timer = 0;
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void SpawnInitialBlock();
+
 	void SpawnBlock();
 
+	void CreateUpcomingBlocks();
+	void UpdateUpcomingBlocks();
 };
