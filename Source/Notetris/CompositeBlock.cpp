@@ -234,6 +234,16 @@ void ACompositeBlock::DropBlock()
 
 bool ACompositeBlock::CanStoreBlock(ACompositeBlock* OtherBlock)
 {	
+	TArray<FVector> UnitPostionsToCheck = OtherBlock->GetUnitPositions();
+	for (int i{ 0 }; i < UnitPostionsToCheck.Num(); i++)
+	{
+		FVector2D IndexToCheck = FVector2D(GridIndex.X + UnitPostionsToCheck[i].X, GridIndex.Y + UnitPostionsToCheck[i].Z);
+		if (GameGrid->IsGridBoxOccupied(IndexToCheck))
+		{
+			return false;
+		}
+	}
+	
 	return true;
 }
 
@@ -244,7 +254,7 @@ void ACompositeBlock::StoreBlock()
 	if(BlockOwner != nullptr)
 	{
 		print("Attempting to store block");
-		Cast<ABlockSpawner>(this->GetOwner())->StoreBlock();
+		BlockOwner->StoreBlock();
 	}
 }
 

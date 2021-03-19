@@ -132,21 +132,26 @@ void ABlockSpawner::StoreBlock()
 	}
 	else
 	{
-		HeldBlock->MoveBlock(ActiveBlock->GetActorLocation());
-		ActiveBlock->MoveBlock(HeldBlockLocation);
+		if (ActiveBlock->CanStoreBlock(HeldBlock))
+		{
 
-		HeldBlock->SetActorTickEnabled(true);
-		ActiveBlock->SetActorTickEnabled(false);
+			HeldBlock->MoveBlock(ActiveBlock->GetActorLocation());
+				ActiveBlock->MoveBlock(HeldBlockLocation);
 
-		GetWorld()->GetFirstPlayerController()->UnPossess();
-		GetWorld()->GetFirstPlayerController()->Possess(HeldBlock);
+				HeldBlock->SetActorTickEnabled(true);
+				ActiveBlock->SetActorTickEnabled(false);
 
-		ACompositeBlock* TempPointer;
-		TempPointer = ActiveBlock;
-		ActiveBlock = HeldBlock;
-		HeldBlock = TempPointer;
+				GetWorld()->GetFirstPlayerController()->UnPossess();
+				GetWorld()->GetFirstPlayerController()->Possess(HeldBlock);
 
-		ActiveBlock->SetOwner(this);
+				ACompositeBlock* TempPointer;
+			TempPointer = ActiveBlock;
+			ActiveBlock = HeldBlock;
+			HeldBlock = TempPointer;
+
+			ActiveBlock->SetOwner(this);
+			ActiveBlock->SetGridIndex();
+		}
 	}
 }
 
