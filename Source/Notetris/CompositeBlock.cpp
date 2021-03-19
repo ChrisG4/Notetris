@@ -54,6 +54,7 @@ void ACompositeBlock::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAction("RotateBlockClockwise", IE_Pressed, this, &ACompositeBlock::RotateBlockClockwise);
 	PlayerInputComponent->BindAction("RotateBlockAnticlockwise", IE_Pressed, this, &ACompositeBlock::RotateBlockAnticlockwise);
 	PlayerInputComponent->BindAction("DropBlock", IE_Pressed, this, &ACompositeBlock::DropBlock);
+	PlayerInputComponent->BindAction("StoreBlock", IE_Pressed, this, &ACompositeBlock::StoreBlock);
 }
 
 void ACompositeBlock::CreateBlocks()
@@ -231,6 +232,22 @@ void ACompositeBlock::DropBlock()
 	
 }
 
+bool ACompositeBlock::CanStoreBlock(ACompositeBlock* OtherBlock)
+{	
+	return true;
+}
+
+void ACompositeBlock::StoreBlock()
+{
+	ABlockSpawner* BlockOwner = Cast<ABlockSpawner>(this->GetOwner());
+	
+	if(BlockOwner != nullptr)
+	{
+		print("Attempting to store block");
+		Cast<ABlockSpawner>(this->GetOwner())->StoreBlock();
+	}
+}
+
 void ACompositeBlock::SetGameGrid(AGameGrid* NewGameGrid)
 {
 	this->GameGrid = NewGameGrid;
@@ -247,6 +264,11 @@ void ACompositeBlock::SetGridIndex()
 		FVector2D RelativeIndex = SingleBlocks[0]->GetGridIndex();
 		GridIndex = FVector2D(RelativeIndex.X - BlockUnitPositions[0].X, RelativeIndex.Y - BlockUnitPositions[0].Z);
 	}
+}
+
+TArray<FVector> ACompositeBlock::GetUnitPositions()
+{
+	return this->BlockUnitPositions;
 }
 
 void ACompositeBlock::PlaceBlock()

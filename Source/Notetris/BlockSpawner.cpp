@@ -20,6 +20,8 @@ void ABlockSpawner::BeginPlay()
 	Super::BeginPlay();
 
 	CreateUpcomingBlocks();
+
+	HeldBlockLocation = this->GetActorLocation() + FVector(-BLOCK_SIZE * WALL_LENGTH, 0, -BLOCK_SIZE * UPCOMING_BLOCK_GAP);
 }
 
 // Called every frame
@@ -45,6 +47,8 @@ void ABlockSpawner::SpawnInitialBlock()
 		int32 BlockChoice = FMath::RandRange(0, SpawnableBlocks.Num() - 1);
 
 		ACompositeBlock * NewBlock = GetWorld()->SpawnActor<ACompositeBlock>(SpawnableBlocks[BlockChoice], this->GetActorLocation(), FRotator(0, 0, 0), params);
+		ActiveBlock = NewBlock;
+
 		if(GameGrid != nullptr)
 			NewBlock->SetGameGrid(this->GameGrid);
 		
@@ -70,6 +74,7 @@ void ABlockSpawner::SpawnBlock()
 			NextBlock->SetActorTickEnabled(true);
 			GetWorld()->GetFirstPlayerController()->Possess(NextBlock);
 			NextBlock->SetOwner(this);
+			ActiveBlock = NextBlock;
 
 		}
 
@@ -111,5 +116,41 @@ void ABlockSpawner::UpdateUpcomingBlocks()
 
 	NewBlock->SetActorTickEnabled(false);
 	UpcomingBlocks.Push(NewBlock);
+}
 
+void ABlockSpawner::StoreBlock()
+{
+	//IF NO BLOCK STORED CURRENTLY
+	if (HeldBlock == nullptr)
+	{
+		ActiveBlock->MoveBlock(HeldBlockLocation);
+		ActiveBlock->SetActorTickEnabled(false);
+		GetWorld()->GetFirstPlayerController()->UnPossess();
+		HeldBlock = ActiveBlock;
+
+		SpawnBlock();
+	}
+	else
+	{
+		HeldBlock->MoveBlock(ActiveBlock->GetActorLocation());
+		ActiveBlock->MoveBlock(HeldBlockLocation);
+
+		HeldBlock->SetActorTickEnabled(true);
+		ActiveBlock->SetActorTickEnabled(false);
+
+		GetWorld()->GetFirstPlayerController()->UnPossess();
+		GetWorld()->GetFirstPlayerController()->Possess(HeldBlock);
+
+		ACompositeBlock* TempPointer;
+		TempPointer = ActiveBlock;
+		ActiveBlock = HeldBlock;
+		HeldBlock = TempPointer;
+
+		ActiveBlock->SetOwner(this);
+	}
+}
+
+ACompositeBlock* ABlockSpawner::GetStoredBlock()
+{
+	return this->HeldBlock;
 }

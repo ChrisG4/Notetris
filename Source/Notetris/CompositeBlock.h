@@ -72,14 +72,18 @@ public:
 
 	bool CanRotateClockwise();
 	void RotateBlockClockwise();
-
 	bool CanRotateAnticlockwise();
 	void RotateBlockAnticlockwise();
 
 	void DropBlock();
 
+	bool CanStoreBlock(ACompositeBlock* OtherBlock);
+	void StoreBlock();
+
 	void SetGameGrid(AGameGrid* NewGameGrid);
 	void SetGridIndex();
+
+	TArray<FVector> GetUnitPositions();
 
 	UFUNCTION()
 	void PlaceBlock();

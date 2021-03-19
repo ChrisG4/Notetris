@@ -33,7 +33,12 @@ protected:
 
 	TArray<ACompositeBlock*> UpcomingBlocks;
 
+	ACompositeBlock* ActiveBlock;
+	ACompositeBlock* HeldBlock;
+
 	float Timer = 0;
+
+	FVector HeldBlockLocation;
 
 public:	
 	// Called every frame
@@ -45,4 +50,8 @@ public:
 
 	void CreateUpcomingBlocks();
 	void UpdateUpcomingBlocks();
+
+	void StoreBlock();
+
+	ACompositeBlock* GetStoredBlock();
 };
