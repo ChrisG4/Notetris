@@ -9,6 +9,8 @@
 #include "Engine/Texture.h"
 #include "Components/SceneComponent.h"
 #include "Sound/SoundBase.h"
+#include <PaperSprite.h>
+#include "GhostBlock.h"
 #include "CompositeBlock.generated.h"
 
 UCLASS()
@@ -50,6 +52,7 @@ protected:
 
 	bool IsBlockDropping = false;
 
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -58,6 +61,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void CreateBlocks();
+	TArray<ASingleBlock*> GetSingleBlocks();
 
 	void MoveBlock(FVector NewLocation);
 
@@ -75,6 +79,7 @@ public:
 	bool CanRotateAnticlockwise();
 	void RotateBlockAnticlockwise();
 
+	int32 GetRowsToDrop();
 	void DropBlock();
 
 	bool CanStoreBlock(ACompositeBlock* OtherBlock);
@@ -87,10 +92,12 @@ public:
 
 	UFUNCTION()
 	void PlaceBlock();
-
 	bool IsRowFull(int32 RowNumber);
-
 	void SetBlockBoxesOccupied();
+
+	void CreateGhostBlocks();
+	void UpdateGhostBlocks();
+	void DestroyGhostBlocks();
 
 	void PlayMoveSound();
 };

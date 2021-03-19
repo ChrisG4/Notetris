@@ -53,6 +53,7 @@ void ABlockSpawner::SpawnInitialBlock()
 			NewBlock->SetGameGrid(this->GameGrid);
 		
 		NewBlock->SetOwner(this);
+		NewBlock->CreateGhostBlocks();
 
 		bCanSpawnBlock = false;
 	}
@@ -74,7 +75,9 @@ void ABlockSpawner::SpawnBlock()
 			NextBlock->SetActorTickEnabled(true);
 			GetWorld()->GetFirstPlayerController()->Possess(NextBlock);
 			NextBlock->SetOwner(this);
+			NextBlock->CreateGhostBlocks();
 			ActiveBlock = NextBlock;
+
 
 		}
 
@@ -125,6 +128,8 @@ void ABlockSpawner::StoreBlock()
 	{
 		ActiveBlock->MoveBlock(HeldBlockLocation);
 		ActiveBlock->SetActorTickEnabled(false);
+		ActiveBlock->DestroyGhostBlocks();
+
 		GetWorld()->GetFirstPlayerController()->UnPossess();
 		HeldBlock = ActiveBlock;
 
@@ -136,21 +141,24 @@ void ABlockSpawner::StoreBlock()
 		{
 
 			HeldBlock->MoveBlock(ActiveBlock->GetActorLocation());
-				ActiveBlock->MoveBlock(HeldBlockLocation);
+			ActiveBlock->MoveBlock(HeldBlockLocation);
 
-				HeldBlock->SetActorTickEnabled(true);
-				ActiveBlock->SetActorTickEnabled(false);
+			HeldBlock->SetActorTickEnabled(true);
+			ActiveBlock->SetActorTickEnabled(false);
 
-				GetWorld()->GetFirstPlayerController()->UnPossess();
-				GetWorld()->GetFirstPlayerController()->Possess(HeldBlock);
+			GetWorld()->GetFirstPlayerController()->UnPossess();
+			GetWorld()->GetFirstPlayerController()->Possess(HeldBlock);
 
-				ACompositeBlock* TempPointer;
+			ActiveBlock->DestroyGhostBlocks();
+
+			ACompositeBlock* TempPointer;
 			TempPointer = ActiveBlock;
 			ActiveBlock = HeldBlock;
 			HeldBlock = TempPointer;
 
 			ActiveBlock->SetOwner(this);
 			ActiveBlock->SetGridIndex();
+			ActiveBlock->CreateGhostBlocks();
 		}
 	}
 }

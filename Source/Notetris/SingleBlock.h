@@ -6,6 +6,7 @@
 #include "PaperSpriteComponent.h"
 #include "GameGrid.h"
 #include "Components/SceneComponent.h"
+#include "GhostBlock.h"
 #include "SingleBlock.generated.h"
 
 UCLASS()
@@ -35,6 +36,12 @@ protected:
 
 	FVector* UnitPosition;
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<AGhostBlock> GhostBlockType;
+
+	UPROPERTY(VisibleAnywhere)
+	AGhostBlock* GhostBlock;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -51,6 +58,7 @@ public:
 	bool CanMoveDown();
 	void MoveBlockDown();
 
+	void PlaceBlock();
 	void FallDown();
 
 	int32 FindNumberOfRowsToDrop();
@@ -65,4 +73,8 @@ public:
 	FVector2D GetGridIndex();
 
 	void SetGridBoxOccupied(bool IsOccupied);
+
+	void CreateGhostBlock();
+	void DestroyGhostBlock();
+	void SetGhostBlockLocation(FVector NewLocation);
 };

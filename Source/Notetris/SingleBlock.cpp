@@ -27,6 +27,7 @@ ASingleBlock::ASingleBlock()
 void ASingleBlock::BeginPlay()
 {
 	Super::BeginPlay();
+
 }
 
 // Called every frame
@@ -107,6 +108,16 @@ void ASingleBlock::MoveBlockDown()
 	this->SetActorLocation(NewLocation);
 }
 
+void ASingleBlock::PlaceBlock()
+{
+	if (GameGrid != nullptr)
+	{
+		GameGrid->SetIsGridBoxOccupied(GridIndex, true);
+	}
+
+	DestroyGhostBlock();
+}
+
 void ASingleBlock::FallDown()
 {
 	GameGrid->GetRow(GridIndex.Y).NumberOfBlocksInRow--;
@@ -173,4 +184,26 @@ void ASingleBlock::SetGridBoxOccupied(bool IsOccupied)
 	GameGrid->SetIsGridBoxOccupied(this->GridIndex, IsOccupied);
 }
 
+void ASingleBlock::CreateGhostBlock()
+{
+	FVector SpawnLocation = this->GetActorLocation();
+	FActorSpawnParameters params;
 
+	GhostBlock = GetWorld()->SpawnActor<AGhostBlock>(GhostBlockType, SpawnLocation, FRotator(0, 0, 0), params);
+}
+
+void ASingleBlock::DestroyGhostBlock()
+{
+	if (GhostBlock != nullptr)
+	{
+		GhostBlock->Destroy();
+	}
+}
+
+void ASingleBlock::SetGhostBlockLocation(FVector NewLocation)
+{
+	if (GhostBlock != nullptr)
+	{
+		GhostBlock->SetActorLocation(NewLocation);
+	}
+}

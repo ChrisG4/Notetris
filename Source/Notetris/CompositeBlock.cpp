@@ -23,6 +23,8 @@ void ACompositeBlock::BeginPlay()
 
 	CreateBlocks();
 	SetGridIndex();
+
+	UpdateGhostBlocks();
 }
 
 // Called every frame
@@ -41,6 +43,8 @@ void ACompositeBlock::Tick(float DeltaTime)
 		this->MoveBlockDown();
 		MoveDownTimer = 0;
 	}
+
+	UpdateGhostBlocks();
 }
 
 // Called to bind functionality to input
@@ -71,6 +75,11 @@ void ACompositeBlock::CreateBlocks()
 			SingleBlocks.Push(NewBlock);
 		}
 	}
+}
+
+TArray<ASingleBlock*> ACompositeBlock::GetSingleBlocks()
+{
+	return this->SingleBlocks;
 }
 
 void ACompositeBlock::MoveBlock(FVector NewLocation)
@@ -205,21 +214,29 @@ void ACompositeBlock::RotateBlockAnticlockwise()
 	PlayMoveSound();
 }
 
+int32 ACompositeBlock::GetRowsToDrop()
+{
+	if (SingleBlocks[0] != nullptr) {
+		int32 SmallestNumberOfDropRows = SingleBlocks[0]->FindNumberOfRowsToDrop();
+		for (int i{ 1 }; i < SingleBlocks.Num(); i++)
+		{
+			int32 RowsToDrop = SingleBlocks[i]->FindNumberOfRowsToDrop();
+
+			if (RowsToDrop < SmallestNumberOfDropRows)
+			{
+				SmallestNumberOfDropRows = RowsToDrop;
+			}
+		}
+		return SmallestNumberOfDropRows;
+	}
+	return 0;
+}
+
 void ACompositeBlock::DropBlock()
 {
 	IsBlockDropping = true;
 
-	int32 SmallestNumberOfDropRows = SingleBlocks[0]->FindNumberOfRowsToDrop();
-
-	for (int i{ 1 }; i < SingleBlocks.Num(); i++)
-	{
-		int32 RowsToDrop = SingleBlocks[i]->FindNumberOfRowsToDrop();
-
-		if (RowsToDrop < SmallestNumberOfDropRows)
-		{
-			SmallestNumberOfDropRows = RowsToDrop;
-		}
-	}
+	int32 SmallestNumberOfDropRows = GetRowsToDrop();
 	print(FString::FromInt(SmallestNumberOfDropRows));
 
 	for (int i{ 0 }; i < SmallestNumberOfDropRows; i++) {
@@ -289,15 +306,16 @@ void ACompositeBlock::PlaceBlock()
 
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
+		SingleBlocks[i]->PlaceBlock();
 		int32 RowPlaced = SingleBlocks[i]->GetGridIndex().Y;
 		
 		GameGrid->GetRow(RowPlaced).BlocksInRow.Push(SingleBlocks[i]);
 		GameGrid->GetRow(RowPlaced).NumberOfBlocksInRow++;
-
 	}
 
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
+
 		if (SingleBlocks[i]->IsBlockAboveGameOverLine())
 		{
 			print("Game Over");
@@ -341,6 +359,33 @@ void ACompositeBlock::SetBlockBoxesOccupied()
 		SingleBlocks[i]->SetGridBoxOccupied(true);
 	}
 }
+
+void ACompositeBlock::CreateGhostBlocks()
+{
+	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	{
+		SingleBlocks[i]->CreateGhostBlock();
+	}
+}
+
+void ACompositeBlock::UpdateGhostBlocks()
+{
+	int32 RowsToDrop = GetRowsToDrop();
+	
+	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	{
+		SingleBlocks[i]->SetGhostBlockLocation(SingleBlocks[i]->GetActorLocation() - FVector(0, 0.5, BLOCK_SIZE * RowsToDrop));
+	}
+}
+
+void ACompositeBlock::DestroyGhostBlocks()
+{
+	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	{
+		SingleBlocks[i]->DestroyGhostBlock();
+	}
+}
+
 
 void ACompositeBlock::PlayMoveSound()
 {

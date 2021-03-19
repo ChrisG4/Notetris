@@ -3,6 +3,7 @@
 
 #include "GridTriggerBox.h"
 #include "Definitions.h"
+
 #include "SingleBlock.h"
 
 AGridTriggerBox::AGridTriggerBox()
@@ -29,7 +30,8 @@ void AGridTriggerBox::OnBlockBeginOverlap(class AActor* OverlappedActor, class A
 
 void AGridTriggerBox::OnBlockEndOverlap(class AActor* OverlappedActor, class AActor* OtherActor)
 {
-	this->bIsSpaceOccupied = false;
+	if(Cast<ASingleBlock>(OtherActor))
+		this->bIsSpaceOccupied = false;
 }
 
 void AGridTriggerBox::SetIsSpaceOccupied(bool IsSpaceOccupied)
