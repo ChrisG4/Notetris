@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "GridTriggerBox.h"
+#include "Score.h"
+#include "Components/AudioComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "GameGrid.generated.h"
 
@@ -45,6 +47,20 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	UStaticMeshComponent* GameOverLine;
 
+	UPROPERTY(EditAnywhere)
+	AScore* ScoreText;
+
+	UPROPERTY(EditDefaultsOnly)
+	UAudioComponent* GameMusic;
+
+	UPROPERTY(EditDefaultsOnly)
+	USoundBase* RowFilledSound;
+
+	UPROPERTY(EditDefaultsOnly)
+	USoundBase* GameOverSound;
+
+	TMap<int32, int32> ScoreValues;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -64,6 +80,10 @@ public:
 	bool IsGridBoxOccupied(FVector2D GridIndex);
 	void SetIsGridBoxOccupied(FVector2D GridIndex, bool IsOccupied);
 
-	
+	void ChangePlayerScore(int32 ScoreChange);
+	void SetScoreValues();
+	int32 GetScoreValue(int32 NumberOfRowsCleared);
 
+	void PlayRowFilledSound();
+	void GameOver();
 };

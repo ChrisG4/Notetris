@@ -4,6 +4,7 @@
 #include "GameGrid.h"
 #include "Definitions.h"
 #include "SingleBlock.h"
+#include "Kismet/GameplayStatics.h"
 #include <Engine/World.h>
 
 // Sets default values
@@ -13,6 +14,8 @@ AGameGrid::AGameGrid()
 	PrimaryActorTick.bCanEverTick = true;
 
 	GameOverLine = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("GameOverLine"));
+
+	GameMusic = CreateDefaultSubobject<UAudioComponent>(TEXT("GameMusic"));
 
 }
 
@@ -26,6 +29,12 @@ void AGameGrid::BeginPlay()
 		CreateGameOverLine();
 	}
 	SetWallsOccupied();
+	SetScoreValues();
+
+	if (GameMusic != nullptr)
+	{
+		GameMusic->Play();
+	}
 }
 
 // Called every frame
@@ -139,5 +148,55 @@ void AGameGrid::SetIsGridBoxOccupied(FVector2D GridIndex, bool IsOccupied)
 	if (GridIndex.X < WALL_LENGTH && GridIndex.Y < WALL_HEIGHT)
 	{
 		GridRow[GridIndex.Y].GridColumn[GridIndex.X]->SetIsSpaceOccupied(IsOccupied);
+	}
+}
+
+void AGameGrid::ChangePlayerScore(int32 ScoreChange)
+{
+	if (ScoreText != nullptr)
+	{
+		int32 CurrentScore = ScoreText->GetScore();
+
+		ScoreText->SetScore(CurrentScore + ScoreChange);
+
+		PlayRowFilledSound();
+	}
+}
+
+void AGameGrid::SetScoreValues()
+{
+	ScoreValues.Add(1, ROW_FILLED_SCORE);
+	ScoreValues.Add(2, TWO_ROWS_FILLED_SCORE);
+	ScoreValues.Add(3, THREE_ROWS_FILLED_SCORE);
+	ScoreValues.Add(4, FOUR_ROWS_FILLED_SCORE);
+}
+
+int32 AGameGrid::GetScoreValue(int32 NumberOfRowsFilled)
+{
+	if (ScoreValues.Contains(NumberOfRowsFilled))
+	{
+		return this->ScoreValues[NumberOfRowsFilled];
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+void AGameGrid::PlayRowFilledSound()
+{
+	if (RowFilledSound != nullptr)
+	{
+		UGameplayStatics::PlaySound2D(this, RowFilledSound, 1.0f, 1.0f, 0.0f);
+	}
+}
+
+void AGameGrid::GameOver()
+{
+	if (RowFilledSound != nullptr)
+	{
+		GameMusic->Stop();
+		UGameplayStatics::PlaySound2D(this, GameOverSound, 1.0f, 1.0f, 0.0f);
+		
 	}
 }

@@ -318,7 +318,8 @@ void ACompositeBlock::PlaceBlock()
 
 		if (SingleBlocks[i]->IsBlockAboveGameOverLine())
 		{
-			print("Game Over");
+			GameGrid->GameOver();
+
 			Cast<ABlockSpawner>(this->GetOwner())->Destroy();
 			return;
 		}
@@ -326,8 +327,15 @@ void ACompositeBlock::PlaceBlock()
 		int32 RowPlaced = SingleBlocks[i]->GetGridIndex().Y;
 		if (IsRowFull(RowPlaced))
 		{
+			ScoreMultiplier++;
 			GameGrid->RemoveBlocksInRow(RowPlaced);
 		}
+	}
+
+	if (ScoreMultiplier > 0)
+	{
+		GameGrid->ChangePlayerScore(GameGrid->GetScoreValue(ScoreMultiplier));
+		ScoreMultiplier = 0;
 	}
 	
 	if (Cast<ABlockSpawner>(this->GetOwner()))
