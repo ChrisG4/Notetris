@@ -27,28 +27,34 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditDefaultsOnly)
-	USceneComponent* CompositeBlockRoot;
+		USceneComponent* CompositeBlockRoot;
 
 	UPROPERTY(EditDefaultsOnly)
-	TSubclassOf<ASingleBlock> SingleBlockActor;
+		TSubclassOf<ASingleBlock> SingleBlockActor;
 
 	//Multiplied by Sprite Size (e.g. (1, 0, 0) would be one block to the left)
 	UPROPERTY(EditDefaultsOnly)
-	TArray<FVector> BlockUnitPositions;
+		TArray<FVector> BlockUnitPositions;
 
 	UPROPERTY()
-	TArray<ASingleBlock*> SingleBlocks;
+		TArray<ASingleBlock*> SingleBlocks;
 
 	float MoveDownTimer = 0;
 
 	UPROPERTY()
-	AGameGrid* GameGrid;
+		AGameGrid* GameGrid;
 
 	UPROPERTY(VisibleAnywhere)
-	FVector2D GridIndex = FVector2D(0, 0);
+		FVector2D GridIndex = FVector2D(0, 0);
 
 	UPROPERTY(EditDefaultsOnly)
-	USoundBase* MoveSound;
+		USoundBase* MoveSound;
+
+	UPROPERTY(EditDefaultsOnly)
+		USoundBase* DropSound;
+
+	UPROPERTY(EditDefaultsOnly)
+		USoundBase* FailSound;
 
 	bool IsBlockDropping = false;
 
@@ -91,7 +97,7 @@ public:
 	TArray<FVector> GetUnitPositions();
 
 	UFUNCTION()
-	void PlaceBlock();
+		void PlaceBlock();
 	bool IsRowFull(int32 RowNumber);
 	void SetBlockBoxesOccupied();
 
@@ -99,5 +105,6 @@ public:
 	void UpdateGhostBlocks();
 	void DestroyGhostBlocks();
 
-	void PlayMoveSound();
+	void PlaySound(USoundBase* Sound);
+
 };

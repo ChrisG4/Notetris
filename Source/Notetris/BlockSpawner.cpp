@@ -85,7 +85,6 @@ void ABlockSpawner::SpawnBlock()
 		
 	
 	}
-	print(FString::FromInt(UpcomingBlocks.Num()))
 }
 
 void ABlockSpawner::CreateUpcomingBlocks()

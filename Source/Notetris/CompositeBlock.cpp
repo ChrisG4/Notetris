@@ -98,15 +98,11 @@ void ACompositeBlock::MoveBlockLeft()
 		if (!SingleBlocks[i]->CanMoveLeft())
 			return;
 	}
-	this->SetActorLocation(FVector(-BLOCK_SIZE, 0, 0) + this->GetActorLocation());
+
+	MoveBlock(FVector(-BLOCK_SIZE, 0, 0) + this->GetActorLocation());
 	GridIndex += FVector2D(-1, 0);
 
-	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
-	{
-		SingleBlocks[i]->MoveBlockLeft();
-	}
-
-	PlayMoveSound();
+	PlaySound(MoveSound);
 }
 
 
@@ -117,14 +113,10 @@ void ACompositeBlock::MoveBlockRight()
 		if (!SingleBlocks[i]->CanMoveRight())
 			return;
 	}
-	this->SetActorLocation(FVector(BLOCK_SIZE, 0, 0) + this->GetActorLocation());
+	
+	MoveBlock(FVector(BLOCK_SIZE, 0, 0) + this->GetActorLocation());
 	GridIndex += FVector2D(1, 0);
-	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
-	{
-		SingleBlocks[i]->MoveBlockRight();
-	}
-
-	PlayMoveSound();
+	PlaySound(MoveSound);
 }
 
 void ACompositeBlock::MoveBlockDown()
@@ -137,18 +129,14 @@ void ACompositeBlock::MoveBlockDown()
 			return;
 		}
 	}
-	this->SetActorLocation(FVector(0, 0, -BLOCK_SIZE) + this->GetActorLocation());
+	
+	MoveBlock(FVector(0, 0, -BLOCK_SIZE) + this->GetActorLocation());
 	GridIndex += FVector2D(0, -1);
-
-	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
-	{
-		SingleBlocks[i]->MoveBlockDown();
-	}
 	
 	MoveDownTimer = 0;
 	
 	if (IsBlockDropping == false) {
-		PlayMoveSound();
+		PlaySound(MoveSound);
 	}
 	
 }
@@ -164,6 +152,7 @@ bool ACompositeBlock::CanRotateClockwise()
 
 		if (GameGrid->IsGridBoxOccupied(GridIndexToCheck))
 		{
+			PlaySound(FailSound);
 			return false;
 		}
 	}
@@ -180,7 +169,7 @@ void ACompositeBlock::RotateBlockClockwise()
 		}
 	}
 
-	PlayMoveSound();
+	PlaySound(MoveSound);
 }
 
 bool ACompositeBlock::CanRotateAnticlockwise()
@@ -194,6 +183,7 @@ bool ACompositeBlock::CanRotateAnticlockwise()
 
 		if (GameGrid->IsGridBoxOccupied(GridIndexToCheck))
 		{
+			PlaySound(FailSound);
 			return false;
 		}
 	}
@@ -211,7 +201,7 @@ void ACompositeBlock::RotateBlockAnticlockwise()
 		}
 	}
 	
-	PlayMoveSound();
+	PlaySound(MoveSound);
 }
 
 int32 ACompositeBlock::GetRowsToDrop()
@@ -237,14 +227,14 @@ void ACompositeBlock::DropBlock()
 	IsBlockDropping = true;
 
 	int32 SmallestNumberOfDropRows = GetRowsToDrop();
-	print(FString::FromInt(SmallestNumberOfDropRows));
 
 	for (int i{ 0 }; i < SmallestNumberOfDropRows; i++) {
 		MoveBlockDown();
 	}
 
 	IsBlockDropping = false;
-	
+	PlaySound(DropSound);
+
 	PlaceBlock();
 	
 }
@@ -270,7 +260,6 @@ void ACompositeBlock::StoreBlock()
 	
 	if(BlockOwner != nullptr)
 	{
-		print("Attempting to store block");
 		BlockOwner->StoreBlock();
 	}
 }
@@ -340,11 +329,10 @@ void ACompositeBlock::PlaceBlock()
 	
 	if (Cast<ABlockSpawner>(this->GetOwner()))
 	{
-		print("Owner Found");
 		Cast<ABlockSpawner>(this->GetOwner())->SpawnBlock();
 	}
 
-	print("Block Placed");
+	PlaySound(DropSound);
 	this->Destroy();
 }
 
@@ -395,8 +383,8 @@ void ACompositeBlock::DestroyGhostBlocks()
 }
 
 
-void ACompositeBlock::PlayMoveSound()
+void ACompositeBlock::PlaySound(USoundBase* Sound)
 {
-	if (MoveSound != nullptr)
-		UGameplayStatics::PlaySound2D(this, MoveSound, 1.0f, 1.0f, 0.0f);
+	if (Sound != nullptr)
+		UGameplayStatics::PlaySound2D(this, Sound, 1.0f, 1.0f, 0.0f);
 }
