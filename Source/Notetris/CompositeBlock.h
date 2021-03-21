@@ -48,13 +48,13 @@ protected:
 		FVector2D GridIndex = FVector2D(0, 0);
 
 	UPROPERTY(EditDefaultsOnly)
-		USoundBase* MoveSound;
+	USoundBase* MoveSound;
 
 	UPROPERTY(EditDefaultsOnly)
-		USoundBase* DropSound;
+	USoundBase* DropSound;
 
 	UPROPERTY(EditDefaultsOnly)
-		USoundBase* FailSound;
+	USoundBase* FailSound;
 
 	bool IsBlockDropping = false;
 
