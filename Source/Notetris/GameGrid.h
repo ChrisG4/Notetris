@@ -85,5 +85,9 @@ public:
 	int32 GetScoreValue(int32 NumberOfRowsCleared);
 
 	void PlayRowFilledSound();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void CallGameOver();
+
 	void GameOver();
 };

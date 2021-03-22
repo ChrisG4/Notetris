@@ -7,7 +7,10 @@ void ATimerText::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	
-	GameTime += DeltaTime;
+	if (IsCountingUp == true)
+	{
+		GameTime += DeltaTime;
+	}
 
 	ConvertFloatToTime(GameTime);
 
@@ -19,9 +22,9 @@ void ATimerText::ConvertFloatToTime(float DirtyFloat)
 	int32 TimeInteger = FMath::Floor(DirtyFloat);
 	int32 IntLength = FString::FromInt(TimeInteger).Len();
 
-	if (IntLength < 6)
+	if (IntLength < 5)
 	{
-		DisplayZeros = LeadingZeros.Left(5 - IntLength);
+		DisplayZeros = LeadingZeros.Left(4 - IntLength);
 	}
 
 	FString TrueTime = FString::SanitizeFloat(GameTime);

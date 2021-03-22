@@ -18,7 +18,7 @@ protected:
 
 	float GameTime = 0.0f;
 
-	FString LeadingZeros = FString("00000");
+	FString LeadingZeros = FString("0000");
 	FString DisplayZeros;
 
 	FString DisplayTime;

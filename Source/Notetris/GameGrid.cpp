@@ -193,10 +193,10 @@ void AGameGrid::PlayRowFilledSound()
 
 void AGameGrid::GameOver()
 {
-	if (RowFilledSound != nullptr)
+	CallGameOver();
+	if (GameOverSound != nullptr)
 	{
 		GameMusic->Stop();
 		UGameplayStatics::PlaySound2D(this, GameOverSound, 1.0f, 1.0f, 0.0f);
-		
 	}
 }
