@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "DynamicText.h"
+#include "GameGrid.h"
 #include "TimerText.generated.h"
 
 /**
@@ -29,6 +30,8 @@ protected:
 	UPROPERTY(EditAnywhere)
 	float StartingTime;
 
+	UPROPERTY(EditAnywhere)
+	AGameGrid* CurrentGameGrid;
 
 public:
 	void BeginPlay() override;
@@ -38,4 +41,6 @@ public:
 	void ConvertFloatToTime(float DirtyFloat);
 
 	float GetGameTime();
+
+	bool HasTimeRunOut();
 };

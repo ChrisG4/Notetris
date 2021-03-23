@@ -22,7 +22,7 @@ void ANotetrisGameModeBase::SaveHighScores()
 
 		if (UGameplayStatics::SaveGameToSlot(SaveDataInstance, SaveDataInstance->SaveDataName, SaveDataInstance->UserIndex))
 		{
-			print("Save Succesful");
+
 		}
 	}
 
@@ -32,12 +32,10 @@ void ANotetrisGameModeBase::LoadHighScores()
 {
 	if (USaveData* LoadedData = Cast<USaveData>(UGameplayStatics::LoadGameFromSlot(SAVE_DATA_NAME, SAVE_DATA_USER_INDEX)))
 	{
-		print("Game Loaded");
+
 
 		HighScoreData.GetClassicHighScores() = LoadedData->ClassicHighScores;
 		HighScoreData.GetQuinHighScores() = LoadedData->QuinHighScores;
-
-		HighScoreData.PrintClassicScores();
 	}
 
 }

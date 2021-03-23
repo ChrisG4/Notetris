@@ -23,8 +23,12 @@ void ATimerText::Tick(float DeltaTime)
 		GameTime -= DeltaTime;
 	}
 
+	if (HasTimeRunOut() && CurrentGameGrid != nullptr)
+	{
+		CurrentGameGrid->GameOver();
+	}
+	
 	ConvertFloatToTime(GameTime);
-
 	this->SetText(DisplayTime);
 }
 
@@ -45,4 +49,16 @@ void ATimerText::ConvertFloatToTime(float DirtyFloat)
 float ATimerText::GetGameTime()
 {
 	return this->GameTime;
+}
+
+bool ATimerText::HasTimeRunOut()
+{
+	if (GameTime < 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

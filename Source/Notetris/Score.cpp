@@ -21,6 +21,4 @@ void AScore::SetScore(int32 NewScore)
 int32 AScore::GetScore()
 {
 	return this->PlayerScore;
-
-	print(FString::FromInt(PlayerScore));
 }

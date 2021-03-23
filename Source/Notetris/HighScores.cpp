@@ -42,11 +42,11 @@ void HighScores::AddHighScore(int32 NewHighScore, TArray<int32>& CurrentHighScor
 			if (NewHighScore < CurrentHighScores[i])
 			{
 				CurrentHighScores.Insert(NewHighScore, i + 1);
-				print("High Score Added after start");
+
 				return;
 			}
 		}
-			print("High Score Added at top");
+
 			CurrentHighScores.Insert(NewHighScore, 0);
 	}
 }
