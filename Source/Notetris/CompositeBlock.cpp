@@ -338,7 +338,7 @@ void ACompositeBlock::PlaceBlock()
 
 bool ACompositeBlock::IsRowFull(int32 RowNumber)
 {
-	if (GameGrid->GetRow(RowNumber).NumberOfBlocksInRow == WALL_LENGTH - 2)
+	if (GameGrid->GetRow(RowNumber).NumberOfBlocksInRow == GameGrid->GetGridLength() - 2)
 	{
 		return true;
 	}

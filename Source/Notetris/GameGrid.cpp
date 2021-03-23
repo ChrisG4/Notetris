@@ -25,6 +25,8 @@ void AGameGrid::BeginPlay()
 {
 	Super::BeginPlay();
 
+	SetGridDimensions();
+
 	CreateGrid();
 	if (GameOverLine != nullptr) {
 		CreateGameOverLine();
@@ -45,17 +47,35 @@ void AGameGrid::Tick(float DeltaTime)
 
 }
 
+void AGameGrid::SetGridDimensions()
+{
+	if(bIsClassicGrid)
+	{
+		GridLength = CLASSIC_WALL_LENGTH;
+		GridHeight = CLASSIC_WALL_HEIGHT;
+	}
+	else if (bIsQuinGrid)
+	{
+		GridLength = QUIN_WALL_LENGTH;
+		GridHeight = QUIN_WALL_HEIGHT;
+	}
+}
+
+int32 AGameGrid::GetGridLength()
+{
+	return this->GridLength;
+}
 
 void AGameGrid::CreateGrid()
 {
 	if (GridBox != nullptr)
 	{
 		FActorSpawnParameters params;
-		for (int i{ 0 }; i < WALL_HEIGHT; i++)
+		for (int i{ 0 }; i < GridHeight; i++)
 		{
 			FGridBoxRow NewRow;
 
-			for (int j{ 0 }; j < WALL_LENGTH; j++)
+			for (int j{ 0 }; j < GridLength; j++)
 			{
 				FVector SpawnLocation = this->GetActorLocation() + FVector(j * BLOCK_SIZE, 0, i * BLOCK_SIZE);
 				
@@ -76,24 +96,24 @@ void AGameGrid::SetWallsOccupied()
 
 	if (GridRow.Num() > 0) {
 		//FLOOR
-		for (int i{ 0 }; i < WALL_LENGTH; i++)
+		for (int i{ 0 }; i < GridLength; i++)
 		{
 			GridRow[0].GridColumn[i]->SetIsSpaceOccupied(true);
 		}
 
 		//SIDE WALLS
-		for (int i{ 0 }; i < WALL_HEIGHT; i++)
+		for (int i{ 0 }; i < GridHeight; i++)
 		{
 			GridRow[i].GridColumn[0]->SetIsSpaceOccupied(true);
-			GridRow[i].GridColumn[WALL_LENGTH - 1]->SetIsSpaceOccupied(true);
+			GridRow[i].GridColumn[GridLength- 1]->SetIsSpaceOccupied(true);
 		}
 	}
 }
 
 void AGameGrid::CreateGameOverLine()
 {
-	GameOverLine->SetWorldScale3D(FVector(BLOCK_SIZE * (WALL_LENGTH - 2), 0, BLOCK_SIZE / 10));
-	GameOverLine->SetWorldLocation(this->GetActorLocation() + FVector((BLOCK_SIZE / 2) + (BLOCK_SIZE * ((WALL_LENGTH - 2) / 2)),  -0.1, BLOCK_SIZE * GAME_OVER_HEIGHT));
+	GameOverLine->SetWorldScale3D(FVector(BLOCK_SIZE * (GridLength - 2), 0, BLOCK_SIZE / 10));
+	GameOverLine->SetWorldLocation(this->GetActorLocation() + FVector((BLOCK_SIZE / 2) + (BLOCK_SIZE * ((GridLength - 2) / 2)),  -0.1, BLOCK_SIZE * GAME_OVER_HEIGHT));
 }
 
 FGridBoxRow& AGameGrid::GetRow(int32 RowNumber)
@@ -117,7 +137,7 @@ void AGameGrid::RemoveBlocksInRow(int32 RowNumber)
 
 void AGameGrid::MoveBlocksDown(int32 BottomRowNumber)
 {
-	for (int i{ BottomRowNumber }; i < WALL_HEIGHT; i++)
+	for (int i{ BottomRowNumber }; i < CLASSIC_WALL_HEIGHT; i++)
 	{
 		if (GridRow[i].BlocksInRow.Num() > 0) {
 			for (int j{ 0 }; j < GridRow[i].BlocksInRow.Num(); j++) {
@@ -146,7 +166,7 @@ bool AGameGrid::IsGridBoxOccupied(FVector2D GridIndex)
 
 void AGameGrid::SetIsGridBoxOccupied(FVector2D GridIndex, bool IsOccupied)
 {
-	if (GridIndex.X < WALL_LENGTH && GridIndex.Y < WALL_HEIGHT)
+	if (GridIndex.X < GridLength && GridIndex.Y < GridHeight)
 	{
 		GridRow[GridIndex.Y].GridColumn[GridIndex.X]->SetIsSpaceOccupied(IsOccupied);
 	}
@@ -195,8 +215,6 @@ void AGameGrid::PlayRowFilledSound()
 void AGameGrid::GameOver()
 {
 	int32 FinalScore = ScoreText->GetScore();
-	print(FString::FromInt(FinalScore));
-	print("Final Score is");
 	
 	if (GameOverSound != nullptr)
 	{
@@ -206,7 +224,13 @@ void AGameGrid::GameOver()
 	
 	if (ANotetrisGameModeBase* CurrentGamemode = Cast<ANotetrisGameModeBase>(UGameplayStatics::GetGameMode(GetWorld())))
 	{
-		CurrentGamemode->GetHighScoreData().AddHighScore(FinalScore, CurrentGamemode->GetHighScoreData().GetClassicHighScores());
+		if (bIsClassicGrid) {
+			CurrentGamemode->GetHighScoreData().AddHighScore(FinalScore, CurrentGamemode->GetHighScoreData().GetClassicHighScores());
+		}
+		else if (bIsQuinGrid)
+		{
+			CurrentGamemode->GetHighScoreData().AddHighScore(FinalScore, CurrentGamemode->GetHighScoreData().GetQuinHighScores());
+		}
 		CurrentGamemode->SaveHighScores();
 	}
 

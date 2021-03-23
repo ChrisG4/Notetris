@@ -38,6 +38,9 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	int32 GridLength;
+	int32 GridHeight;
+
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AGridTriggerBox> GridBox;
 
@@ -59,11 +62,20 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	USoundBase* GameOverSound;
 
+	UPROPERTY(EditAnywhere, meta = (EditCondition = "!bIsQuinGrid"), Category = "GridType")
+	bool bIsClassicGrid = true;
+
+	UPROPERTY(EditAnywhere, meta = (EditCondition = "!bIsClassicGrid"), Category = "GridType")
+	bool bIsQuinGrid = false;
+
 	TMap<int32, int32> ScoreValues;
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	void SetGridDimensions();
+	int32 GetGridLength();
 
 	void CreateGrid();
 

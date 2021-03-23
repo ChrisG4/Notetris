@@ -1,7 +1,14 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
+#define TIME_NUMBER_PLACES 4
 
 #include "TimerText.h"
+
+void ATimerText::BeginPlay()
+{
+	Super::BeginPlay();
+
+	GameTime = StartingTime;
+}
 
 void ATimerText::Tick(float DeltaTime)
 {
@@ -10,6 +17,10 @@ void ATimerText::Tick(float DeltaTime)
 	if (IsCountingUp == true)
 	{
 		GameTime += DeltaTime;
+	}
+	else
+	{
+		GameTime -= DeltaTime;
 	}
 
 	ConvertFloatToTime(GameTime);
@@ -22,11 +33,16 @@ void ATimerText::ConvertFloatToTime(float DirtyFloat)
 	int32 TimeInteger = FMath::Floor(DirtyFloat);
 	int32 IntLength = FString::FromInt(TimeInteger).Len();
 
-	if (IntLength < 5)
+	if (IntLength <= TIME_NUMBER_PLACES)
 	{
-		DisplayZeros = LeadingZeros.Left(4 - IntLength);
+		DisplayZeros = LeadingZeros.Left(TIME_NUMBER_PLACES - IntLength);
 	}
 
 	FString TrueTime = FString::SanitizeFloat(GameTime);
 	DisplayTime = DisplayZeros + TrueTime.Left(IntLength + 3);
+}
+
+float ATimerText::GetGameTime()
+{
+	return this->GameTime;
 }

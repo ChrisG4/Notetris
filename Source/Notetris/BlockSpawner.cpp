@@ -21,7 +21,7 @@ void ABlockSpawner::BeginPlay()
 
 	CreateUpcomingBlocks();
 
-	HeldBlockLocation = this->GetActorLocation() + FVector(-BLOCK_SIZE * WALL_LENGTH, 0, -BLOCK_SIZE * UPCOMING_BLOCK_GAP);
+	HeldBlockLocation = this->GetActorLocation() + FVector(-BLOCK_SIZE * CLASSIC_WALL_LENGTH, 0, -BLOCK_SIZE * UPCOMING_BLOCK_GAP);
 }
 
 // Called every frame
@@ -94,7 +94,7 @@ void ABlockSpawner::CreateUpcomingBlocks()
 	for (int i{ 0 }; i < UPCOMING_BLOCKS_NUMBER; i++)
 	{
 		int32 BlockChoice = FMath::RandRange(0, SpawnableBlocks.Num() - 1);
-		FVector SpawnLocation = this->GetActorLocation() + FVector(WALL_LENGTH * BLOCK_SIZE, 0, -UPCOMING_BLOCK_GAP * (i + 1) * BLOCK_SIZE);
+		FVector SpawnLocation = this->GetActorLocation() + FVector(CLASSIC_WALL_LENGTH * BLOCK_SIZE, 0, -UPCOMING_BLOCK_GAP * (i + 1) * BLOCK_SIZE);
 
 		ACompositeBlock* NewBlock = GetWorld()->SpawnActor<ACompositeBlock>(SpawnableBlocks[BlockChoice], SpawnLocation, FRotator(0, 0, 0), params);
 
@@ -112,7 +112,7 @@ void ABlockSpawner::UpdateUpcomingBlocks()
 	
 	FActorSpawnParameters params;
 	int32 BlockChoice = FMath::RandRange(0, SpawnableBlocks.Num() - 1);
-	FVector SpawnLocation = this->GetActorLocation() + FVector(WALL_LENGTH * BLOCK_SIZE, 0, -UPCOMING_BLOCK_GAP * UPCOMING_BLOCKS_NUMBER * BLOCK_SIZE);
+	FVector SpawnLocation = this->GetActorLocation() + FVector(CLASSIC_WALL_LENGTH * BLOCK_SIZE, 0, -UPCOMING_BLOCK_GAP * UPCOMING_BLOCKS_NUMBER * BLOCK_SIZE);
 
 	ACompositeBlock* NewBlock = GetWorld()->SpawnActor<ACompositeBlock>(SpawnableBlocks[BlockChoice], SpawnLocation, FRotator(0, 0, 0), params);
 

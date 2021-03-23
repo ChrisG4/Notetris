@@ -3,8 +3,11 @@
 
 //BLOCK AND GRID DEFINITIONS
 #define BLOCK_SIZE 52
-#define WALL_LENGTH 12
-#define WALL_HEIGHT 25
+#define CLASSIC_WALL_LENGTH 12
+#define CLASSIC_WALL_HEIGHT 25
+
+#define QUIN_WALL_LENGTH 14
+#define QUIN_WALL_HEIGHT 25
 
 //GAMEPLAY 
 #define GAME_OVER_HEIGHT 20
@@ -25,4 +28,5 @@
 #define SAVE_DATA_NAME "SaveDataName"
 #define SAVE_DATA_USER_INDEX 0
 
+//DEBUG 
 #define print(text) if(GEngine)GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, text);

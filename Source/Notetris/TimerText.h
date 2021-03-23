@@ -26,9 +26,16 @@ protected:
 	UPROPERTY(EditAnywhere)
 	bool IsCountingUp = true;
 
+	UPROPERTY(EditAnywhere)
+	float StartingTime;
+
+
 public:
+	void BeginPlay() override;
 
 	void Tick(float DeltaTime) override;
 
 	void ConvertFloatToTime(float DirtyFloat);
+
+	float GetGameTime();
 };
