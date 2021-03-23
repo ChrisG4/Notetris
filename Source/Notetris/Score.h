@@ -16,6 +16,7 @@ class NOTETRIS_API AScore : public ADynamicText
 	
 protected:
 
+	UPROPERTY(EditAnywhere)
 	int32 PlayerScore = 0;
 
 public:

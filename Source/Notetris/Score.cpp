@@ -2,6 +2,7 @@
 
 
 #include "Score.h"
+#include "Definitions.h"
 
 void AScore::BeginPlay()
 {
@@ -14,10 +15,12 @@ void AScore::SetScore(int32 NewScore)
 {
 	this->PlayerScore = NewScore;
 
-	this->SetText(FString::FromInt(NewScore));
+	this->SetText(FString::FromInt(PlayerScore));
 }
 
 int32 AScore::GetScore()
 {
 	return this->PlayerScore;
+
+	print(FString::FromInt(PlayerScore));
 }

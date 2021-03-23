@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "SaveData.h"
+#include "HighScores.h"
 #include "NotetrisGameModeBase.generated.h"
 
 /**
@@ -14,4 +16,17 @@ class NOTETRIS_API ANotetrisGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+private:
+
+	HighScores HighScoreData;
+
+public:
+
+	void BeginPlay() override;
+
+	void SaveHighScores();
+
+	void LoadHighScores();
+
+	HighScores& GetHighScoreData();
 };

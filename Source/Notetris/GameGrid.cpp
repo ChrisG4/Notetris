@@ -5,6 +5,7 @@
 #include "Definitions.h"
 #include "SingleBlock.h"
 #include "Kismet/GameplayStatics.h"
+#include "NotetrisGameModeBase.h"
 #include <Engine/World.h>
 
 // Sets default values
@@ -193,10 +194,21 @@ void AGameGrid::PlayRowFilledSound()
 
 void AGameGrid::GameOver()
 {
-	CallGameOver();
+	int32 FinalScore = ScoreText->GetScore();
+	print(FString::FromInt(FinalScore));
+	print("Final Score is");
+	
 	if (GameOverSound != nullptr)
 	{
 		GameMusic->Stop();
 		UGameplayStatics::PlaySound2D(this, GameOverSound, 1.0f, 1.0f, 0.0f);
 	}
+	
+	if (ANotetrisGameModeBase* CurrentGamemode = Cast<ANotetrisGameModeBase>(UGameplayStatics::GetGameMode(GetWorld())))
+	{
+		CurrentGamemode->GetHighScoreData().AddHighScore(FinalScore, CurrentGamemode->GetHighScoreData().GetClassicHighScores());
+		CurrentGamemode->SaveHighScores();
+	}
+
+	CallGameOver();
 }
