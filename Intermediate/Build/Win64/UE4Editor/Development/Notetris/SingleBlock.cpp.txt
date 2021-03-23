@@ -10,7 +10,25 @@ D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TriggerBase.gene
 D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TriggerBox.generated.h
 D:\UE_4.26\Engine\Source\Runtime\Engine\Public\DrawDebugHelpers.h
 D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\GridTriggerBox.generated.h
+D:\Unreal Projects\Notetris\Source\Notetris\Score.h
+D:\Unreal Projects\Notetris\Source\Notetris\DynamicText.h
+D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h
+D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TextRenderComponent.generated.h
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\DynamicText.generated.h
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\Score.generated.h
+D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Components/AudioComponent.h
+D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Sound/QuartzSubscription.h
+D:\UE_4.26\Engine\Source\Runtime\AudioMixer\Public\Quartz/AudioMixerClockHandle.h
+D:\UE_4.26\Engine\Source\Runtime\AudioMixer\Public\Quartz/QuartzSubsystem.h
+D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AudioMixer\QuartzSubsystem.generated.h
+D:\UE_4.26\Engine\Source\Runtime\AudioMixer\Public\Quartz/QuartzMetronome.h
+D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AudioMixer\AudioMixerClockHandle.generated.h
+D:\UE_4.26\Engine\Source\Runtime\AudioMixer\Public\Quartz/AudioMixerQuantizedCommands.h
+D:\UE_4.26\Engine\Source\Runtime\AudioMixer\Public\Quartz\AudioMixerClock.h
+D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\AudioComponent.generated.h
 D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\GameGrid.generated.h
+D:\Unreal Projects\Notetris\Source\Notetris\GhostBlock.h
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\GhostBlock.generated.h
 D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\SingleBlock.generated.h
 D:\Unreal Projects\Notetris\Source\Notetris\Definitions.h
 D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h

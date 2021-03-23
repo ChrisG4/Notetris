@@ -14,25 +14,27 @@ struct FVector2D;
 #endif
 #define NOTETRIS_GameGrid_generated_h
 
-#define Notetris_Source_Notetris_GameGrid_h_13_GENERATED_BODY \
+#define Notetris_Source_Notetris_GameGrid_h_16_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FGridBoxRow_Statics; \
 	NOTETRIS_API static class UScriptStruct* StaticStruct();
 
 
 template<> NOTETRIS_API UScriptStruct* StaticStruct<struct FGridBoxRow>();
 
-#define Notetris_Source_Notetris_GameGrid_h_27_SPARSE_DATA
-#define Notetris_Source_Notetris_GameGrid_h_27_RPC_WRAPPERS \
+#define Notetris_Source_Notetris_GameGrid_h_31_SPARSE_DATA
+#define Notetris_Source_Notetris_GameGrid_h_31_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execIsGridBoxOccupied);
 
 
-#define Notetris_Source_Notetris_GameGrid_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
+#define Notetris_Source_Notetris_GameGrid_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execIsGridBoxOccupied);
 
 
-#define Notetris_Source_Notetris_GameGrid_h_27_INCLASS_NO_PURE_DECLS \
+#define Notetris_Source_Notetris_GameGrid_h_31_EVENT_PARMS
+#define Notetris_Source_Notetris_GameGrid_h_31_CALLBACK_WRAPPERS
+#define Notetris_Source_Notetris_GameGrid_h_31_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGameGrid(); \
 	friend struct Z_Construct_UClass_AGameGrid_Statics; \
@@ -41,7 +43,7 @@ public: \
 	DECLARE_SERIALIZER(AGameGrid)
 
 
-#define Notetris_Source_Notetris_GameGrid_h_27_INCLASS \
+#define Notetris_Source_Notetris_GameGrid_h_31_INCLASS \
 private: \
 	static void StaticRegisterNativesAGameGrid(); \
 	friend struct Z_Construct_UClass_AGameGrid_Statics; \
@@ -50,7 +52,7 @@ public: \
 	DECLARE_SERIALIZER(AGameGrid)
 
 
-#define Notetris_Source_Notetris_GameGrid_h_27_STANDARD_CONSTRUCTORS \
+#define Notetris_Source_Notetris_GameGrid_h_31_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AGameGrid(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AGameGrid) \
@@ -63,7 +65,7 @@ private: \
 public:
 
 
-#define Notetris_Source_Notetris_GameGrid_h_27_ENHANCED_CONSTRUCTORS \
+#define Notetris_Source_Notetris_GameGrid_h_31_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AGameGrid(AGameGrid&&); \
@@ -74,32 +76,42 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AGameGrid); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGameGrid)
 
 
-#define Notetris_Source_Notetris_GameGrid_h_27_PRIVATE_PROPERTY_OFFSET \
+#define Notetris_Source_Notetris_GameGrid_h_31_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__GridBox() { return STRUCT_OFFSET(AGameGrid, GridBox); } \
-	FORCEINLINE static uint32 __PPO__GridRow() { return STRUCT_OFFSET(AGameGrid, GridRow); }
+	FORCEINLINE static uint32 __PPO__GridRow() { return STRUCT_OFFSET(AGameGrid, GridRow); } \
+	FORCEINLINE static uint32 __PPO__GameOverLine() { return STRUCT_OFFSET(AGameGrid, GameOverLine); } \
+	FORCEINLINE static uint32 __PPO__ScoreText() { return STRUCT_OFFSET(AGameGrid, ScoreText); } \
+	FORCEINLINE static uint32 __PPO__GameMusic() { return STRUCT_OFFSET(AGameGrid, GameMusic); } \
+	FORCEINLINE static uint32 __PPO__RowFilledSound() { return STRUCT_OFFSET(AGameGrid, RowFilledSound); } \
+	FORCEINLINE static uint32 __PPO__GameOverSound() { return STRUCT_OFFSET(AGameGrid, GameOverSound); }
 
 
-#define Notetris_Source_Notetris_GameGrid_h_24_PROLOG
-#define Notetris_Source_Notetris_GameGrid_h_27_GENERATED_BODY_LEGACY \
+#define Notetris_Source_Notetris_GameGrid_h_28_PROLOG \
+	Notetris_Source_Notetris_GameGrid_h_31_EVENT_PARMS
+
+
+#define Notetris_Source_Notetris_GameGrid_h_31_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Notetris_Source_Notetris_GameGrid_h_27_PRIVATE_PROPERTY_OFFSET \
-	Notetris_Source_Notetris_GameGrid_h_27_SPARSE_DATA \
-	Notetris_Source_Notetris_GameGrid_h_27_RPC_WRAPPERS \
-	Notetris_Source_Notetris_GameGrid_h_27_INCLASS \
-	Notetris_Source_Notetris_GameGrid_h_27_STANDARD_CONSTRUCTORS \
+	Notetris_Source_Notetris_GameGrid_h_31_PRIVATE_PROPERTY_OFFSET \
+	Notetris_Source_Notetris_GameGrid_h_31_SPARSE_DATA \
+	Notetris_Source_Notetris_GameGrid_h_31_RPC_WRAPPERS \
+	Notetris_Source_Notetris_GameGrid_h_31_CALLBACK_WRAPPERS \
+	Notetris_Source_Notetris_GameGrid_h_31_INCLASS \
+	Notetris_Source_Notetris_GameGrid_h_31_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Notetris_Source_Notetris_GameGrid_h_27_GENERATED_BODY \
+#define Notetris_Source_Notetris_GameGrid_h_31_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Notetris_Source_Notetris_GameGrid_h_27_PRIVATE_PROPERTY_OFFSET \
-	Notetris_Source_Notetris_GameGrid_h_27_SPARSE_DATA \
-	Notetris_Source_Notetris_GameGrid_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
-	Notetris_Source_Notetris_GameGrid_h_27_INCLASS_NO_PURE_DECLS \
-	Notetris_Source_Notetris_GameGrid_h_27_ENHANCED_CONSTRUCTORS \
+	Notetris_Source_Notetris_GameGrid_h_31_PRIVATE_PROPERTY_OFFSET \
+	Notetris_Source_Notetris_GameGrid_h_31_SPARSE_DATA \
+	Notetris_Source_Notetris_GameGrid_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
+	Notetris_Source_Notetris_GameGrid_h_31_CALLBACK_WRAPPERS \
+	Notetris_Source_Notetris_GameGrid_h_31_INCLASS_NO_PURE_DECLS \
+	Notetris_Source_Notetris_GameGrid_h_31_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

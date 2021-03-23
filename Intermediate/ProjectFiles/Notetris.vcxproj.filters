@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Notetris.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{B1626694-C505-47B1-958D-716B0E398CFD}</UniqueIdentifier>
+      <UniqueIdentifier>{116A5B79-6CA9-41F6-A716-80486212187D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Notetris.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\README.md" />
     <Filter Include="Config">
-      <UniqueIdentifier>{B5873D6A-90EF-477E-92A7-3A1818C3CAF5}</UniqueIdentifier>
+      <UniqueIdentifier>{F8997712-E9CD-44C4-A146-1D24B58E6FBF}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Notetris">
-      <UniqueIdentifier>{C775E98E-2E77-49FE-9583-61996C8C91DD}</UniqueIdentifier>
+      <UniqueIdentifier>{E2EFA303-0B14-44B6-B04F-96FF382F3685}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Notetris\Block.cpp">
       <Filter>Source\Notetris</Filter>
@@ -53,16 +53,40 @@
     <ClInclude Include="..\..\Source\Notetris\Definitions.h">
       <Filter>Source\Notetris</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\DynamicText.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\DynamicText.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Notetris\GameGrid.cpp">
       <Filter>Source\Notetris</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Notetris\GameGrid.h">
       <Filter>Source\Notetris</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\GameTimer.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\GameTimer.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\GhostBlock.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\GhostBlock.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Notetris\GridTriggerBox.cpp">
       <Filter>Source\Notetris</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Notetris\GridTriggerBox.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\HighScores.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\HighScores.h">
       <Filter>Source\Notetris</Filter>
     </ClInclude>
     <None Include="..\..\Source\Notetris\Notetris.Build.cs">
@@ -92,10 +116,28 @@
     <ClInclude Include="..\..\Source\Notetris\NotetrisPlayerController.h">
       <Filter>Source\Notetris</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\SaveData.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\SaveData.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\Score.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\Score.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Notetris\SingleBlock.cpp">
       <Filter>Source\Notetris</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Notetris\SingleBlock.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\TimerText.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\TimerText.h">
       <Filter>Source\Notetris</Filter>
     </ClInclude>
   </ItemGroup>

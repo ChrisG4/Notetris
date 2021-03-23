@@ -23,6 +23,7 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	NOTETRIS_API UClass* Z_Construct_UClass_AGameGrid_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector2D();
+	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(ACompositeBlock::execPlaceBlock)
 	{
@@ -188,6 +189,18 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GridIndex_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_GridIndex;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MoveSound_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MoveSound;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DropSound_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_DropSound;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FailSound_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FailSound;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -254,6 +267,27 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GridIndex = { "GridIndex", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, GridIndex), Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GridIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GridIndex_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_MoveSound_MetaData[] = {
+		{ "Category", "CompositeBlock" },
+		{ "ModuleRelativePath", "CompositeBlock.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_MoveSound = { "MoveSound", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, MoveSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_MoveSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_MoveSound_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_DropSound_MetaData[] = {
+		{ "Category", "CompositeBlock" },
+		{ "ModuleRelativePath", "CompositeBlock.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_DropSound = { "DropSound", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, DropSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_DropSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_DropSound_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_FailSound_MetaData[] = {
+		{ "Category", "CompositeBlock" },
+		{ "ModuleRelativePath", "CompositeBlock.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_FailSound = { "FailSound", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, FailSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_FailSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_FailSound_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACompositeBlock_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_CompositeBlockRoot,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SingleBlockActor,
@@ -263,6 +297,9 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SingleBlocks,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GameGrid,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GridIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_MoveSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_DropSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_FailSound,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACompositeBlock_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACompositeBlock>::IsAbstract,
@@ -291,7 +328,7 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACompositeBlock, 3324712956);
+	IMPLEMENT_CLASS(ACompositeBlock, 2211967811);
 	template<> NOTETRIS_API UClass* StaticClass<ACompositeBlock>()
 	{
 		return ACompositeBlock::StaticClass();

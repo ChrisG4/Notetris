@@ -6,4 +6,9 @@ D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+D:\Unreal Projects\Notetris\Source\Notetris\SaveData.h
+D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/SaveGame.h
+D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SaveGame.generated.h
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\SaveData.generated.h
+D:\Unreal Projects\Notetris\Source\Notetris\HighScores.h
 D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\NotetrisGameModeBase.generated.h

@@ -1,0 +1,106 @@
+Begin Object Class=/Script/Paper2D.PaperTileMap Name="Title"
+   Begin Object Class=/Script/Paper2D.PaperTileLayer Name="PaperTileLayer_0"
+   End Object
+   Begin Object Class=/Script/Engine.AssetImportData Name="AssetImportData"
+   End Object
+   Begin Object Name="PaperTileLayer_0"
+      LayerName=LOCGEN_FORMAT_ORDERED(NSLOCTEXT("Paper2D", "NewLayerNameFormatString", "Layer {0}"), LOCGEN_NUMBER_UNGROUPED(1, ""))
+      LayerWidth=31
+      LayerHeight=5
+      AllocatedWidth=31
+      AllocatedHeight=5
+      AllocatedCells(0)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(1)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(2)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(4)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=4)
+      AllocatedCells(5)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=4)
+      AllocatedCells(6)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=4)
+      AllocatedCells(8)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=8)
+      AllocatedCells(9)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=8)
+      AllocatedCells(10)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=8)
+      AllocatedCells(12)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=2)
+      AllocatedCells(13)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=2)
+      AllocatedCells(14)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=2)
+      AllocatedCells(16)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=0)
+      AllocatedCells(17)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=0)
+      AllocatedCells(18)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=0)
+      AllocatedCells(20)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=6)
+      AllocatedCells(21)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=6)
+      AllocatedCells(22)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=6)
+      AllocatedCells(24)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=5)
+      AllocatedCells(25)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=5)
+      AllocatedCells(26)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=5)
+      AllocatedCells(28)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(29)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(30)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(31)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(33)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(35)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=4)
+      AllocatedCells(37)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=4)
+      AllocatedCells(40)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=8)
+      AllocatedCells(43)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=2)
+      AllocatedCells(48)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=0)
+      AllocatedCells(51)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=6)
+      AllocatedCells(53)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=6)
+      AllocatedCells(56)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=5)
+      AllocatedCells(59)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(62)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(64)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(66)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=4)
+      AllocatedCells(68)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=4)
+      AllocatedCells(71)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=8)
+      AllocatedCells(74)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=2)
+      AllocatedCells(75)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=2)
+      AllocatedCells(76)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=2)
+      AllocatedCells(79)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=0)
+      AllocatedCells(82)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=6)
+      AllocatedCells(83)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=6)
+      AllocatedCells(87)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=5)
+      AllocatedCells(90)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(91)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(92)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(93)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(95)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(97)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=4)
+      AllocatedCells(99)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=4)
+      AllocatedCells(102)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=8)
+      AllocatedCells(105)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=2)
+      AllocatedCells(110)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=0)
+      AllocatedCells(113)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=6)
+      AllocatedCells(115)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=6)
+      AllocatedCells(118)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=5)
+      AllocatedCells(123)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(124)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(126)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(128)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=4)
+      AllocatedCells(129)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=4)
+      AllocatedCells(130)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=4)
+      AllocatedCells(133)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=8)
+      AllocatedCells(136)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=2)
+      AllocatedCells(137)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=2)
+      AllocatedCells(138)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=2)
+      AllocatedCells(141)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=0)
+      AllocatedCells(144)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=6)
+      AllocatedCells(146)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=6)
+      AllocatedCells(148)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=5)
+      AllocatedCells(149)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=5)
+      AllocatedCells(150)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=5)
+      AllocatedCells(152)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(153)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+      AllocatedCells(154)=(TileSet=PaperTileSet'"/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset"',PackedTileIndex=7)
+   End Object
+   Begin Object Name="AssetImportData"
+   End Object
+   MapWidth=31
+   MapHeight=5
+   TileWidth=52
+   TileHeight=52
+   SelectedTileSet=/Game/Assets/Textures/TileSets/SingleBlocksTileset.SingleBlocksTileset
+   TileLayers(0)=PaperTileLayer'"PaperTileLayer_0"'
+   SpriteCollisionDomain=None
+   AssetImportData=AssetImportData'"AssetImportData"'
+   SelectedLayerIndex=0
+   TileGridColor=(R=0.304987,G=0.304987,B=0.304987,A=1.000000)
+   LayerGridColor=(R=1.000000,G=1.000000,B=0.000000,A=1.000000)
+   LayerNameIndex=1
+End Object

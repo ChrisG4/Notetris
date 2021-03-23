@@ -21,6 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector2D();
 	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	PAPER2D_API UClass* Z_Construct_UClass_UPaperSpriteComponent_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	NOTETRIS_API UClass* Z_Construct_UClass_AGhostBlock_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(ASingleBlock::execSetGridIndex)
 	{
@@ -183,6 +185,14 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GridIndex_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FStructPropertyParams NewProp_GridIndex;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GhostBlockType_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_GhostBlockType;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GhostBlock_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_GhostBlock;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -232,11 +242,27 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex = { "GridIndex", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, GridIndex), Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlockType_MetaData[] = {
+		{ "Category", "SingleBlock" },
+		{ "ModuleRelativePath", "SingleBlock.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlockType = { "GhostBlockType", nullptr, (EPropertyFlags)0x0024080000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, GhostBlockType), Z_Construct_UClass_AGhostBlock_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlockType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlockType_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlock_MetaData[] = {
+		{ "Category", "SingleBlock" },
+		{ "ModuleRelativePath", "SingleBlock.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlock = { "GhostBlock", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, GhostBlock), Z_Construct_UClass_AGhostBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlock_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlock_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASingleBlock_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockRoot,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockSprite,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASingleBlock_Statics::NewProp_GameGrid,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlockType,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlock,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASingleBlock_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ASingleBlock>::IsAbstract,
@@ -265,7 +291,7 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASingleBlock, 624439860);
+	IMPLEMENT_CLASS(ASingleBlock, 2247759733);
 	template<> NOTETRIS_API UClass* StaticClass<ASingleBlock>()
 	{
 		return ASingleBlock::StaticClass();
