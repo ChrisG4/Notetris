@@ -23,7 +23,9 @@ public:
 	bool IsNewHighScore(int32 Score, TArray<int32>& CurrentHighScores);
 	void AddHighScore(int32 NewHighScore, TArray<int32>& CurrentHighScores);
 
+	UFUNCTION(BlueprintCallable)
 	TArray<int32>& GetClassicHighScores();
+	UFUNCTION(BlueprintCallable)
 	TArray<int32>& GetQuinHighScores();
 
 	void PrintClassicScores();

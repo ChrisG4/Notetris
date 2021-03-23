@@ -42,6 +42,9 @@ protected:
 	int32 GridHeight;
 
 	UPROPERTY(EditAnywhere)
+	bool bIsTimeTrial;
+
+	UPROPERTY(EditAnywhere)
 	TSubclassOf<AGridTriggerBox> GridBox;
 
 	UPROPERTY(VisibleAnywhere)

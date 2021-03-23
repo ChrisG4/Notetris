@@ -28,5 +28,11 @@ public:
 
 	void LoadHighScores();
 
+	UFUNCTION(BlueprintCallable)
+	TArray<int32>& GetClassicHighScores();
+
+	UFUNCTION(BlueprintCallable)
+	TArray<int32>& GetQuinHighScores();
+
 	HighScores& GetHighScoreData();
 };

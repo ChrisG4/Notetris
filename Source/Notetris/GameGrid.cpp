@@ -224,14 +224,16 @@ void AGameGrid::GameOver()
 	
 	if (ANotetrisGameModeBase* CurrentGamemode = Cast<ANotetrisGameModeBase>(UGameplayStatics::GetGameMode(GetWorld())))
 	{
-		if (bIsClassicGrid) {
-			CurrentGamemode->GetHighScoreData().AddHighScore(FinalScore, CurrentGamemode->GetHighScoreData().GetClassicHighScores());
+		if (bIsTimeTrial == true) {
+			if (bIsClassicGrid) {
+				CurrentGamemode->GetHighScoreData().AddHighScore(FinalScore, CurrentGamemode->GetHighScoreData().GetClassicHighScores());
+			}
+			else if (bIsQuinGrid)
+			{
+				CurrentGamemode->GetHighScoreData().AddHighScore(FinalScore, CurrentGamemode->GetHighScoreData().GetQuinHighScores());
+			}
+			CurrentGamemode->SaveHighScores();
 		}
-		else if (bIsQuinGrid)
-		{
-			CurrentGamemode->GetHighScoreData().AddHighScore(FinalScore, CurrentGamemode->GetHighScoreData().GetQuinHighScores());
-		}
-		CurrentGamemode->SaveHighScores();
 	}
 
 	CallGameOver();

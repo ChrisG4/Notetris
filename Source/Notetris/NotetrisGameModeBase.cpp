@@ -42,8 +42,17 @@ void ANotetrisGameModeBase::LoadHighScores()
 
 }
 
+TArray<int32>& ANotetrisGameModeBase::GetClassicHighScores()
+{
+	return HighScoreData.GetClassicHighScores();
+}
+
+TArray<int32>& ANotetrisGameModeBase::GetQuinHighScores()
+{
+	return HighScoreData.GetQuinHighScores();
+}
+
 HighScores& ANotetrisGameModeBase::GetHighScoreData()
 {
 	return this->HighScoreData;
-
 }
