@@ -1,3 +1,5 @@
 NOTETRIS
 
-Tetris with a twist, made in Unreal Engine 4
+A Tetris game created using C++ in Unreal Engine 4.
+
+Sounds from Zapsplat.com
