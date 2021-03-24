@@ -5,7 +5,7 @@
 #include "Definitions.h"
 #include "SingleBlock.h"
 #include "Kismet/GameplayStatics.h"
-#include "NotetrisGameModeBase.h"
+#include "NotetrisGameInstance.h"
 #include <Engine/World.h>
 
 // Sets default values
@@ -222,17 +222,17 @@ void AGameGrid::GameOver()
 		UGameplayStatics::PlaySound2D(this, GameOverSound, 1.0f, 1.0f, 0.0f);
 	}
 	
-	if (ANotetrisGameModeBase* CurrentGamemode = Cast<ANotetrisGameModeBase>(UGameplayStatics::GetGameMode(GetWorld())))
+	if (UNotetrisGameInstance* CurrentInstance = Cast<UNotetrisGameInstance>(UGameplayStatics::GetGameInstance(GetWorld())))
 	{
 		if (bIsTimeTrial == true) {
 			if (bIsClassicGrid) {
-				CurrentGamemode->GetHighScoreData().AddHighScore(FinalScore, CurrentGamemode->GetHighScoreData().GetClassicHighScores());
+				CurrentInstance->GetHighScoreData().AddHighScore(FinalScore, CurrentInstance->GetHighScoreData().GetClassicHighScores());
 			}
 			else if (bIsQuinGrid)
 			{
-				CurrentGamemode->GetHighScoreData().AddHighScore(FinalScore, CurrentGamemode->GetHighScoreData().GetQuinHighScores());
+				CurrentInstance->GetHighScoreData().AddHighScore(FinalScore, CurrentInstance->GetHighScoreData().GetQuinHighScores());
 			}
-			CurrentGamemode->SaveHighScores();
+			CurrentInstance->SaveHighScores();
 		}
 	}
 

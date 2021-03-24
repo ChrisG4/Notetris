@@ -18,21 +18,7 @@ class NOTETRIS_API ANotetrisGameModeBase : public AGameModeBase
 	
 private:
 
-	HighScores HighScoreData;
 
 public:
 
-	void BeginPlay() override;
-
-	void SaveHighScores();
-
-	void LoadHighScores();
-
-	UFUNCTION(BlueprintCallable)
-	TArray<int32>& GetClassicHighScores();
-
-	UFUNCTION(BlueprintCallable)
-	TArray<int32>& GetQuinHighScores();
-
-	HighScores& GetHighScoreData();
 };
