@@ -32,33 +32,14 @@ void ABlockSpawner::Tick(float DeltaTime)
 
 	Timer += DeltaTime;
 
-	if (Timer >= 0.1 && bCanSpawnBlock == true)
+	//DELAY TO ENSURE GRID CREATED BEFORE BLOCK SPAWNED
+	if (Timer >= 0.1)
 	{
-		SpawnInitialBlock();
+		SpawnBlock();
 		SetActorTickEnabled(false);
 	}
 }
 
-void ABlockSpawner::SpawnInitialBlock()
-{
-	if (SpawnableBlocks.Num() > 0 && GameGrid != nullptr)
-	{
-		FActorSpawnParameters params;
-
-		int32 BlockChoice = FMath::RandRange(0, SpawnableBlocks.Num() - 1);
-
-		ACompositeBlock * NewBlock = GetWorld()->SpawnActor<ACompositeBlock>(SpawnableBlocks[BlockChoice], this->GetActorLocation(), FRotator(0, 0, 0), params);
-		ActiveBlock = NewBlock;
-
-		if(GameGrid != nullptr)
-			NewBlock->SetGameGrid(this->GameGrid);
-		
-		NewBlock->SetOwner(this);
-		NewBlock->CreateGhostBlocks();
-
-		bCanSpawnBlock = false;
-	}
-}
 
 void ABlockSpawner::SpawnBlock()
 {
@@ -73,18 +54,10 @@ void ABlockSpawner::SpawnBlock()
 			if (GameGrid != nullptr)
 				NextBlock->SetGameGrid(this->GameGrid);
 
-			NextBlock->SetActorTickEnabled(true);
-			GetWorld()->GetFirstPlayerController()->Possess(NextBlock);
-			NextBlock->SetOwner(this);
-			NextBlock->CreateGhostBlocks();
+			ActivateBlock(NextBlock);
 			ActiveBlock = NextBlock;
-
-
 		}
-
 		UpcomingBlocks.RemoveAt(0, 1, true);
-		
-	
 	}
 }
 
@@ -106,11 +79,14 @@ void ABlockSpawner::CreateUpcomingBlocks()
 
 void ABlockSpawner::UpdateUpcomingBlocks()
 {
+	//MOVE EXISTING BLOCKS UP
 	for (int i{ 0 }; i < UpcomingBlocks.Num(); i++)
 	{
 		UpcomingBlocks[i]->MoveBlock(UpcomingBlocks[i]->GetActorLocation() + FVector(0, 0, UPCOMING_BLOCK_GAP * BLOCK_SIZE));
 	}
 	
+	//SPAWN NEW UPCOMING BLOCK
+
 	FActorSpawnParameters params;
 	int32 BlockChoice = FMath::RandRange(0, SpawnableBlocks.Num() - 1);
 	FVector SpawnLocation = this->GetActorLocation() + FVector(CLASSIC_WALL_LENGTH * BLOCK_SIZE, 0, -UPCOMING_BLOCK_GAP * UPCOMING_BLOCKS_NUMBER * BLOCK_SIZE);
@@ -127,38 +103,24 @@ void ABlockSpawner::StoreBlock()
 	if (HeldBlock == nullptr)
 	{
 		ActiveBlock->MoveBlock(HeldBlockLocation);
-		ActiveBlock->SetActorTickEnabled(false);
-		ActiveBlock->DestroyGhostBlocks();
-
-		GetWorld()->GetFirstPlayerController()->UnPossess();
+		DisactivateBlock(ActiveBlock);
 		HeldBlock = ActiveBlock;
-
 		SpawnBlock();
 	}
 	else
 	{
 		if (ActiveBlock->CanStoreBlock(HeldBlock))
 		{
-
 			HeldBlock->MoveBlock(ActiveBlock->GetActorLocation());
 			ActiveBlock->MoveBlock(HeldBlockLocation);
-
-			HeldBlock->SetActorTickEnabled(true);
-			ActiveBlock->SetActorTickEnabled(false);
-
-			GetWorld()->GetFirstPlayerController()->UnPossess();
-			GetWorld()->GetFirstPlayerController()->Possess(HeldBlock);
-
-			ActiveBlock->DestroyGhostBlocks();
+			DisactivateBlock(ActiveBlock);
 
 			ACompositeBlock* TempPointer;
 			TempPointer = ActiveBlock;
 			ActiveBlock = HeldBlock;
 			HeldBlock = TempPointer;
 
-			ActiveBlock->SetOwner(this);
-			ActiveBlock->SetGridIndex();
-			ActiveBlock->CreateGhostBlocks();
+			ActivateBlock(ActiveBlock);
 		}
 	}
 }
@@ -166,4 +128,20 @@ void ABlockSpawner::StoreBlock()
 ACompositeBlock* ABlockSpawner::GetStoredBlock()
 {
 	return this->HeldBlock;
+}
+
+void ABlockSpawner::ActivateBlock(ACompositeBlock* Block)
+{
+	Block->SetActorTickEnabled(true);
+	Block->SetGridIndex();
+	Block->CreateGhostBlocks();
+	GetWorld()->GetFirstPlayerController()->Possess(Block);
+	Block->SetOwner(this);
+}
+
+void ABlockSpawner::DisactivateBlock(ACompositeBlock* Block)
+{
+	Block->SetActorTickEnabled(false);
+	Block->DestroyGhostBlocks();
+	GetWorld()->GetFirstPlayerController()->UnPossess();
 }

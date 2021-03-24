@@ -23,11 +23,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	bool bCanSpawnBlock = true;
-
 	UPROPERTY(EditAnywhere)
 	AGameGrid* GameGrid;
-
 
 	UPROPERTY(EditDefaultsOnly)
 	TArray<TSubclassOf<ACompositeBlock>> SpawnableBlocks;
@@ -45,8 +42,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	void SpawnInitialBlock();
-
 	void SpawnBlock();
 
 	void CreateUpcomingBlocks();
@@ -55,4 +50,7 @@ public:
 	void StoreBlock();
 
 	ACompositeBlock* GetStoredBlock();
+
+	void ActivateBlock(ACompositeBlock* Block);
+	void DisactivateBlock(ACompositeBlock* Block);
 };

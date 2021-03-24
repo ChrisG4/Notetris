@@ -58,6 +58,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	USoundBase* FailSound;
 
+	UPROPERTY(EditDefaultsOnly)
+		USoundBase* SwapSound;
+
 	bool IsBlockDropping = false;
 
 	int32 ScoreMultiplier = 0;

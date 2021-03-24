@@ -252,10 +252,12 @@ bool ACompositeBlock::CanStoreBlock(ACompositeBlock* OtherBlock)
 		FVector2D IndexToCheck = FVector2D(GridIndex.X + UnitPostionsToCheck[i].X, GridIndex.Y + UnitPostionsToCheck[i].Z);
 		if (GameGrid->IsGridBoxOccupied(IndexToCheck))
 		{
+			PlaySound(FailSound);
 			return false;
 		}
 	}
 	
+	PlaySound(SwapSound);
 	return true;
 }
 
