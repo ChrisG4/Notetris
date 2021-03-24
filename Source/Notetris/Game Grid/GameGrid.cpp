@@ -2,11 +2,12 @@
 
 
 #include "GameGrid.h"
-#include "Definitions.h"
-#include "SingleBlock.h"
 #include "Kismet/GameplayStatics.h"
-#include "NotetrisGameInstance.h"
-#include <Engine/World.h>
+#include "Engine/World.h"
+
+#include "../Definitions.h"
+#include "../Blocks/SingleBlock.h"
+#include "../NotetrisGameInstance.h"
 
 // Sets default values
 AGameGrid::AGameGrid()

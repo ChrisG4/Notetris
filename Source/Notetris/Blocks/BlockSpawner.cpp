@@ -4,7 +4,8 @@
 #include "BlockSpawner.h"
 #include "Math/UnrealMathUtility.h"
 #include "Engine/World.h"
-#include "Definitions.h"
+
+#include "../Definitions.h"
 
 // Sets default values
 ABlockSpawner::ABlockSpawner()

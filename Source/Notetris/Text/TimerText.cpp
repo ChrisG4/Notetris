@@ -53,7 +53,7 @@ float ATimerText::GetGameTime()
 
 bool ATimerText::HasTimeRunOut()
 {
-	if (GameTime < 0)
+	if (GameTime <= 0)
 	{
 		return true;
 	}

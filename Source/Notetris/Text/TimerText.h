@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "DynamicText.h"
-#include "GameGrid.h"
+#include "../Game Grid/GameGrid.h"
 #include "TimerText.generated.h"
 
 /**

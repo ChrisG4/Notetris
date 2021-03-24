@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include <PaperSpriteComponent.h>
+#include "PaperSpriteComponent.h"
 #include "Components/SceneComponent.h"
 #include "GhostBlock.generated.h"
 

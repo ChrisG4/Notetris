@@ -2,7 +2,7 @@
 
 
 #include "Score.h"
-#include "Definitions.h"
+#include "../Definitions.h"
 
 void AScore::BeginPlay()
 {

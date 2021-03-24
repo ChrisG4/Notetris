@@ -4,7 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
-#include "HighScores.h"
+
+#include "High Scoring/HighScores.h"
 #include "NotetrisGameInstance.generated.h"
 
 /**

@@ -2,9 +2,10 @@
 
 
 #include "NotetrisGameInstance.h"
-#include "Definitions.h"
 #include "Kismet/GameplayStatics.h"
-#include "SaveData.h"
+
+#include "Definitions.h"
+#include "High Scoring/SaveData.h"
 
 UNotetrisGameInstance::UNotetrisGameInstance()
 {
@@ -31,8 +32,6 @@ void UNotetrisGameInstance::LoadHighScores()
 	{
 		HighScoreData.GetClassicHighScores() = LoadedData->ClassicHighScores;
 		HighScoreData.GetQuinHighScores() = LoadedData->QuinHighScores;
-
-		print("Scores Loaded");
 	}
 }
 

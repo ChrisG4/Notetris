@@ -4,9 +4,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "PaperSpriteComponent.h"
-#include "GameGrid.h"
 #include "Components/SceneComponent.h"
+
+#include "../Game Grid/GameGrid.h"
 #include "GhostBlock.h"
+
 #include "SingleBlock.generated.h"
 
 UCLASS()

@@ -3,7 +3,7 @@
 
 
 #include "HighScores.h"
-#include "Definitions.h"
+#include "../Definitions.h"
 
 HighScores::HighScores()
 {

@@ -3,10 +3,11 @@
 
 #include "CompositeBlock.h"
 #include "Engine/World.h"
-#include "Definitions.h"
-#include "BlockSpawner.h"
 #include "Kismet/GameplayStatics.h"
-#include "NotetrisMath.h"
+
+#include "../Definitions.h"
+#include "BlockSpawner.h"
+#include "../NotetrisMath.h"
 
 
 // Sets default values
@@ -293,22 +294,13 @@ void ACompositeBlock::PlaceBlock()
 	this->SetActorTickEnabled(false);
 	SetBlockBoxesOccupied();
 
-	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
-	{
-		SingleBlocks[i]->PlaceBlock();
-		int32 RowPlaced = SingleBlocks[i]->GetGridIndex().Y;
-		
-		GameGrid->GetRow(RowPlaced).BlocksInRow.Push(SingleBlocks[i]);
-		GameGrid->GetRow(RowPlaced).NumberOfBlocksInRow++;
-	}
+	PlaceSingleBlocks();
 
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
-
 		if (SingleBlocks[i]->IsBlockAboveGameOverLine())
 		{
 			GameGrid->GameOver();
-
 			Cast<ABlockSpawner>(this->GetOwner())->Destroy();
 			return;
 		}
@@ -334,6 +326,18 @@ void ACompositeBlock::PlaceBlock()
 
 	PlaySound(DropSound);
 	this->Destroy();
+}
+
+void ACompositeBlock::PlaceSingleBlocks()
+{
+	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
+	{
+		SingleBlocks[i]->PlaceBlock();
+		int32 RowPlaced = SingleBlocks[i]->GetGridIndex().Y;
+
+		GameGrid->GetRow(RowPlaced).BlocksInRow.Push(SingleBlocks[i]);
+		GameGrid->GetRow(RowPlaced).NumberOfBlocksInRow++;
+	}
 }
 
 bool ACompositeBlock::IsRowFull(int32 RowNumber)

@@ -4,10 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "GridTriggerBox.h"
-#include "Score.h"
 #include "Components/AudioComponent.h"
 #include "Components/StaticMeshComponent.h"
+
+#include "GridTriggerBox.h"
+#include "../Text/Score.h"
+
 #include "GameGrid.generated.h"
 
 USTRUCT()

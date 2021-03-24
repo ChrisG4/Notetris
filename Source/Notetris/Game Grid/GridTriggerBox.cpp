@@ -2,9 +2,8 @@
 
 
 #include "GridTriggerBox.h"
-#include "Definitions.h"
-
-#include "SingleBlock.h"
+#include "../Definitions.h"
+#include "../Blocks/SingleBlock.h"
 
 AGridTriggerBox::AGridTriggerBox()
 {

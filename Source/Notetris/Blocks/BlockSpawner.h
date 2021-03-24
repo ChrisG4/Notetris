@@ -4,9 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+
 #include "CompositeBlock.h"
-#include "GameGrid.h"
-#include "Containers/Queue.h"
+#include "../Game Grid/GameGrid.h"
+
 #include "BlockSpawner.generated.h"
 
 UCLASS()

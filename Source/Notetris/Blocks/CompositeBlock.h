@@ -4,13 +4,15 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "SingleBlock.h"
-#include "GameGrid.h"
+#include "PaperSprite.h"
+#include "Sound/SoundBase.h"
 #include "Engine/Texture.h"
 #include "Components/SceneComponent.h"
-#include "Sound/SoundBase.h"
-#include <PaperSprite.h>
+
+#include "SingleBlock.h"
+#include "../Game Grid/GameGrid.h"
 #include "GhostBlock.h"
+
 #include "CompositeBlock.generated.h"
 
 UCLASS()
@@ -97,7 +99,9 @@ public:
 	TArray<FVector> GetUnitPositions();
 
 	UFUNCTION()
-		void PlaceBlock();
+	void PlaceBlock();
+	void PlaceSingleBlocks();
+
 	bool IsRowFull(int32 RowNumber);
 	void SetBlockBoxesOccupied();
 
