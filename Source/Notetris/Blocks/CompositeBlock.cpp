@@ -96,8 +96,10 @@ void ACompositeBlock::MoveBlockLeft()
 {
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
-		if (!SingleBlocks[i]->CanMoveLeft())
+		if (!SingleBlocks[i]->CanMoveLeft()) {
+			PlaySound(FailSound);
 			return;
+		}
 	}
 
 	MoveBlock(FVector(-BLOCK_SIZE, 0, 0) + this->GetActorLocation());
@@ -111,8 +113,10 @@ void ACompositeBlock::MoveBlockRight()
 {
 	for (int i{ 0 }; i < SingleBlocks.Num(); i++)
 	{
-		if (!SingleBlocks[i]->CanMoveRight())
+		if (!SingleBlocks[i]->CanMoveRight()) {
+			PlaySound(FailSound);
 			return;
+		}
 	}
 	
 	MoveBlock(FVector(BLOCK_SIZE, 0, 0) + this->GetActorLocation());
