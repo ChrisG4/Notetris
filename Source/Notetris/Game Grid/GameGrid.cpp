@@ -29,9 +29,6 @@ void AGameGrid::BeginPlay()
 	SetGridDimensions();
 
 	CreateGrid();
-	if (GameOverLine != nullptr) {
-		CreateGameOverLine();
-	}
 	SetWallsOccupied();
 	SetScoreValues();
 
@@ -90,6 +87,9 @@ void AGameGrid::CreateGrid()
 			GridRow.Push(NewRow);
 		}
 	}
+
+	if (GameOverLine != nullptr)
+		CreateGameOverLine();
 }
 
 void AGameGrid::SetWallsOccupied()
@@ -191,6 +191,7 @@ void AGameGrid::SetScoreValues()
 	ScoreValues.Add(2, TWO_ROWS_FILLED_SCORE);
 	ScoreValues.Add(3, THREE_ROWS_FILLED_SCORE);
 	ScoreValues.Add(4, FOUR_ROWS_FILLED_SCORE);
+	ScoreValues.Add(5, FIVE_ROWS_FILLED_SCORE);
 }
 
 int32 AGameGrid::GetScoreValue(int32 NumberOfRowsFilled)

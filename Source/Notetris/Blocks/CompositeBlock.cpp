@@ -68,11 +68,11 @@ void ACompositeBlock::CreateBlocks()
 	{
 		for (int i{ 0 }; i < BlockUnitPositions.Num(); i++)
 		{
-			FActorSpawnParameters params;
+			FActorSpawnParameters SpawnParams;
 
 			FVector SpawnLocation = (BlockUnitPositions[i] * BLOCK_SIZE) + this->GetActorLocation();
 
-			ASingleBlock* NewBlock = GetWorld()->SpawnActor<ASingleBlock>(SingleBlockActor, SpawnLocation, FRotator(0, 0, 0), params);
+			ASingleBlock* NewBlock = GetWorld()->SpawnActor<ASingleBlock>(SingleBlockActor, SpawnLocation, FRotator(0, 0, 0), SpawnParams);
 			SingleBlocks.Push(NewBlock);
 		}
 	}
