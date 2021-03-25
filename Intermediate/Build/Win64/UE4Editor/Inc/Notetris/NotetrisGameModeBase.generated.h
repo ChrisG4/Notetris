@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define NOTETRIS_NotetrisGameModeBase_generated_h
 
-#define Notetris_Source_Notetris_NotetrisGameModeBase_h_17_SPARSE_DATA
-#define Notetris_Source_Notetris_NotetrisGameModeBase_h_17_RPC_WRAPPERS
-#define Notetris_Source_Notetris_NotetrisGameModeBase_h_17_RPC_WRAPPERS_NO_PURE_DECLS
-#define Notetris_Source_Notetris_NotetrisGameModeBase_h_17_INCLASS_NO_PURE_DECLS \
+#define Notetris_Source_Notetris_NotetrisGameModeBase_h_15_SPARSE_DATA
+#define Notetris_Source_Notetris_NotetrisGameModeBase_h_15_RPC_WRAPPERS
+#define Notetris_Source_Notetris_NotetrisGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define Notetris_Source_Notetris_NotetrisGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesANotetrisGameModeBase(); \
 	friend struct Z_Construct_UClass_ANotetrisGameModeBase_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(ANotetrisGameModeBase)
 
 
-#define Notetris_Source_Notetris_NotetrisGameModeBase_h_17_INCLASS \
+#define Notetris_Source_Notetris_NotetrisGameModeBase_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesANotetrisGameModeBase(); \
 	friend struct Z_Construct_UClass_ANotetrisGameModeBase_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(ANotetrisGameModeBase)
 
 
-#define Notetris_Source_Notetris_NotetrisGameModeBase_h_17_STANDARD_CONSTRUCTORS \
+#define Notetris_Source_Notetris_NotetrisGameModeBase_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ANotetrisGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ANotetrisGameModeBase) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define Notetris_Source_Notetris_NotetrisGameModeBase_h_17_ENHANCED_CONSTRUCTORS \
+#define Notetris_Source_Notetris_NotetrisGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ANotetrisGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -60,28 +60,28 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ANotetrisGameModeBase); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ANotetrisGameModeBase)
 
 
-#define Notetris_Source_Notetris_NotetrisGameModeBase_h_17_PRIVATE_PROPERTY_OFFSET
-#define Notetris_Source_Notetris_NotetrisGameModeBase_h_14_PROLOG
-#define Notetris_Source_Notetris_NotetrisGameModeBase_h_17_GENERATED_BODY_LEGACY \
+#define Notetris_Source_Notetris_NotetrisGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET
+#define Notetris_Source_Notetris_NotetrisGameModeBase_h_12_PROLOG
+#define Notetris_Source_Notetris_NotetrisGameModeBase_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Notetris_Source_Notetris_NotetrisGameModeBase_h_17_PRIVATE_PROPERTY_OFFSET \
-	Notetris_Source_Notetris_NotetrisGameModeBase_h_17_SPARSE_DATA \
-	Notetris_Source_Notetris_NotetrisGameModeBase_h_17_RPC_WRAPPERS \
-	Notetris_Source_Notetris_NotetrisGameModeBase_h_17_INCLASS \
-	Notetris_Source_Notetris_NotetrisGameModeBase_h_17_STANDARD_CONSTRUCTORS \
+	Notetris_Source_Notetris_NotetrisGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
+	Notetris_Source_Notetris_NotetrisGameModeBase_h_15_SPARSE_DATA \
+	Notetris_Source_Notetris_NotetrisGameModeBase_h_15_RPC_WRAPPERS \
+	Notetris_Source_Notetris_NotetrisGameModeBase_h_15_INCLASS \
+	Notetris_Source_Notetris_NotetrisGameModeBase_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Notetris_Source_Notetris_NotetrisGameModeBase_h_17_GENERATED_BODY \
+#define Notetris_Source_Notetris_NotetrisGameModeBase_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Notetris_Source_Notetris_NotetrisGameModeBase_h_17_PRIVATE_PROPERTY_OFFSET \
-	Notetris_Source_Notetris_NotetrisGameModeBase_h_17_SPARSE_DATA \
-	Notetris_Source_Notetris_NotetrisGameModeBase_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	Notetris_Source_Notetris_NotetrisGameModeBase_h_17_INCLASS_NO_PURE_DECLS \
-	Notetris_Source_Notetris_NotetrisGameModeBase_h_17_ENHANCED_CONSTRUCTORS \
+	Notetris_Source_Notetris_NotetrisGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
+	Notetris_Source_Notetris_NotetrisGameModeBase_h_15_SPARSE_DATA \
+	Notetris_Source_Notetris_NotetrisGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	Notetris_Source_Notetris_NotetrisGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
+	Notetris_Source_Notetris_NotetrisGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

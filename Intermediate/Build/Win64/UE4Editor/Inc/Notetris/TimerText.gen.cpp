@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Notetris/TimerText.h"
+#include "Notetris/Text/TimerText.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeTimerText() {}
 	NOTETRIS_API UClass* Z_Construct_UClass_ATimerText();
 	NOTETRIS_API UClass* Z_Construct_UClass_ADynamicText();
 	UPackage* Z_Construct_UPackage__Script_Notetris();
+	NOTETRIS_API UClass* Z_Construct_UClass_AGameGrid_NoRegister();
 // End Cross Module References
 	void ATimerText::StaticRegisterNativesATimerText()
 	{
@@ -36,6 +37,14 @@ void EmptyLinkFunctionForGeneratedCodeTimerText() {}
 #endif
 		static void NewProp_IsCountingUp_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_IsCountingUp;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_StartingTime_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_StartingTime;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CurrentGameGrid_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CurrentGameGrid;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -47,14 +56,14 @@ void EmptyLinkFunctionForGeneratedCodeTimerText() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimerText_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "/**\n * \n */" },
-		{ "IncludePath", "TimerText.h" },
-		{ "ModuleRelativePath", "TimerText.h" },
+		{ "IncludePath", "Text/TimerText.h" },
+		{ "ModuleRelativePath", "Text/TimerText.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimerText_Statics::NewProp_IsCountingUp_MetaData[] = {
 		{ "Category", "TimerText" },
-		{ "ModuleRelativePath", "TimerText.h" },
+		{ "ModuleRelativePath", "Text/TimerText.h" },
 	};
 #endif
 	void Z_Construct_UClass_ATimerText_Statics::NewProp_IsCountingUp_SetBit(void* Obj)
@@ -62,8 +71,24 @@ void EmptyLinkFunctionForGeneratedCodeTimerText() {}
 		((ATimerText*)Obj)->IsCountingUp = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ATimerText_Statics::NewProp_IsCountingUp = { "IsCountingUp", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(ATimerText), &Z_Construct_UClass_ATimerText_Statics::NewProp_IsCountingUp_SetBit, METADATA_PARAMS(Z_Construct_UClass_ATimerText_Statics::NewProp_IsCountingUp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATimerText_Statics::NewProp_IsCountingUp_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimerText_Statics::NewProp_StartingTime_MetaData[] = {
+		{ "Category", "TimerText" },
+		{ "ModuleRelativePath", "Text/TimerText.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATimerText_Statics::NewProp_StartingTime = { "StartingTime", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATimerText, StartingTime), METADATA_PARAMS(Z_Construct_UClass_ATimerText_Statics::NewProp_StartingTime_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATimerText_Statics::NewProp_StartingTime_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATimerText_Statics::NewProp_CurrentGameGrid_MetaData[] = {
+		{ "Category", "TimerText" },
+		{ "ModuleRelativePath", "Text/TimerText.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ATimerText_Statics::NewProp_CurrentGameGrid = { "CurrentGameGrid", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATimerText, CurrentGameGrid), Z_Construct_UClass_AGameGrid_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ATimerText_Statics::NewProp_CurrentGameGrid_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATimerText_Statics::NewProp_CurrentGameGrid_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATimerText_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimerText_Statics::NewProp_IsCountingUp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimerText_Statics::NewProp_StartingTime,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATimerText_Statics::NewProp_CurrentGameGrid,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ATimerText_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ATimerText>::IsAbstract,
@@ -92,7 +117,7 @@ void EmptyLinkFunctionForGeneratedCodeTimerText() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ATimerText, 3140151501);
+	IMPLEMENT_CLASS(ATimerText, 2274521095);
 	template<> NOTETRIS_API UClass* StaticClass<ATimerText>()
 	{
 		return ATimerText::StaticClass();

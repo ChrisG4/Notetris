@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Notetris/GridTriggerBox.h"
+#include "Notetris/Game Grid/GridTriggerBox.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -97,7 +97,7 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "GridTriggerBox.h" },
+		{ "ModuleRelativePath", "Game Grid/GridTriggerBox.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGridTriggerBox, nullptr, "GetIsSpaceOccupied", nullptr, nullptr, sizeof(GridTriggerBox_eventGetIsSpaceOccupied_Parms), Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied_Statics::Function_MetaDataParams)) };
@@ -133,7 +133,7 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGridTriggerBox_OnBlockBeginOverlap_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "GridTriggerBox.h" },
+		{ "ModuleRelativePath", "Game Grid/GridTriggerBox.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGridTriggerBox_OnBlockBeginOverlap_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGridTriggerBox, nullptr, "OnBlockBeginOverlap", nullptr, nullptr, sizeof(GridTriggerBox_eventOnBlockBeginOverlap_Parms), Z_Construct_UFunction_AGridTriggerBox_OnBlockBeginOverlap_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_OnBlockBeginOverlap_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGridTriggerBox_OnBlockBeginOverlap_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_OnBlockBeginOverlap_Statics::Function_MetaDataParams)) };
@@ -169,7 +169,7 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGridTriggerBox_OnBlockEndOverlap_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "GridTriggerBox.h" },
+		{ "ModuleRelativePath", "Game Grid/GridTriggerBox.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGridTriggerBox_OnBlockEndOverlap_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGridTriggerBox, nullptr, "OnBlockEndOverlap", nullptr, nullptr, sizeof(GridTriggerBox_eventOnBlockEndOverlap_Parms), Z_Construct_UFunction_AGridTriggerBox_OnBlockEndOverlap_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_OnBlockEndOverlap_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGridTriggerBox_OnBlockEndOverlap_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_OnBlockEndOverlap_Statics::Function_MetaDataParams)) };
@@ -201,7 +201,7 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "GridTriggerBox.h" },
+		{ "ModuleRelativePath", "Game Grid/GridTriggerBox.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGridTriggerBox, nullptr, "SetGridIndex", nullptr, nullptr, sizeof(GridTriggerBox_eventSetGridIndex_Parms), Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_SetGridIndex_Statics::Function_MetaDataParams)) };
@@ -238,7 +238,7 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "GridTriggerBox.h" },
+		{ "ModuleRelativePath", "Game Grid/GridTriggerBox.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGridTriggerBox, nullptr, "SetIsSpaceOccupied", nullptr, nullptr, sizeof(GridTriggerBox_eventSetIsSpaceOccupied_Parms), Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied_Statics::Function_MetaDataParams)) };
@@ -280,30 +280,30 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Notetris,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AGridTriggerBox_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied, "GetIsSpaceOccupied" }, // 1142429638
-		{ &Z_Construct_UFunction_AGridTriggerBox_OnBlockBeginOverlap, "OnBlockBeginOverlap" }, // 909406801
-		{ &Z_Construct_UFunction_AGridTriggerBox_OnBlockEndOverlap, "OnBlockEndOverlap" }, // 942104857
-		{ &Z_Construct_UFunction_AGridTriggerBox_SetGridIndex, "SetGridIndex" }, // 4058219586
-		{ &Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied, "SetIsSpaceOccupied" }, // 3301826151
+		{ &Z_Construct_UFunction_AGridTriggerBox_GetIsSpaceOccupied, "GetIsSpaceOccupied" }, // 1331708907
+		{ &Z_Construct_UFunction_AGridTriggerBox_OnBlockBeginOverlap, "OnBlockBeginOverlap" }, // 3367231792
+		{ &Z_Construct_UFunction_AGridTriggerBox_OnBlockEndOverlap, "OnBlockEndOverlap" }, // 1411675937
+		{ &Z_Construct_UFunction_AGridTriggerBox_SetGridIndex, "SetGridIndex" }, // 4264284434
+		{ &Z_Construct_UFunction_AGridTriggerBox_SetIsSpaceOccupied, "SetIsSpaceOccupied" }, // 4199823397
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGridTriggerBox_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "/**\n * \n */" },
-		{ "IncludePath", "GridTriggerBox.h" },
-		{ "ModuleRelativePath", "GridTriggerBox.h" },
+		{ "IncludePath", "Game Grid/GridTriggerBox.h" },
+		{ "ModuleRelativePath", "Game Grid/GridTriggerBox.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex_MetaData[] = {
 		{ "Category", "GridTriggerBox" },
-		{ "ModuleRelativePath", "GridTriggerBox.h" },
+		{ "ModuleRelativePath", "Game Grid/GridTriggerBox.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex = { "GridIndex", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGridTriggerBox, GridIndex), Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_GridIndex_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_bIsSpaceOccupied_MetaData[] = {
 		{ "Category", "GridTriggerBox" },
-		{ "ModuleRelativePath", "GridTriggerBox.h" },
+		{ "ModuleRelativePath", "Game Grid/GridTriggerBox.h" },
 	};
 #endif
 	void Z_Construct_UClass_AGridTriggerBox_Statics::NewProp_bIsSpaceOccupied_SetBit(void* Obj)
@@ -342,7 +342,7 @@ void EmptyLinkFunctionForGeneratedCodeGridTriggerBox() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGridTriggerBox, 3762386340);
+	IMPLEMENT_CLASS(AGridTriggerBox, 3545853627);
 	template<> NOTETRIS_API UClass* StaticClass<AGridTriggerBox>()
 	{
 		return AGridTriggerBox::StaticClass();

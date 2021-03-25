@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Notetris/DynamicText.h"
+#include "Notetris/Text/DynamicText.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -51,15 +51,15 @@ void EmptyLinkFunctionForGeneratedCodeDynamicText() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADynamicText_Statics::Class_MetaDataParams[] = {
-		{ "IncludePath", "DynamicText.h" },
-		{ "ModuleRelativePath", "DynamicText.h" },
+		{ "IncludePath", "Text/DynamicText.h" },
+		{ "ModuleRelativePath", "Text/DynamicText.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADynamicText_Statics::NewProp_TextRoot_MetaData[] = {
 		{ "Category", "DynamicText" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "DynamicText.h" },
+		{ "ModuleRelativePath", "Text/DynamicText.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADynamicText_Statics::NewProp_TextRoot = { "TextRoot", nullptr, (EPropertyFlags)0x0020080000090009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ADynamicText, TextRoot), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ADynamicText_Statics::NewProp_TextRoot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ADynamicText_Statics::NewProp_TextRoot_MetaData)) };
@@ -67,7 +67,7 @@ void EmptyLinkFunctionForGeneratedCodeDynamicText() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ADynamicText_Statics::NewProp_Text_MetaData[] = {
 		{ "Category", "DynamicText" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "DynamicText.h" },
+		{ "ModuleRelativePath", "Text/DynamicText.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADynamicText_Statics::NewProp_Text = { "Text", nullptr, (EPropertyFlags)0x0020080000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ADynamicText, Text), Z_Construct_UClass_UTextRenderComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ADynamicText_Statics::NewProp_Text_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ADynamicText_Statics::NewProp_Text_MetaData)) };
@@ -102,7 +102,7 @@ void EmptyLinkFunctionForGeneratedCodeDynamicText() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ADynamicText, 949797043);
+	IMPLEMENT_CLASS(ADynamicText, 3049564347);
 	template<> NOTETRIS_API UClass* StaticClass<ADynamicText>()
 	{
 		return ADynamicText::StaticClass();

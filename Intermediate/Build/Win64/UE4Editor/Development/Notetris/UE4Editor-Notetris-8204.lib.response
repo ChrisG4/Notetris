@@ -1,0 +1,42 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-Notetris-8204.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\NotetrisEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\Block.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\BlockSpawner.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\CompositeBlock.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\GhostBlock.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\SingleBlock.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\GameGrid.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\GridTriggerBox.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\HighScores.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\SaveData.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\DynamicText.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\Score.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\TimerText.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\Notetris.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\NotetrisGameInstance.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\NotetrisMath.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\NotetrisPlayerController.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\Block.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\BlockSpawner.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\CompositeBlock.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\DynamicText.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\GameGrid.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\GhostBlock.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\GridTriggerBox.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\Notetris.init.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\NotetrisGameInstance.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\NotetrisPlayerController.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\SaveData.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\Score.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\SingleBlock.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\TimerText.gen.cpp.obj"
+"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\Default.rc2.res"
+/OUT:"D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\UE4Editor-Notetris-8204.lib"
+/INCLUDE:IMPLEMENT_MODULE_Notetris

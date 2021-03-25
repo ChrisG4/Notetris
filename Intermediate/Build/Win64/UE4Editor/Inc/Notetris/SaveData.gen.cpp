@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Notetris/SaveData.h"
+#include "Notetris/High Scoring/SaveData.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -60,15 +60,15 @@ void EmptyLinkFunctionForGeneratedCodeSaveData() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveData_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "/**\n * \n */" },
-		{ "IncludePath", "SaveData.h" },
-		{ "ModuleRelativePath", "SaveData.h" },
+		{ "IncludePath", "High Scoring/SaveData.h" },
+		{ "ModuleRelativePath", "High Scoring/SaveData.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_USaveData_Statics::NewProp_ClassicHighScores_Inner = { "ClassicHighScores", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveData_Statics::NewProp_ClassicHighScores_MetaData[] = {
 		{ "Category", "SaveData" },
-		{ "ModuleRelativePath", "SaveData.h" },
+		{ "ModuleRelativePath", "High Scoring/SaveData.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USaveData_Statics::NewProp_ClassicHighScores = { "ClassicHighScores", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USaveData, ClassicHighScores), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_USaveData_Statics::NewProp_ClassicHighScores_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveData_Statics::NewProp_ClassicHighScores_MetaData)) };
@@ -76,19 +76,19 @@ void EmptyLinkFunctionForGeneratedCodeSaveData() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveData_Statics::NewProp_QuinHighScores_MetaData[] = {
 		{ "Category", "SaveData" },
-		{ "ModuleRelativePath", "SaveData.h" },
+		{ "ModuleRelativePath", "High Scoring/SaveData.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USaveData_Statics::NewProp_QuinHighScores = { "QuinHighScores", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USaveData, QuinHighScores), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_USaveData_Statics::NewProp_QuinHighScores_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveData_Statics::NewProp_QuinHighScores_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveData_Statics::NewProp_SaveDataName_MetaData[] = {
-		{ "ModuleRelativePath", "SaveData.h" },
+		{ "ModuleRelativePath", "High Scoring/SaveData.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FStrPropertyParams Z_Construct_UClass_USaveData_Statics::NewProp_SaveDataName = { "SaveDataName", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USaveData, SaveDataName), METADATA_PARAMS(Z_Construct_UClass_USaveData_Statics::NewProp_SaveDataName_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveData_Statics::NewProp_SaveDataName_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USaveData_Statics::NewProp_UserIndex_MetaData[] = {
-		{ "ModuleRelativePath", "SaveData.h" },
+		{ "ModuleRelativePath", "High Scoring/SaveData.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_USaveData_Statics::NewProp_UserIndex = { "UserIndex", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USaveData, UserIndex), METADATA_PARAMS(Z_Construct_UClass_USaveData_Statics::NewProp_UserIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USaveData_Statics::NewProp_UserIndex_MetaData)) };
@@ -127,7 +127,7 @@ void EmptyLinkFunctionForGeneratedCodeSaveData() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(USaveData, 1335056507);
+	IMPLEMENT_CLASS(USaveData, 2222930768);
 	template<> NOTETRIS_API UClass* StaticClass<USaveData>()
 	{
 		return USaveData::StaticClass();

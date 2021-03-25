@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Notetris.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{116A5B79-6CA9-41F6-A716-80486212187D}</UniqueIdentifier>
+      <UniqueIdentifier>{805248E5-FBF0-4E43-BAA4-9FA23FC42761}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Notetris.Target.cs">
       <Filter>Source</Filter>
@@ -15,7 +15,7 @@
     <None Include="..\..\.gitignore" />
     <None Include="..\..\README.md" />
     <Filter Include="Config">
-      <UniqueIdentifier>{F8997712-E9CD-44C4-A146-1D24B58E6FBF}</UniqueIdentifier>
+      <UniqueIdentifier>{E7263BEA-2943-436C-A2C8-4EC7F3779C43}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,63 +30,9 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Notetris">
-      <UniqueIdentifier>{E2EFA303-0B14-44B6-B04F-96FF382F3685}</UniqueIdentifier>
+      <UniqueIdentifier>{450DFE34-BA99-4CF9-A2F8-8971666DB6DB}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\Notetris\Block.cpp">
-      <Filter>Source\Notetris</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\Block.h">
-      <Filter>Source\Notetris</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Notetris\BlockSpawner.cpp">
-      <Filter>Source\Notetris</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\BlockSpawner.h">
-      <Filter>Source\Notetris</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Notetris\CompositeBlock.cpp">
-      <Filter>Source\Notetris</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\CompositeBlock.h">
-      <Filter>Source\Notetris</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\Notetris\Definitions.h">
-      <Filter>Source\Notetris</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Notetris\DynamicText.cpp">
-      <Filter>Source\Notetris</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\DynamicText.h">
-      <Filter>Source\Notetris</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Notetris\GameGrid.cpp">
-      <Filter>Source\Notetris</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\GameGrid.h">
-      <Filter>Source\Notetris</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Notetris\GameTimer.cpp">
-      <Filter>Source\Notetris</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\GameTimer.h">
-      <Filter>Source\Notetris</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Notetris\GhostBlock.cpp">
-      <Filter>Source\Notetris</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\GhostBlock.h">
-      <Filter>Source\Notetris</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Notetris\GridTriggerBox.cpp">
-      <Filter>Source\Notetris</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\GridTriggerBox.h">
-      <Filter>Source\Notetris</Filter>
-    </ClInclude>
-    <ClCompile Include="..\..\Source\Notetris\HighScores.cpp">
-      <Filter>Source\Notetris</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\HighScores.h">
       <Filter>Source\Notetris</Filter>
     </ClInclude>
     <None Include="..\..\Source\Notetris\Notetris.Build.cs">
@@ -96,6 +42,12 @@
       <Filter>Source\Notetris</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Notetris\Notetris.h">
+      <Filter>Source\Notetris</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\NotetrisGameInstance.cpp">
+      <Filter>Source\Notetris</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\NotetrisGameInstance.h">
       <Filter>Source\Notetris</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Notetris\NotetrisGameModeBase.cpp">
@@ -116,29 +68,83 @@
     <ClInclude Include="..\..\Source\Notetris\NotetrisPlayerController.h">
       <Filter>Source\Notetris</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Notetris\SaveData.cpp">
-      <Filter>Source\Notetris</Filter>
+    <Filter Include="Source\Notetris\Blocks">
+      <UniqueIdentifier>{496A6F0B-62DD-4BD5-8D52-0757E81A2F9D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Notetris\Blocks\BlockSpawner.cpp">
+      <Filter>Source\Notetris\Blocks</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\SaveData.h">
-      <Filter>Source\Notetris</Filter>
+    <ClInclude Include="..\..\Source\Notetris\Blocks\BlockSpawner.h">
+      <Filter>Source\Notetris\Blocks</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Notetris\Score.cpp">
-      <Filter>Source\Notetris</Filter>
+    <ClCompile Include="..\..\Source\Notetris\Blocks\CompositeBlock.cpp">
+      <Filter>Source\Notetris\Blocks</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\Score.h">
-      <Filter>Source\Notetris</Filter>
+    <ClInclude Include="..\..\Source\Notetris\Blocks\CompositeBlock.h">
+      <Filter>Source\Notetris\Blocks</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Notetris\SingleBlock.cpp">
-      <Filter>Source\Notetris</Filter>
+    <ClCompile Include="..\..\Source\Notetris\Blocks\GhostBlock.cpp">
+      <Filter>Source\Notetris\Blocks</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\SingleBlock.h">
-      <Filter>Source\Notetris</Filter>
+    <ClInclude Include="..\..\Source\Notetris\Blocks\GhostBlock.h">
+      <Filter>Source\Notetris\Blocks</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\Notetris\TimerText.cpp">
-      <Filter>Source\Notetris</Filter>
+    <ClCompile Include="..\..\Source\Notetris\Blocks\SingleBlock.cpp">
+      <Filter>Source\Notetris\Blocks</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\Notetris\TimerText.h">
-      <Filter>Source\Notetris</Filter>
+    <ClInclude Include="..\..\Source\Notetris\Blocks\SingleBlock.h">
+      <Filter>Source\Notetris\Blocks</Filter>
+    </ClInclude>
+    <Filter Include="Source\Notetris\Game Grid">
+      <UniqueIdentifier>{9C05D8F3-408E-4D37-83E2-10C46341BE72}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Notetris\Game Grid\GameGrid.cpp">
+      <Filter>Source\Notetris\Game Grid</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\Game Grid\GameGrid.h">
+      <Filter>Source\Notetris\Game Grid</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\Game Grid\GridTriggerBox.cpp">
+      <Filter>Source\Notetris\Game Grid</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\Game Grid\GridTriggerBox.h">
+      <Filter>Source\Notetris\Game Grid</Filter>
+    </ClInclude>
+    <Filter Include="Source\Notetris\High Scoring">
+      <UniqueIdentifier>{F42A6FBD-E202-492E-9758-04A951761531}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Notetris\High Scoring\HighScores.cpp">
+      <Filter>Source\Notetris\High Scoring</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\High Scoring\HighScores.h">
+      <Filter>Source\Notetris\High Scoring</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\High Scoring\SaveData.cpp">
+      <Filter>Source\Notetris\High Scoring</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\High Scoring\SaveData.h">
+      <Filter>Source\Notetris\High Scoring</Filter>
+    </ClInclude>
+    <Filter Include="Source\Notetris\Text">
+      <UniqueIdentifier>{466339B5-9B06-4941-941F-8E0CF19F51A4}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Notetris\Text\DynamicText.cpp">
+      <Filter>Source\Notetris\Text</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\Text\DynamicText.h">
+      <Filter>Source\Notetris\Text</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\Text\Score.cpp">
+      <Filter>Source\Notetris\Text</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\Text\Score.h">
+      <Filter>Source\Notetris\Text</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Notetris\Text\TimerText.cpp">
+      <Filter>Source\Notetris\Text</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Notetris\Text\TimerText.h">
+      <Filter>Source\Notetris\Text</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

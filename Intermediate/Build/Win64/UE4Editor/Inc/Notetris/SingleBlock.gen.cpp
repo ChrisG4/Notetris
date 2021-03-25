@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Notetris/SingleBlock.h"
+#include "Notetris/Blocks/SingleBlock.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -81,7 +81,7 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASingleBlock_CanMoveDown_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "SingleBlock.h" },
+		{ "ModuleRelativePath", "Blocks/SingleBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASingleBlock_CanMoveDown_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASingleBlock, nullptr, "CanMoveDown", nullptr, nullptr, sizeof(SingleBlock_eventCanMoveDown_Parms), Z_Construct_UFunction_ASingleBlock_CanMoveDown_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASingleBlock_CanMoveDown_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASingleBlock_CanMoveDown_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ASingleBlock_CanMoveDown_Statics::Function_MetaDataParams)) };
@@ -113,7 +113,7 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASingleBlock_SetGameGrid_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "SingleBlock.h" },
+		{ "ModuleRelativePath", "Blocks/SingleBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASingleBlock_SetGameGrid_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASingleBlock, nullptr, "SetGameGrid", nullptr, nullptr, sizeof(SingleBlock_eventSetGameGrid_Parms), Z_Construct_UFunction_ASingleBlock_SetGameGrid_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASingleBlock_SetGameGrid_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASingleBlock_SetGameGrid_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ASingleBlock_SetGameGrid_Statics::Function_MetaDataParams)) };
@@ -145,7 +145,7 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "SingleBlock.h" },
+		{ "ModuleRelativePath", "Blocks/SingleBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASingleBlock, nullptr, "SetGridIndex", nullptr, nullptr, sizeof(SingleBlock_eventSetGridIndex_Parms), Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ASingleBlock_SetGridIndex_Statics::Function_MetaDataParams)) };
@@ -202,21 +202,21 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Notetris,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ASingleBlock_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ASingleBlock_CanMoveDown, "CanMoveDown" }, // 645122378
-		{ &Z_Construct_UFunction_ASingleBlock_SetGameGrid, "SetGameGrid" }, // 3900374395
-		{ &Z_Construct_UFunction_ASingleBlock_SetGridIndex, "SetGridIndex" }, // 762456899
+		{ &Z_Construct_UFunction_ASingleBlock_CanMoveDown, "CanMoveDown" }, // 1152947148
+		{ &Z_Construct_UFunction_ASingleBlock_SetGameGrid, "SetGameGrid" }, // 2716392041
+		{ &Z_Construct_UFunction_ASingleBlock_SetGridIndex, "SetGridIndex" }, // 883550906
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASingleBlock_Statics::Class_MetaDataParams[] = {
-		{ "IncludePath", "SingleBlock.h" },
-		{ "ModuleRelativePath", "SingleBlock.h" },
+		{ "IncludePath", "Blocks/SingleBlock.h" },
+		{ "ModuleRelativePath", "Blocks/SingleBlock.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockRoot_MetaData[] = {
 		{ "Category", "SingleBlock" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "SingleBlock.h" },
+		{ "ModuleRelativePath", "Blocks/SingleBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockRoot = { "BlockRoot", nullptr, (EPropertyFlags)0x0020080000090009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, BlockRoot), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockRoot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockRoot_MetaData)) };
@@ -224,35 +224,35 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockSprite_MetaData[] = {
 		{ "Category", "SingleBlock" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "SingleBlock.h" },
+		{ "ModuleRelativePath", "Blocks/SingleBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockSprite = { "BlockSprite", nullptr, (EPropertyFlags)0x0020080000090009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, BlockSprite), Z_Construct_UClass_UPaperSpriteComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockSprite_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_BlockSprite_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASingleBlock_Statics::NewProp_GameGrid_MetaData[] = {
 		{ "Category", "SingleBlock" },
-		{ "ModuleRelativePath", "SingleBlock.h" },
+		{ "ModuleRelativePath", "Blocks/SingleBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_GameGrid = { "GameGrid", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, GameGrid), Z_Construct_UClass_AGameGrid_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GameGrid_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GameGrid_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex_MetaData[] = {
 		{ "Category", "SingleBlock" },
-		{ "ModuleRelativePath", "SingleBlock.h" },
+		{ "ModuleRelativePath", "Blocks/SingleBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex = { "GridIndex", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, GridIndex), Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GridIndex_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlockType_MetaData[] = {
 		{ "Category", "SingleBlock" },
-		{ "ModuleRelativePath", "SingleBlock.h" },
+		{ "ModuleRelativePath", "Blocks/SingleBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlockType = { "GhostBlockType", nullptr, (EPropertyFlags)0x0024080000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, GhostBlockType), Z_Construct_UClass_AGhostBlock_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlockType_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlockType_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlock_MetaData[] = {
 		{ "Category", "SingleBlock" },
-		{ "ModuleRelativePath", "SingleBlock.h" },
+		{ "ModuleRelativePath", "Blocks/SingleBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlock = { "GhostBlock", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASingleBlock, GhostBlock), Z_Construct_UClass_AGhostBlock_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlock_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASingleBlock_Statics::NewProp_GhostBlock_MetaData)) };
@@ -291,7 +291,7 @@ void EmptyLinkFunctionForGeneratedCodeSingleBlock() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASingleBlock, 2247759733);
+	IMPLEMENT_CLASS(ASingleBlock, 2772529855);
 	template<> NOTETRIS_API UClass* StaticClass<ASingleBlock>()
 	{
 		return ASingleBlock::StaticClass();

@@ -1,18 +1,5 @@
 D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Development\Notetris\Definitions.Notetris.h
-D:\Unreal Projects\Notetris\Source\Notetris\GameGrid.h
-D:\Unreal Projects\Notetris\Source\Notetris\GridTriggerBox.h
-D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Engine/TriggerBox.h
-D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Engine/TriggerBase.h
-D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TriggerBase.generated.h
-D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TriggerBox.generated.h
-D:\UE_4.26\Engine\Source\Runtime\Engine\Public\DrawDebugHelpers.h
-D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\GridTriggerBox.generated.h
-D:\Unreal Projects\Notetris\Source\Notetris\Score.h
-D:\Unreal Projects\Notetris\Source\Notetris\DynamicText.h
-D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h
-D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TextRenderComponent.generated.h
-D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\DynamicText.generated.h
-D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\Score.generated.h
+D:\Unreal Projects\Notetris\Source\Notetris\Game Grid\GameGrid.h
 D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Components/AudioComponent.h
 D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Sound/QuartzSubscription.h
 D:\UE_4.26\Engine\Source\Runtime\AudioMixer\Public\Quartz/AudioMixerClockHandle.h
@@ -23,14 +10,20 @@ D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AudioMixer\AudioMixerCl
 D:\UE_4.26\Engine\Source\Runtime\AudioMixer\Public\Quartz/AudioMixerQuantizedCommands.h
 D:\UE_4.26\Engine\Source\Runtime\AudioMixer\Public\Quartz\AudioMixerClock.h
 D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\AudioComponent.generated.h
+D:\Unreal Projects\Notetris\Source\Notetris\Game Grid\GridTriggerBox.h
+D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Engine/TriggerBox.h
+D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Engine/TriggerBase.h
+D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TriggerBase.generated.h
+D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TriggerBox.generated.h
+D:\UE_4.26\Engine\Source\Runtime\Engine\Public\DrawDebugHelpers.h
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\GridTriggerBox.generated.h
+D:\Unreal Projects\Notetris\Source\Notetris\Game Grid\../Text/Score.h
+D:\Unreal Projects\Notetris\Source\Notetris\Text\DynamicText.h
+D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h
+D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\TextRenderComponent.generated.h
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\DynamicText.generated.h
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\Score.generated.h
 D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\GameGrid.generated.h
-D:\Unreal Projects\Notetris\Source\Notetris\Definitions.h
-D:\Unreal Projects\Notetris\Source\Notetris\SingleBlock.h
-D:\UE_4.26\Engine\Plugins\2D\Paper2D\Source\Paper2D\Classes\PaperSpriteComponent.h
-D:\UE_4.26\Engine\Plugins\2D\Paper2D\Intermediate\Build\Win64\UE4Editor\Inc\Paper2D\PaperSpriteComponent.generated.h
-D:\Unreal Projects\Notetris\Source\Notetris\GhostBlock.h
-D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\GhostBlock.generated.h
-D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\SingleBlock.generated.h
 D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
 D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
 D:\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
@@ -42,14 +35,13 @@ D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DialogueTypes.ge
 D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Kismet\GameplayStaticsTypes.h
 D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
 D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h
-D:\Unreal Projects\Notetris\Source\Notetris\NotetrisGameModeBase.h
-D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
-D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
-D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
-D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-D:\Unreal Projects\Notetris\Source\Notetris\SaveData.h
-D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/SaveGame.h
-D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SaveGame.generated.h
-D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\SaveData.generated.h
-D:\Unreal Projects\Notetris\Source\Notetris\HighScores.h
-D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\NotetrisGameModeBase.generated.h
+D:\Unreal Projects\Notetris\Source\Notetris\Game Grid\../Definitions.h
+D:\Unreal Projects\Notetris\Source\Notetris\Game Grid\../Blocks/SingleBlock.h
+D:\UE_4.26\Engine\Plugins\2D\Paper2D\Source\Paper2D\Classes\PaperSpriteComponent.h
+D:\UE_4.26\Engine\Plugins\2D\Paper2D\Intermediate\Build\Win64\UE4Editor\Inc\Paper2D\PaperSpriteComponent.generated.h
+D:\Unreal Projects\Notetris\Source\Notetris\Blocks\GhostBlock.h
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\GhostBlock.generated.h
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\SingleBlock.generated.h
+D:\Unreal Projects\Notetris\Source\Notetris\Game Grid\../NotetrisGameInstance.h
+D:\Unreal Projects\Notetris\Source\Notetris\High Scoring/HighScores.h
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4Editor\Inc\Notetris\NotetrisGameInstance.generated.h

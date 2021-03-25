@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Notetris/GhostBlock.h"
+#include "Notetris/Blocks/GhostBlock.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -51,15 +51,15 @@ void EmptyLinkFunctionForGeneratedCodeGhostBlock() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGhostBlock_Statics::Class_MetaDataParams[] = {
-		{ "IncludePath", "GhostBlock.h" },
-		{ "ModuleRelativePath", "GhostBlock.h" },
+		{ "IncludePath", "Blocks/GhostBlock.h" },
+		{ "ModuleRelativePath", "Blocks/GhostBlock.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGhostBlock_Statics::NewProp_GhostRoot_MetaData[] = {
 		{ "Category", "GhostBlock" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "GhostBlock.h" },
+		{ "ModuleRelativePath", "Blocks/GhostBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGhostBlock_Statics::NewProp_GhostRoot = { "GhostRoot", nullptr, (EPropertyFlags)0x0020080000090009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGhostBlock, GhostRoot), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGhostBlock_Statics::NewProp_GhostRoot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGhostBlock_Statics::NewProp_GhostRoot_MetaData)) };
@@ -67,7 +67,7 @@ void EmptyLinkFunctionForGeneratedCodeGhostBlock() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGhostBlock_Statics::NewProp_BlockSprite_MetaData[] = {
 		{ "Category", "GhostBlock" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "GhostBlock.h" },
+		{ "ModuleRelativePath", "Blocks/GhostBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGhostBlock_Statics::NewProp_BlockSprite = { "BlockSprite", nullptr, (EPropertyFlags)0x0020080000090009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGhostBlock, BlockSprite), Z_Construct_UClass_UPaperSpriteComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGhostBlock_Statics::NewProp_BlockSprite_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGhostBlock_Statics::NewProp_BlockSprite_MetaData)) };
@@ -102,7 +102,7 @@ void EmptyLinkFunctionForGeneratedCodeGhostBlock() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGhostBlock, 825595296);
+	IMPLEMENT_CLASS(AGhostBlock, 4251038831);
 	template<> NOTETRIS_API UClass* StaticClass<AGhostBlock>()
 	{
 		return AGhostBlock::StaticClass();

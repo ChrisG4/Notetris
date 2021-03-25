@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Notetris/CompositeBlock.h"
+#include "Notetris/Blocks/CompositeBlock.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -73,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACompositeBlock_MoveBlockDown_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACompositeBlock_MoveBlockDown_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACompositeBlock, nullptr, "MoveBlockDown", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACompositeBlock_MoveBlockDown_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACompositeBlock_MoveBlockDown_Statics::Function_MetaDataParams)) };
@@ -95,7 +95,7 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACompositeBlock_MoveBlockLeft_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACompositeBlock_MoveBlockLeft_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACompositeBlock, nullptr, "MoveBlockLeft", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACompositeBlock_MoveBlockLeft_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACompositeBlock_MoveBlockLeft_Statics::Function_MetaDataParams)) };
@@ -117,7 +117,7 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACompositeBlock_MoveBlockRight_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACompositeBlock_MoveBlockRight_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACompositeBlock, nullptr, "MoveBlockRight", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACompositeBlock_MoveBlockRight_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACompositeBlock_MoveBlockRight_Statics::Function_MetaDataParams)) };
@@ -139,7 +139,7 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ACompositeBlock_PlaceBlock_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ACompositeBlock_PlaceBlock_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ACompositeBlock, nullptr, "PlaceBlock", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ACompositeBlock_PlaceBlock_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ACompositeBlock_PlaceBlock_Statics::Function_MetaDataParams)) };
@@ -201,6 +201,10 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FailSound_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FailSound;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SwapSound_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SwapSound;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -210,30 +214,30 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Notetris,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ACompositeBlock_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ACompositeBlock_MoveBlockDown, "MoveBlockDown" }, // 1316492273
-		{ &Z_Construct_UFunction_ACompositeBlock_MoveBlockLeft, "MoveBlockLeft" }, // 214783627
-		{ &Z_Construct_UFunction_ACompositeBlock_MoveBlockRight, "MoveBlockRight" }, // 2166710762
-		{ &Z_Construct_UFunction_ACompositeBlock_PlaceBlock, "PlaceBlock" }, // 4130128484
+		{ &Z_Construct_UFunction_ACompositeBlock_MoveBlockDown, "MoveBlockDown" }, // 1234128489
+		{ &Z_Construct_UFunction_ACompositeBlock_MoveBlockLeft, "MoveBlockLeft" }, // 3622657754
+		{ &Z_Construct_UFunction_ACompositeBlock_MoveBlockRight, "MoveBlockRight" }, // 4129684341
+		{ &Z_Construct_UFunction_ACompositeBlock_PlaceBlock, "PlaceBlock" }, // 2994816912
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::Class_MetaDataParams[] = {
 		{ "HideCategories", "Navigation" },
-		{ "IncludePath", "CompositeBlock.h" },
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "IncludePath", "Blocks/CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_CompositeBlockRoot_MetaData[] = {
 		{ "Category", "CompositeBlock" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_CompositeBlockRoot = { "CompositeBlockRoot", nullptr, (EPropertyFlags)0x0020080000090009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, CompositeBlockRoot), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_CompositeBlockRoot_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_CompositeBlockRoot_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SingleBlockActor_MetaData[] = {
 		{ "Category", "CompositeBlock" },
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SingleBlockActor = { "SingleBlockActor", nullptr, (EPropertyFlags)0x0024080000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, SingleBlockActor), Z_Construct_UClass_ASingleBlock_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SingleBlockActor_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SingleBlockActor_MetaData)) };
@@ -242,7 +246,7 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_BlockUnitPositions_MetaData[] = {
 		{ "Category", "CompositeBlock" },
 		{ "Comment", "//Multiplied by Sprite Size (e.g. (1, 0, 0) would be one block to the left)\n" },
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 		{ "ToolTip", "Multiplied by Sprite Size (e.g. (1, 0, 0) would be one block to the left)" },
 	};
 #endif
@@ -250,44 +254,51 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SingleBlocks_Inner = { "SingleBlocks", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_ASingleBlock_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SingleBlocks_MetaData[] = {
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SingleBlocks = { "SingleBlocks", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, SingleBlocks), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SingleBlocks_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SingleBlocks_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GameGrid_MetaData[] = {
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GameGrid = { "GameGrid", nullptr, (EPropertyFlags)0x0020080000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, GameGrid), Z_Construct_UClass_AGameGrid_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GameGrid_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GameGrid_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GridIndex_MetaData[] = {
 		{ "Category", "CompositeBlock" },
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GridIndex = { "GridIndex", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, GridIndex), Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GridIndex_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_GridIndex_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_MoveSound_MetaData[] = {
 		{ "Category", "CompositeBlock" },
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_MoveSound = { "MoveSound", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, MoveSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_MoveSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_MoveSound_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_DropSound_MetaData[] = {
 		{ "Category", "CompositeBlock" },
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_DropSound = { "DropSound", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, DropSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_DropSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_DropSound_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_FailSound_MetaData[] = {
 		{ "Category", "CompositeBlock" },
-		{ "ModuleRelativePath", "CompositeBlock.h" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_FailSound = { "FailSound", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, FailSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_FailSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_FailSound_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SwapSound_MetaData[] = {
+		{ "Category", "CompositeBlock" },
+		{ "ModuleRelativePath", "Blocks/CompositeBlock.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SwapSound = { "SwapSound", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ACompositeBlock, SwapSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SwapSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SwapSound_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ACompositeBlock_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_CompositeBlockRoot,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SingleBlockActor,
@@ -300,6 +311,7 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_MoveSound,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_DropSound,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_FailSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ACompositeBlock_Statics::NewProp_SwapSound,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ACompositeBlock_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ACompositeBlock>::IsAbstract,
@@ -328,7 +340,7 @@ void EmptyLinkFunctionForGeneratedCodeCompositeBlock() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ACompositeBlock, 2211967811);
+	IMPLEMENT_CLASS(ACompositeBlock, 2720195184);
 	template<> NOTETRIS_API UClass* StaticClass<ACompositeBlock>()
 	{
 		return ACompositeBlock::StaticClass();

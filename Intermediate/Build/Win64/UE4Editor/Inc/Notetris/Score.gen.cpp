@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Notetris/Score.h"
+#include "Notetris/Text/Score.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -46,14 +46,14 @@ void EmptyLinkFunctionForGeneratedCodeScore() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AScore_Statics::Class_MetaDataParams[] = {
 		{ "Comment", "/**\n * \n */" },
-		{ "IncludePath", "Score.h" },
-		{ "ModuleRelativePath", "Score.h" },
+		{ "IncludePath", "Text/Score.h" },
+		{ "ModuleRelativePath", "Text/Score.h" },
 	};
 #endif
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AScore_Statics::NewProp_PlayerScore_MetaData[] = {
 		{ "Category", "Score" },
-		{ "ModuleRelativePath", "Score.h" },
+		{ "ModuleRelativePath", "Text/Score.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_AScore_Statics::NewProp_PlayerScore = { "PlayerScore", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AScore, PlayerScore), METADATA_PARAMS(Z_Construct_UClass_AScore_Statics::NewProp_PlayerScore_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AScore_Statics::NewProp_PlayerScore_MetaData)) };
@@ -87,7 +87,7 @@ void EmptyLinkFunctionForGeneratedCodeScore() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AScore, 1155154079);
+	IMPLEMENT_CLASS(AScore, 1092320077);
 	template<> NOTETRIS_API UClass* StaticClass<AScore>()
 	{
 		return AScore::StaticClass();

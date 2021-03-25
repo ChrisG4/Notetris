@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Notetris/GameGrid.h"
+#include "Notetris/Game Grid/GameGrid.h"
 #ifdef _MSC_VER
 #pragma warning (push)
 #pragma warning (disable : 4883)
@@ -63,7 +63,7 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FGridBoxRow_Statics::Struct_MetaDataParams[] = {
-		{ "ModuleRelativePath", "GameGrid.h" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
 	};
 #endif
 	void* Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewStructOps()
@@ -73,7 +73,7 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_NumberOfBlocksInRow_MetaData[] = {
 		{ "Category", "GridBoxRow" },
-		{ "ModuleRelativePath", "GameGrid.h" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_NumberOfBlocksInRow = { "NumberOfBlocksInRow", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FGridBoxRow, NumberOfBlocksInRow), METADATA_PARAMS(Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_NumberOfBlocksInRow_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FGridBoxRow_Statics::NewProp_NumberOfBlocksInRow_MetaData)) };
@@ -108,7 +108,7 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FGridBoxRow_Hash() { return 2962619162U; }
+	uint32 Get_Z_Construct_UScriptStruct_FGridBoxRow_Hash() { return 3250161453U; }
 	DEFINE_FUNCTION(AGameGrid::execIsGridBoxOccupied)
 	{
 		P_GET_STRUCT(FVector2D,Z_Param_GridIndex);
@@ -139,7 +139,7 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGameGrid_CallGameOver_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "GameGrid.h" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGameGrid_CallGameOver_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGameGrid, nullptr, "CallGameOver", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGameGrid_CallGameOver_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGameGrid_CallGameOver_Statics::Function_MetaDataParams)) };
@@ -180,7 +180,7 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGameGrid_IsGridBoxOccupied_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "GameGrid.h" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGameGrid_IsGridBoxOccupied_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGameGrid, nullptr, "IsGridBoxOccupied", nullptr, nullptr, sizeof(GameGrid_eventIsGridBoxOccupied_Parms), Z_Construct_UFunction_AGameGrid_IsGridBoxOccupied_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGameGrid_IsGridBoxOccupied_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGameGrid_IsGridBoxOccupied_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGameGrid_IsGridBoxOccupied_Statics::Function_MetaDataParams)) };
@@ -204,6 +204,11 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bIsTimeTrial_MetaData[];
+#endif
+		static void NewProp_bIsTimeTrial_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bIsTimeTrial;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GridBox_MetaData[];
 #endif
@@ -233,6 +238,16 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_GameOverSound_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_GameOverSound;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bIsClassicGrid_MetaData[];
+#endif
+		static void NewProp_bIsClassicGrid_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bIsClassicGrid;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bIsQuinGrid_MetaData[];
+#endif
+		static void NewProp_bIsQuinGrid_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bIsQuinGrid;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -242,19 +257,30 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 		(UObject* (*)())Z_Construct_UPackage__Script_Notetris,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AGameGrid_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AGameGrid_CallGameOver, "CallGameOver" }, // 1013383779
-		{ &Z_Construct_UFunction_AGameGrid_IsGridBoxOccupied, "IsGridBoxOccupied" }, // 3802918882
+		{ &Z_Construct_UFunction_AGameGrid_CallGameOver, "CallGameOver" }, // 3745788878
+		{ &Z_Construct_UFunction_AGameGrid_IsGridBoxOccupied, "IsGridBoxOccupied" }, // 2813071738
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::Class_MetaDataParams[] = {
-		{ "IncludePath", "GameGrid.h" },
-		{ "ModuleRelativePath", "GameGrid.h" },
+		{ "IncludePath", "Game Grid/GameGrid.h" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
 	};
 #endif
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsTimeTrial_MetaData[] = {
+		{ "Category", "GameGrid" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
+	};
+#endif
+	void Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsTimeTrial_SetBit(void* Obj)
+	{
+		((AGameGrid*)Obj)->bIsTimeTrial = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsTimeTrial = { "bIsTimeTrial", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AGameGrid), &Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsTimeTrial_SetBit, METADATA_PARAMS(Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsTimeTrial_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsTimeTrial_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBox_MetaData[] = {
 		{ "Category", "GameGrid" },
-		{ "ModuleRelativePath", "GameGrid.h" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBox = { "GridBox", nullptr, (EPropertyFlags)0x0024080000000001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGameGrid, GridBox), Z_Construct_UClass_AGridTriggerBox_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBox_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBox_MetaData)) };
@@ -262,7 +288,7 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::NewProp_GridRow_MetaData[] = {
 		{ "Category", "GameGrid" },
-		{ "ModuleRelativePath", "GameGrid.h" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_GridRow = { "GridRow", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGameGrid, GridRow), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AGameGrid_Statics::NewProp_GridRow_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameGrid_Statics::NewProp_GridRow_MetaData)) };
@@ -270,14 +296,14 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::NewProp_GameOverLine_MetaData[] = {
 		{ "Category", "GameGrid" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "GameGrid.h" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_GameOverLine = { "GameOverLine", nullptr, (EPropertyFlags)0x0020080000090009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGameGrid, GameOverLine), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGameGrid_Statics::NewProp_GameOverLine_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameGrid_Statics::NewProp_GameOverLine_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::NewProp_ScoreText_MetaData[] = {
 		{ "Category", "GameGrid" },
-		{ "ModuleRelativePath", "GameGrid.h" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_ScoreText = { "ScoreText", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGameGrid, ScoreText), Z_Construct_UClass_AScore_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGameGrid_Statics::NewProp_ScoreText_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameGrid_Statics::NewProp_ScoreText_MetaData)) };
@@ -285,25 +311,50 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::NewProp_GameMusic_MetaData[] = {
 		{ "Category", "GameGrid" },
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "GameGrid.h" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_GameMusic = { "GameMusic", nullptr, (EPropertyFlags)0x0020080000090009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGameGrid, GameMusic), Z_Construct_UClass_UAudioComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGameGrid_Statics::NewProp_GameMusic_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameGrid_Statics::NewProp_GameMusic_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::NewProp_RowFilledSound_MetaData[] = {
 		{ "Category", "GameGrid" },
-		{ "ModuleRelativePath", "GameGrid.h" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_RowFilledSound = { "RowFilledSound", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGameGrid, RowFilledSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGameGrid_Statics::NewProp_RowFilledSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameGrid_Statics::NewProp_RowFilledSound_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::NewProp_GameOverSound_MetaData[] = {
 		{ "Category", "GameGrid" },
-		{ "ModuleRelativePath", "GameGrid.h" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_GameOverSound = { "GameOverSound", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGameGrid, GameOverSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGameGrid_Statics::NewProp_GameOverSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameGrid_Statics::NewProp_GameOverSound_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsClassicGrid_MetaData[] = {
+		{ "Category", "GridType" },
+		{ "EditCondition", "!bIsQuinGrid" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
+	};
+#endif
+	void Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsClassicGrid_SetBit(void* Obj)
+	{
+		((AGameGrid*)Obj)->bIsClassicGrid = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsClassicGrid = { "bIsClassicGrid", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AGameGrid), &Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsClassicGrid_SetBit, METADATA_PARAMS(Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsClassicGrid_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsClassicGrid_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsQuinGrid_MetaData[] = {
+		{ "Category", "GridType" },
+		{ "EditCondition", "!bIsClassicGrid" },
+		{ "ModuleRelativePath", "Game Grid/GameGrid.h" },
+	};
+#endif
+	void Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsQuinGrid_SetBit(void* Obj)
+	{
+		((AGameGrid*)Obj)->bIsQuinGrid = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsQuinGrid = { "bIsQuinGrid", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AGameGrid), &Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsQuinGrid_SetBit, METADATA_PARAMS(Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsQuinGrid_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsQuinGrid_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGameGrid_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsTimeTrial,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameGrid_Statics::NewProp_GridBox,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameGrid_Statics::NewProp_GridRow_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameGrid_Statics::NewProp_GridRow,
@@ -312,6 +363,8 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameGrid_Statics::NewProp_GameMusic,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameGrid_Statics::NewProp_RowFilledSound,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameGrid_Statics::NewProp_GameOverSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsClassicGrid,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameGrid_Statics::NewProp_bIsQuinGrid,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGameGrid_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AGameGrid>::IsAbstract,
@@ -340,7 +393,7 @@ static struct FScriptStruct_Notetris_StaticRegisterNativesFGridBoxRow
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGameGrid, 1346270274);
+	IMPLEMENT_CLASS(AGameGrid, 736268046);
 	template<> NOTETRIS_API UClass* StaticClass<AGameGrid>()
 	{
 		return AGameGrid::StaticClass();
