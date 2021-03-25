@@ -1,0 +1,2 @@
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4\Shipping\Notetris\Definitions.Notetris.h
+D:\Unreal Projects\Notetris\Source\Notetris\Notetris.h

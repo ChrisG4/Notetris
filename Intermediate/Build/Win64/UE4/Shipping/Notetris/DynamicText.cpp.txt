@@ -1,0 +1,5 @@
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4\Shipping\Notetris\Definitions.Notetris.h
+D:\Unreal Projects\Notetris\Source\Notetris\Text\DynamicText.h
+D:\UE_4.26\Engine\Source\Runtime\Engine\Classes\Components/TextRenderComponent.h
+D:\UE_4.26\Engine\Intermediate\Build\Win64\UE4\Inc\Engine\TextRenderComponent.generated.h
+D:\Unreal Projects\Notetris\Intermediate\Build\Win64\UE4\Inc\Notetris\DynamicText.generated.h
