@@ -36,6 +36,7 @@ protected:
 
 	float Timer = 0;
 
+	UPROPERTY(EditAnywhere, meta = (MakeEditWidget = "true"))
 	FVector HeldBlockLocation;
 
 public:	

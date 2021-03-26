@@ -22,7 +22,7 @@ void ABlockSpawner::BeginPlay()
 
 	CreateUpcomingBlocks();
 
-	HeldBlockLocation = this->GetActorLocation() + FVector(-BLOCK_SIZE * CLASSIC_WALL_LENGTH, 0, -BLOCK_SIZE * UPCOMING_BLOCK_GAP);
+	HeldBlockLocation += this->GetActorLocation();
 }
 
 // Called every frame
