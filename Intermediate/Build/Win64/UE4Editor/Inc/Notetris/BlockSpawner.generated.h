@@ -60,7 +60,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABlockSpawner); \
 
 #define Notetris_Source_Notetris_Blocks_BlockSpawner_h_16_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__GameGrid() { return STRUCT_OFFSET(ABlockSpawner, GameGrid); } \
-	FORCEINLINE static uint32 __PPO__SpawnableBlocks() { return STRUCT_OFFSET(ABlockSpawner, SpawnableBlocks); }
+	FORCEINLINE static uint32 __PPO__SpawnableBlocks() { return STRUCT_OFFSET(ABlockSpawner, SpawnableBlocks); } \
+	FORCEINLINE static uint32 __PPO__HeldBlockLocation() { return STRUCT_OFFSET(ABlockSpawner, HeldBlockLocation); }
 
 
 #define Notetris_Source_Notetris_Blocks_BlockSpawner_h_13_PROLOG
